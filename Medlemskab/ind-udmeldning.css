@@ -46,6 +46,7 @@ flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
 
 main h1 { 
   color: #333;
+  position: relative;
 }
 
 /* billeder */
@@ -56,7 +57,7 @@ main h1 {
   object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
   border-radius: 8px;
   position:absolute; /* Gør det muligt at justere med top og left */
-  top: 1800px; /* Ryk billedet længere op */
+  top: 300px; /* Ryk billedet længere op */
   left: -100px; /* Fra venstre side til højre */
 }
 
@@ -71,24 +72,16 @@ main h1 {
 }
 
 
-.image_4_img_r{
+.image_4_img_r {
   display: block;
   position: absolute;
-  top: 1370px;
+  top: 1430px;
   margin-left:-140px;
-}
-
-
-.image_4_img_l{
-  display: block;
-  position: absolute;
-  top: 2770px;
-  margin-left: 1120px;
 }
 /* billeder */
 
 section {
-flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
+  flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
   padding: 140px;
   background-color: #BEF49A;
   text-align: left;

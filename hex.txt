@@ -1,0 +1,27 @@
+Rød 
+color: #d83d53;
+background-color: #d83d53;
+
+Sort
+color: #333;
+background-color: #333;
+
+mørkeblå 
+color: #1E3445
+background-color: #1E3445
+
+Blå
+color: #a8d4ff;
+background-color: #a8d4ff;
+
+Gul 
+color: #F5DC71;
+background-color: #F5DC71;
+
+Grøn
+color: #BEF49A;
+background-color: #BEF49A;
+
+Hvid
+color: #FCFBFB;
+background-color: #FCFBFB;

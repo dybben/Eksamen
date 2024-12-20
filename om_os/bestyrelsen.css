@@ -84,7 +84,7 @@ main {
     object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
     border-radius: 8px;
     position: relative;
-    top: -270px;
+    top: -400px;
     margin-left: 1680px;
 }
 
@@ -107,15 +107,15 @@ main {
     right: -710px; /* Fra venstre side til højre */
 }
 
-.bestyrelse_billede {
-    width: 800px; /* Fast bredde */
-    height: 500px; /* Fast højde */
-    display: block; /* Fjerner mellemrum og gør elementet blokbaseret */
-    position: absolute; /* Gør det muligt at justere med top og left */
-    top: 500px; /* Ryk billedet længere op */
-    right: 250px; /* Fra venstre side til højre */
-    object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
-}
+ /* .bestyrelse_billede {
+    width: 800px; /* Fast bredde 
+    height: 500px; /* Fast højde 
+    display: block; /* Fjerner mellemrum og gør elementet blokbaseret
+    position: absolute; /* Gør det muligt at justere med top og left 
+    top: 500px; /* Ryk billedet længere op
+    left:800px; /* Fra venstre side til højre 
+    object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne
+    } */
 
 /* billeder */
 
