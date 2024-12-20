@@ -1,0 +1,134 @@
+/* 
+    Vilkår og Privatlivspolitik for Børnegården Katholt
+  Koden er baseret på hjælp fra ChatGPT (OpenAI, 2024).
+  Hentet fra 
+    https://chatgpt.com/c/6758a548-c688-8007-abe8-6b903f909494 - lokaliseret d. 11/12 2024
+*/
+
+/* === Grundlæggende Reset og Font === */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: "cooper-black";
+    src: url("/assets/fonts/cooper-black/COOPBL.TTF") format("truetype");
+}
+@font-face {
+    font-family: "Cooper-Light-BT";
+    src: url("/assets/fonts/Cooper-Light-BT/cooperl.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cooper-Light-Italic-BT";
+    src: url("/assets/fonts/Cooper-Light-BT/cooperli.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F5DC71;
+}
+
+/* Typography */
+h1 {
+    color: #333;
+    font-family: 'cooper-black';
+    font-size: 55px;
+}
+
+h2 {
+    color: #333; 
+    font-family: "Lato";
+    font-size: 34px;
+    margin-top: 1.5em;
+}
+
+p {
+    font-family: 'PT Sans';
+    font-size: 21px;
+    color: #333;
+}
+
+a {
+    font-family: 'PT Sans';
+    font-size: 21px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    font-family: 'PT Sans';
+    font-size: 21px;
+}
+
+/* Generelle stilarter */
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 100px; /* Øger afstanden øverst */
+}
+
+section {
+    /*background-color: #FCFBFB;*/
+    padding: 20px;
+    border-radius: 8px;
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h1 br {
+        display: inline;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    ul {
+        margin-left: 15px;
+    }
+}

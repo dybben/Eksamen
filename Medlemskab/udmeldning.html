@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Børnegården Katholt</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../Medlemskab/udmeldning.css">
+    <link rel="stylesheet" href="../css/navbar-footer.css">
+    <link rel="stylesheet" href="../css/font.css">
+
+</head>
+<body>
+    
+    <!-- Navigation Bar Start -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/logo.webp" alt="Børnegården Katholt Logo">
+            </a>
+        </div>
+        <button class="burger-menu" id="burgerMenuButton" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+            &#9776;
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li>
+                    <a>Om Os</a>
+                    <ul class="dropdown">
+                        <li><a href="../om_os/hvem_er_vi.html" class="link">Hvem er vi</a></li>
+                        <li><a href="../om_os/vores_værdier.html" class="link">Vores værdier</a></li>
+                        <li><a href="../om_os/Kontakt.html" class="link">Kontakt</a></li>
+                        <li><a href="../om_os/bestyrelsen.html" class="link">Bestyrelsen</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Børnehave</a>
+                    <ul class="dropdown">
+                        <li><a href="../Boernehavnen/om_boernehavnen.html" class="link">Om Børnehaven</a></li>
+                        <li><a href="../Boernehavnen/aabningstider.html" class="link">Åbningstider</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fritidshjem</a>
+                    <ul class="dropdown">
+                        <li><a href="../Fritidshjem/om_fritidshjemmet.html" class="link">Om fritidshjemmet</a></li>
+                        <li><a href="../Fritidshjem/aabningstider_fritidshjem.html" class="link">Åbningstider</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../stamkort.html" class="link">Stamkort</a>
+                </li>
+                <li>
+                    <a class="link active">Medlemskab</a>
+                    <ul class="dropdown">
+                        <li><a href="../Medlemskab/indmeldning.html" class="link ">Indmeldning</a></li>
+                        <li><a href="../Medlemskab/udmeldning.html" class="link active">Udmeldning</a></li>
+                        <li><a href="../Medlemskab/priser.html" class="link">Priser</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+ 
+    <!-- Brødkrummesti -->
+    <div class="breadcrumb">
+        <a href="../index.html">Hjem</a> &gt; 
+        <a>Medlemskab</a> &gt; 
+        <span>udmeldning</span>
+    </div>
+    <!-- Brødkrummesti -->
+<main>
+    <div class="container">
+        <h1 class="ufb_h1">Udmeldelse fra Børnehave</h1>
+        <p>Udfyld formularen nedenfor for at 
+            <br> melde dit barn ud af børnehaven.
+        </p>
+        <form action="#" method="post">
+            <label for="barn-fornavn"><p>Barnets fornavn</p></label>
+            <input type="text" id="barn-fornavn" name="barn-fornavn" placeholder="Indtast barnets fornavn" required>
+    
+            <label for="barn-efternavn"><p>Barnets efternavn</p></label>
+            <input type="text" id="barn-efternavn" name="barn-efternavn" placeholder="Indtast barnets efternavn" required>
+
+            <label for="barn-cpr"><p>Barnets CPR-nummer</p></label>
+            <input type="text" id="barn-cpr" name="barn-cpr" placeholder="DDMMÅÅ-XXXX" pattern="\d{6}-\d{4}" required>
+    
+            <label for="udmeldelsesdato"><p> Ønsket udmeldelsesdato</p></label>
+            <input type="date" id="udmeldelsesdato" name="udmeldelsesdato" required>
+    
+            <label for="forældres-navn"><p>Forældres navn</p></label>
+            <input type="text" id="forældres-navn" name="forældres-navn" placeholder="Dit fulde navn" required>
+    
+            <label for="telefon"><p>Telefonnummer</p></label>
+            <input type="tel" id="telefon" name="telefon" placeholder="Indtast dit telefonnummer" required>
+    
+            <label for="email"><p>E-mail</p></label>
+            <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
+    
+            <label for="bemærkning"><p>Bemærkninger (valgfrit)</p></label>
+            <textarea id="bemærkning" name="bemærkning" rows="4" placeholder="Har du en kommentar?"></textarea>
+    
+            <button type="submit"><p>Send Udmeldelse</p></button>
+        </form>
+    </div>
+        <!-- Billeder --> 
+        <img src="../assets/illustrationer_katholt/kids-4702840_640_R.webp" alt="Illustration af børn" class="right-image">
+        <img src="../assets/illustrationer_katholt/stick-kids-5995514_640_R.png" alt="Stick kids illustration" class="image_4_img_r">
+        <!-- billeder end -->
+</main>
+
+<section>
+    <div class="container">
+        <h1 class="ufb_h1">Udmeldelse fra Fritidshjemmet </h1>
+        <p> Udfyld formularen nedenfor for at 
+            <br> melde dit barn ud af Fritidshjem
+        </p>
+        <form action="#" method="post">
+            <label for="barn-fornavn"><p>Barnets fornavn</p></label>
+            <input type="text" id="barn-fornavn" name="barn-fornavn" placeholder="Indtast barnets fornavn" required>
+    
+            <label for="barn-efternavn"><p>Barnets efternavn</p></label>
+            <input type="text" id="barn-efternavn" name="barn-efternavn" placeholder="Indtast barnets efternavn" required>
+    
+            <label for="barn-cpr"><p>Barnets CPR-nummer</p></label>
+            <input type="text" id="barn-cpr" name="barn-cpr" placeholder="DDMMÅÅ-XXXX" pattern="\d{6}-\d{4}" required>
+    
+            <label for="udmeldelsesdato"><p>Ønsket udmeldelsesdato</p></label>
+            <input type="date" id="udmeldelsesdato" name="udmeldelsesdato" required>
+    
+            <label for="forældres-navn"><p>Forældres navn</p></label>
+            <input type="text" id="forældres-navn" name="forældres-navn" placeholder="Dit fulde navn" required>
+    
+            <label for="telefon"><p>Telefonnummer</p></label>
+            <input type="tel" id="telefon" name="telefon" placeholder="Indtast dit telefonnummer" required>
+    
+            <label for="email"><p>E-mail</p></label>
+            <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
+    
+            <label for="bemærkning"><p>Bemærkninger (valgfrit)</p></label>
+            <textarea id="bemærkning" name="bemærkning" rows="4" placeholder="Har du en kommentar?"></textarea>
+    
+            <button type="submit"><p>Send Udmeldelse</p></button>
+        </form>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container_footer">
+            <div class="footer-content">
+                <p>Copyright &copy; Børnegården Katholt 20-12-2024</p>
+                <p>Dette site er kun til undervisningsformål</p>
+                <div class="footer-links">
+                    <a href="../Vilkår_Privatlivspolitik/Privatlivspolitik_boernegaarden_Katholt.html"> Privatlivspolitik </a>
+                    <span>&middot;</span>
+                    <a href="../Vilkår_Privatlivspolitik/vilkår_boernegaarden_Katholt.html"> Vilkår </a>
+                    <span>&middot;</span>
+                    <a href="../om_os/Kontakt.html">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

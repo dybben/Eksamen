@@ -1,0 +1,400 @@
+/* Generelle regler */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1, h2, h3 {
+  margin-bottom: 10px;
+}
+
+/* Hero sektion */
+
+/* Generelle hero-stil */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fylder hele viewport-højden */
+  background: url(/assets/Freepik.com/1920x1080.jpg) no-repeat center center; /* Centrér baggrundsbilledet */
+  display: flex; /* noget med Velkommen til Børnegården katholt og background: rgba(0, 0, 0, 0.3); (Halv-transparent overlay) linje 36 */
+  justify-content: center;/* noget med Velkommen til Børnegården katholt */
+  align-items: center; /* noget med Velkommen til Børnegården katholt */
+  text-align: center;
+}
+
+/* Overlay for bedre læsbarhed */
+.hero::after {
+  content: ''; /* Tilføjer et tomt pseudo-element, der bruges til at skabe et overlay. */
+  position: absolute; /* Positionerer elementet relativt til nærmeste forfader med positionering. */
+  width: 100%; /* Gør pseudo-elementet lige så bredt som det overliggende element. */
+  height: 100%; /* Gør pseudo-elementet lige så højt som det overliggende element. */
+  background: rgba(0, 0, 0, 0.3); /* Anvender en halv-transparent sort baggrund som overlay. */
+  z-index: 1; /* Sørger for, at overlayet vises foran baggrunden, men bag andet indhold med højere z-index. */
+}
+
+/* Hero-indhold */
+.hero-content {
+  position: relative; /* Sikrer, at indholdet placeres oven på overlayet. */
+  z-index: 2; /* Sørger for, at indholdet vises over overlayet (.hero::after). */
+  width: 1000px; /* Angiver en fast bredde til hero-indholdet. */
+  padding: 20px; /* Tilføjer indvendig afstand for at give luft omkring indholdet. */
+}
+
+.hero-content h1 {
+  color: #FCFBFB; /* Angiver en lys farve til teksten, så den skiller sig ud på en mørk baggrund. */
+  font-family: 'cooper-black'; /* Bruger en fed skrifttype til at fremhæve overskriften. */
+  font-size: 55px; /* Størrelsen på overskriften. */
+  margin-bottom: 1rem; /* Tilføjer afstand under overskriften. */
+  text-transform: uppercase; /* Gør teksten til store bogstaver. */
+}
+
+.hero-content h2 {
+  color: #FCFBFB; /* Holder den sekundære overskrift i samme lyse farve for konsistens. */
+  font-family: 'Lato'; /* Bruger en mere neutral skrifttype for variation. */
+  font-size: 34px; /* Mindre skriftstørrelse for at differentiere fra H1. */
+  margin-bottom: 2rem; /* Tilføjer ekstra afstand under H2. */
+}
+
+.hero-content a {
+  color: #1E3445; /* farven tekst til links. */
+  font-family: 'Lato'; /* Samme skrifttype som H2 for en ensartet stil. */
+  font-size: 21px; /* Gør links tydelige og let læselige. */
+  margin-bottom: 2px; /* Tilføjer afstand mellem links og andre elementer. */
+}
+
+.hero-content .btn {
+  background-color: #BEF49A; /* En markant rød farve for at tiltrække opmærksomhed. */
+  padding: 15px 30px; /* Gør knappen større og nem at klikke på. */
+  text-decoration: none; /* Fjerner understregning fra link-knappen. */
+  border-radius: 5px; /* Giver knappen afrundede hjørner for et moderne look. */
+  font-size: 21px; /* Sikrer læsbarhed. */
+}
+
+.hero-content .btn:hover {
+  background-color: #D83d53; /* farve ved hover. */
+  cursor: pointer; /* Skifter cursoren til en hånd. */
+}
+
+.hero-content a:hover {
+  color: #ffffff; /* Hvid tekst til links. */
+  font-family: 'Lato'; /* Samme skrifttype som H2 for en ensartet stil. */
+  font-size: 21px; /* Gør links tydelige og let læselige. */
+  margin-bottom: 2px; /* Tilføjer afstand mellem links og andre elementer. */
+}
+/* hero end*/
+
+
+/* Styling for værdier sektion */
+/* Container til værdier - Flexbox layout med centrering og mellemrum mellem elementer */
+/* Generel styling til .box */
+.container_box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Opdel i fire lige store kolonner */
+  text-align: center; /* Centrerer teksten horisontalt */
+  height: 200px; /* Sørger for højden på containeren */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  background-color: #a8d4ff;
+  column-gap: 20px; /* Justeret mellemrum mellem kolonner */
+  justify-items: center; /* Centrerer indholdet horisontalt i hver kolonne */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Afstand mellem boksene */
+}
+
+.box {
+  font-size: 34px; /* Skriftstørrelse for tekst i bokse */
+  color: #333; /* Mørk grå tekstfarve */
+  flex: 1; /* Hver sektion fylder en lige stor del af containeren */
+  text-align: center; /* Centrerer teksten inde i boksen */
+  margin: 0; /* Fjerner eventuelle standardmargener */
+  padding: 20px; /* Giver boksen noget indre luft */
+  width: 100%; /* Sektionen får en fast brede på antal px */
+}
+.image_1_img {
+  width: 84px;
+  height: 119px;
+  position: absolute;
+  top: 991px;
+  left: 850px;
+}
+
+.image_2_img {
+  width: 72px;
+  height: 127px;
+  position: absolute;
+  top: 985px;
+  right: 850px;
+}
+/* sted Section end */
+#sted {
+  text-align: left;
+  padding: 40px 20px;
+  background-color: #F5DC71;
+  width: 100%;
+  min-height: 900px; /* Brug min-height for fleksibilitet */
+}
+
+#sted h1, #sted h2, #sted h3, #sted p {
+  color: #333 ;
+  position: relative; /* Sørger for at elementerne placeres i forhold til deres normale flow */
+}
+/* Placering af h1 */
+#sted h1 {
+  margin-top: 0px; /* Afstand fra toppen */
+  margin-left: 220px; /* Afstand fra venstre side */
+  font-size: 55px; /* Størrelse på overskriften */
+  position: relative; /* Muliggør forskydning i forhold til det normale flow */
+}
+
+/* Placering af h2 */
+#sted h2 {
+  margin-top: 5px; /* Afstand fra toppen, juster efter behov */
+  margin-left: 220px; /* Afstand fra venstre */
+  font-size: 34px;
+  position: relative; /* Muliggør forskydning i forhold til det normale flow */
+}
+
+/* Placering af h3 */
+#sted h3 {
+  margin-top: 5px; /* Afstand fra toppen, juster efter behov */
+  margin-left: 220px; /* Afstand fra venstre */
+  font-size: 21px;
+  position: relative; /* Muliggør forskydning i forhold til det normale flow */
+}
+
+/* Placering af p */
+#sted p {
+  margin-top: 5px; /* Afstand fra toppen, juster efter behov */
+  margin-left: 220px; /* Afstand fra venstre */
+  position: relative; /* Muliggør forskydning i forhold til det normale flow */
+}
+
+/* Styling af billedet (image_3_img) */
+.image_3_img {
+  width: 700px;
+  height: 310px;
+  margin-top: -300px; /* Justering af afstanden fra toppen */
+  margin-left: 220px; /* Justering af afstanden fra venstre */
+  position: absolute; /* Placér billedet absolut i forhold til det nærmeste positionerede element */
+  top: 1500px; /* Juster billedeplacering i forhold til sektionen */
+  left: 800px; /* For at sikre at billedet ikke overlapper */
+  object-fit: cover; /* Sørger for, at billedet dækker hele området uden at blive forvrænget */
+}
+
+.left-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+  border-radius: 8px;
+  position:absolute; /* Gør det muligt at justere med top og left */
+  top: 1350px; /* Ryk billedet længere op */
+  left: -100px; /* Fra venstre side til højre */
+}
+
+.image_4_img {
+  width: 473px; /* Fast bredde */
+  height: 193px; /* Fast højde */
+  display: block; /* Fjerner mellemrum og gør elementet blokbaseret */
+  margin: 20px auto; /* Centrerer billedet og tilføjer afstand */
+  position: relative; /* Gør det muligt at justere med top og left */
+  top: 125px; /* Ryk billedet længere op */
+  right: -710px; /* Fra venstre side til højre */
+}
+
+/* Styling for trivsel sektion */
+#trivsel {
+  width: 100%; /* Fast bredde */
+  height: 200vh; /* Fast højde */
+  background-color: #BEF49A; /* Grøn baggrund */
+  text-align: left;
+}
+
+#trivsel h1 {
+  font-size: 55px;
+  color: #1E3445; /* Mørkblå tekst */
+}
+#trivsel h2 {
+  font-size: 34px;
+  color: #1E3445; /* Mørkblå tekst */
+}
+
+#trivsel p {
+  font-size: 21px;
+  color: #1E3445;/* Mørkblå tekst */
+}
+
+.image_6_img
+{
+  width: 600px; /* Fast bredde */
+  height: 350px; /* Fast højde */
+  object-fit: cover; /* Sørger for, at billedet dækker hele området uden at blive forvrænget */
+  position: relative;
+  top: 100px;
+}
+
+/* Content */
+.trivsel{   
+  width: 500px; /* Fast bredde */
+  height: 500px; /* Fast højde */
+  text-align: left;
+  position: relative;  
+  top: -250px;
+  left: 800px;
+}
+
+.curious_kids
+{
+  width: 300px; /* Fast bredde */
+  height: 200px; /* Fast højde */
+  object-fit: cover; /* Sørger for, at billedet dækker hele området uden at blive forvrænget */
+  position: absolute;
+  margin-top: -650px;
+  margin-left: 1400px;
+}
+
+/* teskt til Leg i naturen*/
+.naturen{   
+  width: 300px; /* Fast bredde */
+  height: 100px; /* Fast højde */
+  text-align: left;
+  margin-top: -400px;
+  margin-left: 1400px;
+}
+
+
+/* billede til Nysgerrighed der skaber læring  */
+.nature_scene
+{
+  width: 200px; /* Fast bredde */
+  height: 200px; /* Fast højde */
+  object-fit: cover; /* Sørger for, at billedet dækker hele området uden at blive forvrænget */
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 100px;
+}
+
+/* teskt til Nysgerrighed der skaber læring */
+.nysgerrighed {   
+  width: 300px; /* Fast bredde */
+  height: 100px; /* Fast højde */
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 350px;
+}
+
+
+/* billede til ordentlighed_som_fundament  */
+.playground_scene
+{
+  width: 200px; /* Fast bredde */
+  height: 200px; /* Fast højde */
+  object-fit: cover; /* Sørger for, at billedet dækker hele området uden at blive forvrænget */
+  position: absolute;
+  margin-top: 500px;
+  margin-left: 100px;
+}
+/* teskt til ordentlighed som fundament */
+.ordentlighed_som_fundament {   
+  width: 300px; /* Fast bredde */
+  height: 100px; /* Fast højde */
+  text-align: left;
+  margin-top: 500px;
+  margin-left: 350px; 
+}
+
+/* billede til Leg på legepladsen */
+.istockphoto_1423340535 {   
+  width: 300px; /* Fast bredde */
+  height: 200px; /* Fast højde */
+  text-align: left;
+  position: absolute;
+  margin-top: -100px; /*400*/
+  margin-left: 1400px; /* 1400px*/
+}
+
+/* teskt til Leg på legepladsen */
+.leg_på_legepladsen {   
+  width: 300px; /* Fast bredde */
+  height: 100px; /* Fast højde */
+  text-align: left;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 1400px;
+}
+
+/* Styling for trivsel sektion end */
+
+/* Styling for Find Us sektion */
+#find-os {
+  background-color: #a8d4ff; /* Lys blå baggrund */
+  padding: 40px 20px;
+  text-align: left;
+  margin: 0 auto; /* Centrér sektionen */
+}
+
+.find-os-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  max-width: 800px; /* Begrænser bredden */
+  margin: 0 auto; /* Centrér containeren */
+}
+
+#find-os h1 {
+  color: #333;
+  margin-left: 500px;
+  position: relative;
+  top: 100px;
+}
+#find-os h2 {
+  margin-bottom: 10px;
+}
+
+#find-os p {
+  font-size: 21px;
+
+}
+
+#find-os a {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Adresse og kort layout */
+.info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.address-info p {
+  margin: 5px 0;
+}
+
+.map-container {
+  flex: 2;
+  width: 100%; /* Fylder hele containerens bredde */
+  max-width: 600px; /* Begrænser bredden */
+  margin: 0 auto; /* Centrér kortet */
+  border-radius: 10px; /* Afrundede hjørner */
+  overflow: hidden; /* Skjul overskydende indhold */
+}
+
+.map-container iframe {
+  width: 100%; /* Gør kortet responsivt */
+  height: 300px; /* Standard højde */
+  border: none; /* Fjern iframe-ramme */
+}

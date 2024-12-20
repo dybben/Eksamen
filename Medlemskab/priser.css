@@ -1,0 +1,144 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Indholdssektion Styling */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333; /* Standard tekstfarve */
+  line-height: 1.6;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+
+/* Brødkrummesti */
+.breadcrumb {
+  padding-top: 110px;
+  font-size: 13px;
+  text-align: left; /* Centrerer indholdet */
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+
+main {
+  height: 1200px;
+  background-color: #f5dc71;
+  text-align: left;
+}
+.midt_h1 {
+  /* background-color: #BEF49A; */
+  color: #333;
+  font-size: 55px;
+  position: relative;
+  top: 50px; /* Juster top-afstanden */ /* Juster denne værdi for at rykke det længere op */
+  left: 800px; /* Juster afstanden fra venstre side af */
+}  
+
+.container h1 {
+  color: #333;
+}
+
+.priser-betaling {
+  /* background-color: #ffe4b5; /* Lysegul-orange */
+  max-width: 400px;
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  position: relative;
+  top: 50px;
+  left: 750px; /* Skubber boksen 50px til højre */
+}
+
+.container {
+  /* background-color: #d83d53; */
+  display: flex; /* Gør containeren til en flexbox */
+  justify-content: space-between; /* Lige mellemrum mellem boksene */
+  align-items: stretch; /* Stræk boksene til samme højde */
+  flex-wrap: nowrap; /* Forhindrer boksene i at bryde til næste linje */
+  margin: 50px auto 0; /* Top-margin på 50px */
+  padding-top: 20px; /* Ekstra top-padding inde i containeren */
+  max-width: 1200px; /* Containerens maksimale bredde */
+  text-align: left;
+}
+
+/* Økonomisk friplads */
+.økonomisk-friplads {
+  /* background-color: #e0f7fa; /* Lyseblå */
+  padding: 20px;
+  flex: 0 1 32%; /* Giver boksen 32% bredde */
+  margin: 0; /* Fjerner margin for at holde dem på linjen */
+}
+
+/* Søskendetilskud */
+.søsken-tilskud {
+  /* background-color: #f3e5f5; /* Lyserød-lilla */
+  padding: 20px;
+  flex: 0 1 32%; /* Giver boksen 32% bredde */
+  margin: 0;
+  text-align: left;
+}
+
+/* Egenbetaling */
+.egenbetaling {
+  /* background-color: #dcedc8; /* Lysegrøn */
+  padding: 20px;
+  flex: 0 1 32%; /* Giver boksen 32% bredde */
+  margin: 0;
+}
+
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  top: -1000px;
+  left: 1600px;
+}
+
+.image_4_img_r {
+  width: 473px;
+  height: 200px;
+  position: absolute;
+  top: 1150px;
+  left: 0px;
+}
+
+/* grøn section */
+section {
+  height: 80vh;
+  background-color: #BEF49A;
+  text-align: left;
+}
+
+.takster-boks {
+  /* background-color: #d4f8c6; /* Lysegrøn baggrund */
+  /* border: 1px solid #a8e6a1; /* Lysere grøn kant */
+  /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+  padding: 20px;
+  width: 45%; /* Hver boks fylder 45% af containeren */
+  margin-top: 60px;
+}
+/* grøn section */
+
+ul {
+  list-style: none; /* Fjern bullet points */
+}
+

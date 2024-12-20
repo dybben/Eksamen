@@ -1,0 +1,178 @@
+/* Reset - Fjerner standard marginer, padding og sikrer, at elementernes bredde beregnes inklusiv padding og border */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Indholdssektion Styling - Definerer kroppens layout som en fleksibel kolonne og sikrer, at siden mindst fylder hele vinduets højde */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6; /* God linjehøjde for læsevenlighed */
+}
+
+/* Styling for hvem er vi section */
+  
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sikrer, at hele højden af viewport bruges */
+  margin: 0; /* Fjerner uønsket margin */
+}
+
+/* Brødkrummesti - Tilføjer afstand fra toppen, sætter en mindre skrifttype og justerer teksten til venstre */
+.breadcrumb {
+  padding-top: 110px; /* Placerer brødkrummestien længere nede på siden */
+  text-align: left;   /* Sørger for, at teksten er venstrestillet */
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+/* Brødkrummesti */
+
+
+/* Styling for Kontakt section */
+/* Styling for gul section */
+main {
+  width: 100%;
+  height: 170vh; /* Fylder hele skærmen, uanset indholdets størrelse */
+  background-color: #f5dc71;
+  position: relative; /* Gør det muligt at justere med top og left */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Placerer indholdet i toppen */
+  text-align: left;
+}
+
+/* Styling af container for centrering og visuelt fokus */
+.container {
+  max-width: 800px; /* Maksimal bredde for at begrænse indholdets bredde */
+  margin-left: 100px;
+  padding: 20px; /* Indvendig afstand */
+  border-radius: 8px; /* Runde hjørner for et blødere udtryk */
+}
+
+/* Styling for h1 element i .container */
+.container h1 {
+  font-size: 55px; /* Sætter fontstørrelsen til 55px */
+  color: #333; /* Sætter farven til sort hex #333*/
+  position: relative; /* Gør det muligt at justere med top og left */
+  top: 30px;
+  left: 450px; /* Flytter elementet 628px til højre */
+  text-align: center; /* Centrering af tekst */
+  margin-bottom: 20px; /* Afstand under overskriften */
+}
+
+/* Sekundær overskrift (h2) styling */
+.contact-info h2 {
+  margin-bottom: 15px; /* Afstand under overskriften */
+  border-bottom: 2px; /* Understregning for struktur */
+  padding-bottom: 5px; /* Indvendig afstand under teksten */
+}
+
+/* Tertiær overskrift (h3) styling */
+.contact-info h3 {
+  margin: 15px 0 5px; /* Lodret afstand omkring overskriften */
+}
+
+/* Afsnit styling for konsistens */
+.contact-info p {
+  margin: 5px 0 15px; /* Lodret afstand til og fra afsnit */
+}
+
+/* Links styling for at sikre synlighed */
+.contact-info a {
+  color: #333; /* Blå farve for at signalere klikbarhed */
+  text-decoration: none; /* Fjernelse af understregning */
+}
+
+/* Hover-effekt for links for bedre interaktivitet */
+.contact-info a:hover {
+  text-decoration: underline; /* Understregning ved hover for fokus */
+}
+
+/* Adresse-element styling for standardisering */
+address {
+  font-style: normal; /* Fjern kursiv for bedre læsning */
+  margin-bottom: 20px; /* Afstand under adressen */
+}
+
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+  border-radius: 8px;
+  position: relative; /* Gør det muligt at justere med top og left */
+  top: -515px; /* Øg denne værdi for at flytte billedet længere ned */
+  right: -1680px;
+}
+
+
+/* Styling for Image 4 */
+.image_4_img {
+  width: 640px;
+  height: 186px;
+  display: block;
+  border-radius: 10px;
+  position: absolute; /* Gør det muligt at justere med top og left */
+  top: 1365px; /* Flytter billedet ned */
+  left: 0px;
+}
+
+/* Styling for specifikke billeder */
+.pictures_1 {
+  width: 417px;
+  height: 417px;
+  position: absolute;
+  top: 200px; /* Flyttet længere ned  f.eks 800px ned på siden*/
+  right: 400px; /* Fra venstre side til højre */
+}
+
+.pictures_2 {
+  width: 417px;
+  height: 417px;
+  position: absolute;
+  top: 720px; /* Flyttet længere ned  f.eks 800px ned på siden*/
+  right: 400px; /* Fra venstre side til højre */
+}
+
+/* Responsivt design */
+@media (max-width: 600px) {
+  /* Tilpasning af container for små skærme */
+  .container {
+      padding: 15px; /* Reduceret padding for pladsoptimering */
+  }
+
+  /* Tilpasning af h1 for mindre skærme */
+  .container h1 {
+      font-size: 2rem; /* Mindre tekststørrelse for bedre pasform */
+  }
+
+  /* Tilpasning af h2 for mindre skærme */
+  .contact-info h2 {
+      font-size: 1.5rem; /* Mindre tekststørrelse for mobilvenlighed */
+  }
+
+  /* Tilpasning af h3 for mindre skærme */
+  .contact-info h3 {
+      font-size: 1.2rem; /* Mindre tekststørrelse for bedre overskuelighed */
+  }
+
+  /* Tilpasning af billeder for små skærme */
+  .container img {
+      margin: 15px auto; /* Reduceret afstand for kompakt design */
+  }
+}

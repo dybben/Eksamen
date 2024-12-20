@@ -1,0 +1,200 @@
+/* Reset - Fjerner standard marginer, padding og sikrer, at elementernes bredde beregnes inklusiv padding og border */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Generel styling */
+body {
+  height: 100%; /* Fylder hele skærmen */
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh; /* Sørg for at hele skærmen fyldes */
+  overflow-x: hidden; /* Fjerner horisontal scroll */
+  overflow-y: auto; /* Tillader lodret scroll, hvis nødvendigt */
+}
+
+/* Brødkrummesti */
+.breadcrumb {
+  padding-top: 110px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+
+/* Sikrer, at elementet fylder hele skærmen */
+main {
+  background-color: #a8d4ff;
+  width: 100%;
+  height: 250vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.midt_h1 {
+  color: #333;
+  width: 500px;
+  height: 100px;
+  position: relative;
+  top: 100px;
+  left: 700px;
+}
+
+.pictures_1 {
+  width: 720px;
+  height: 480px;
+  position: absolute;
+  top:  300px;
+  left: 1000px;
+}
+
+.velkommen_til_børnegården_katholt {
+  width: 500px;
+  height: 400px;
+  border-radius: 8px;
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.tryghed_leg_som_fundament {
+  width: 500px;
+  height: 400px;
+  border-radius: 8px;
+  position: relative;
+  top: 700px;
+  left: 100px;
+}
+
+.pictures_2 {
+  width: 720px;
+  height: 480px;
+  border-radius: 8px;
+  position: absolute;
+  top: 1300px;
+  left: 100px;
+}
+
+.barnets_garderobe_personlige_plads {
+  width: 500px;
+  height: 450px;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 850px;
+  left: 1100px;
+}
+
+.udeliv_naturen_som_legeplads { 
+  padding: 20px;
+  width: 500px;
+  height: 400px;
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 1700px;
+  left: 1100px;
+}
+
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  top: 100px;
+  left: 1680px;
+}
+
+.image_4_img_l {
+  width: 473px;
+  height: 200px;
+  position: relative;
+  top: 980px;
+  left: 1430px;
+}
+
+/* Gul section */
+section {
+  background-color: #F5DC71;
+  width: 100%;
+  height: 200vh;
+  border-radius: 8px;
+}
+
+.ALIA {
+  padding: 20px;
+  width: 500px;
+  height: 400px;
+  border-radius: 8px;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+.Traditioner_der_samler_os {
+  padding: 20px;
+  width: 500px;
+  height: 400px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: 300px;
+  left: 100px;
+}
+
+.De_store_børn_klar_til_skolen {  
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.Et_tæt_samarbejde_med_forældrene {
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: -250px;
+  margin-left: 700px;
+}
+
+.Katholt_Et_godt_sted_at_være {
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+  border-radius: 8px;
+  position: relative;
+  margin-top: -250px;
+  margin-left: 1300px;
+}
+
+.pictures_3 {
+  width: 815px;
+  height: 550px;
+  object-fit: cover; /* Eller "contain" afhængigt af behov */
+  margin-left: 800px;
+  position: absolute; /* Billedet fjernes fra dokumentstrømmen */
+  top: 2800px; /* Flytter billedet op */
+}

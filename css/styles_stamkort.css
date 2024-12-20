@@ -1,0 +1,222 @@
+/* === Grundlæggende Reset og Font === */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+@font-face {
+    font-family: "cooper-black";
+    src: url("/assets/fonts/cooper-black/COOPBL.TTF") format("truetype");
+}
+@font-face {
+  font-family: "Cooper-Light-BT";
+  src: url("/assets/fonts/Cooper-Light-BT/cooperl.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cooper-Light-Italic-BT";
+    src: url("/assets/fonts/Cooper-Light-BT/cooperli.ttf") format("truetype");
+  }
+  
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1 {
+    color: #333;
+    font-family: 'cooper-black';
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+  
+h2 {
+    color: #333; 
+    font-family: "Lato";
+    font-size: 34px;
+}
+  
+h3 {
+    color: #333;
+    font-family: 'Cooper-Light-BT';
+    font-size: 21px;
+}
+  
+p {
+    font-family: 'PT Sans';
+    font-size: 13px;
+    color: #333;
+} 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Til centrering af containeren på hele siden */
+body {
+    height: auto; /* Gør plads til indholdet, hvis det fylder mere end skærmen */
+    margin: 0; /* Fjern standard margin */
+}
+
+/* Wrapper til de to containere */
+.container-wrapper {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Lige meget plads mellem containerne */
+    flex-wrap: wrap; /* Sørg for responsivitet på små skærme */
+    margin: 0 auto; /* Centrer hele wrapperen */
+    padding-top: 100px;
+}
+
+/* Styling for stamkort section */
+#stamkort {
+    background-color: #BEF49A; /* Baggrundsfarven */ 
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container_1 {
+    max-width: 800px;
+    max-height: 500px;
+    margin-left: 10px ;
+    padding: 20px;
+    background-color: #FCFBFB;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  
+.download-links {
+    margin-bottom: 20px;
+}
+
+.download-links a {
+    font-family: 'PT Sans';
+    font-size: 13px;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.download-links a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #a8d4ff;
+    color:  #FCFBFB;
+    border: none;
+    border-radius: 4px;
+    font-size: 1px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #6CBFFF /*Nabo i farvefamilien: #6CBFFF*/
+}
+.form-footer {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.form-footer a {
+    font-family: 'PT Sans';
+    font-size: 13px;
+    display: block;
+    color: #6CBFFF;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for containere_2 */
+.container_2 {
+    flex: 1; /* Giver begge containere lige meget plads */
+    max-width: calc(50% - 10px); /* Halvdelen af pladsen minus mellemrum */
+
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.container_h1 {
+    font-family: 'cooper-black';
+    font-size: 55px;
+    color: #4b6c35;
+}
+
+.container_h2 {
+    font-size: 34px;
+    color: #4b6c35;
+    margin-top: 20px; 
+}
+
+.container_2 ul {
+    padding-left: 20px;
+}
+
+.container_2 li {
+    margin-bottom: 10px;
+}
+
+.important {
+    border-left: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+.important h2  {
+    font-size: 34px;
+    color:  #333;
+    margin-top: 20px; 
+}
+.important h3  {
+    font-size: 21px;
+    color:  #333;
+    margin-top: 20px; 
+}
+
+/* Responsivitet: Containerne fylder hele bredden på små skærme */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%; /* Fuld bredde på små skærme */
+    }
+}

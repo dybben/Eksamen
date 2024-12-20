@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Børnegården Katholt</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../Medlemskab/ind-udmeldning.css">
+    <link rel="stylesheet" href="../css/navbar-footer.css">
+    <link rel="stylesheet" href="../css/font.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar Start -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/logo.webp" alt="Børnegården Katholt Logo">
+            </a>
+        </div>
+        <button class="burger-menu" id="burgerMenuButton" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">
+            &#9776;
+        </button>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li>
+                    <a>Om Os</a>
+                    <ul class="dropdown">
+                        <li><a href="../om_os/hvem_er_vi.html" class="link">Hvem er vi</a></li>
+                        <li><a href="../om_os/vores_værdier.html" class="link">Vores værdier</a></li>
+                        <li><a href="../om_os/Kontakt.html" class="link">Kontakt</a></li>
+                        <li><a href="../om_os/bestyrelsen.html" class="link">Bestyrelsen</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Børnehave</a>
+                    <ul class="dropdown">
+                        <li><a href="../Boernehavnen/om_boernehavnen.html" class="link">Om Børnehaven</a></li>
+                        <li><a href="../Boernehavnen/aabningstider.html" class="link">Åbningstider</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fritidshjem</a>
+                    <ul class="dropdown">
+                        <li><a href="../Fritidshjem/om_fritidshjemmet.html" class="link">Om fritidshjemmet</a></li>
+                        <li><a href="../Fritidshjem/aabningstider_fritidshjem.html" class="link">Åbningstider</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../stamkort.html" class="link">Stamkort</a>
+                </li>
+                <li>
+                    <a class="link active">Medlemskab</a>
+                    <ul class="dropdown">
+                        <li><a href="../Medlemskab/indmeldning.html" class="link active">Indmeldning</a></li>
+                        <li><a href="../Medlemskab/udmeldning.html" class="link">Udmeldning</a></li>
+                        <li><a href="../Medlemskab/priser.html" class="link">Priser</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navigation Bar End -->
+ 
+<!-- Brødkrummesti -->
+<div class="breadcrumb">
+    <a href="../index.html">Hjem</a> &gt; 
+    <a>Medlemskab</a> &gt; 
+    <span>Indmeldning</span>
+</div>
+<!-- Brødkrummesti -->
+
+    <main>
+        <div class="content">
+            <div class="intro">
+                <h1>Børnehaven</h1>
+
+                <div class="container">
+                    <a href="#" class="back-link">&lt; Tilbage</a>
+                    <h1>Opret</h1>
+                    <form action="#" method="post">
+                        <label for="barn-cpr">Barns cpr-nummer</label>
+                        <input type="text" id="barn-cpr" name="barn-cpr">
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="barn-fornavn">Barns fornavn</label>
+                                <input type="text" id="barn-fornavn" name="barn-fornavn">
+                            </div>
+                            <div>
+                                <label for="barn-efternavn">Barns efternavn</label>
+                                <input type="text" id="barn-efternavn" name="barn-efternavn">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="indmeldt-dato">Indmeldt d.</label>
+                                <input type="date" id="indmeldt-dato" name="indmeldt-dato">
+                            </div>
+                            <div>
+                                <label for="gruppe">Gruppe</label>
+                                <select id="gruppe" name="gruppe">
+                                    <option value="">Vælg..</option>
+                                    <option value="1">Gruppe 1</option>
+                                    <option value="2">Gruppe 2</option>
+                                    <option value="3">Gruppe 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label for="cpr">Dit cpr-nummer</label>
+                        <input type="text" id="cpr" name="cpr">
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="fornavn">Dit fornavn</label>
+                                <input type="text" id="fornavn" name="fornavn">
+                            </div>
+                            <div>
+                                <label for="efternavn">Dit efternavn</label>
+                                <input type="text" id="efternavn" name="efternavn">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="telefon-mobil">Telefon (mobil)</label>
+                                <input type="tel" id="telefon-mobil" name="telefon-mobil">
+                            </div>
+                            <div>
+                                <label for="telefon-arbejde">Telefon (arbejde)</label>
+                                <input type="tel" id="telefon-arbejde" name="telefon-arbejde">
+                            </div>
+                        </div>
+
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" name="adresse">
+
+                        <label for="postnr">Postnr. og by</label>
+                        <input type="text" id="postnr" name="postnr">
+
+                        <div class="checkbox">
+                            <input type="checkbox" id="vis-info" name="vis-info">
+                            <label for="vis-info">Adresse, telefon og email må vises på legeliste</label>
+                        </div>
+
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="email-repeat">E-mail (gentag)</label>
+                        <input type="email" id="email-repeat" name="email-repeat">
+
+                        <label for="kode">Ønsket loginkode (minimum 5 tegn)</label>
+                        <input type="password" id="kode" name="kode" minlength="5">
+
+                        <button type="submit">Opret bruger</button>
+                    </form>
+                </div>  
+            </div>
+            <div class="guide-container">
+                <h1>Sådan indmelder du dit barn</h1>
+                <ol>
+                    <li><strong>Åbn formularen:</strong> Find indmeldelsesformularen på børnehavens hjemmeside under fanen "Indmeldelse".</li>
+                    <li><strong>Udfyld barnets oplysninger:</strong>
+                        <ul>
+                            <li>Indtast <strong>barnets CPR-nummer</strong> (10 cifre).</li>
+                            <li>Angiv <strong>barnets fornavn</strong> og <strong>efternavn</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Udfyld tilmeldingsdetaljer:</strong>
+                        <ul>
+                            <li>Angiv dato under <strong>Indmeldt d.</strong> (dd-mm-åååå).</li>
+                            <li>Vælg en gruppe fra dropdown-menuen.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Indtast dine oplysninger:</strong>
+                        <ul>
+                            <li>Indtast <strong>dit CPR-nummer</strong>
+                            <li>Skriv <strong>dit fornavn</strong> og <strong>efternavn</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Indtast kontaktoplysninger:</strong>
+                        <ul>
+                            <li>Angiv <strong>telefon (mobil)</strong>.</li>
+                            <li>Indtast <strong>telefon (arbejde)</strong> (valgfrit).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Udfyld adresseoplysninger:</strong>
+                        <ul>
+                            <li>Skriv <strong>adresse</strong>, <strong>postnummer</strong>, og <strong>by</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Særlige tilladelser:</strong> Marker feltet, hvis <strong>adresse, telefon og e-mail</strong> må vises til andre forældre.</li>
+                    <li><strong>Indtast din e-mail:</strong>
+                        <ul>
+                            <li>Udfyld <strong>e-mail</strong>.</li>
+                            <li>Gentag e-mail for at bekræfte.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Opret login:</strong> Vælg en adgangskode på minimum 5 tegn.</li>
+                    <li><strong>Indsend formularen:</strong> Klik på knappen <span class="highlight">"Opret bruger"</span> for at indsende.</li>
+                    <li><strong>Bekræftelse:</strong> Du modtager en e-mail, når formularen er sendt korrekt.</li>
+                </ol>
+            </div>
+             <!-- Billeder -->
+            <img src="../assets/illustrationer_katholt/kids-4702840_640_R.webp" alt="Illustration af børn" class="right-image">
+            <img src="../assets/illustrationer_katholt/stick-kids-5995514_640_R.png" alt="Stick kids illustration" class="image_4_img_r">
+            <img src="../assets/illustrationer_katholt/kids-4702840_640_L.webp" alt="Illustration af børn" class="left-image">
+            <img src="../assets/illustrationer_katholt/stick-kids-5995514_640_L.png" alt="Stick kids illustration" class="image_4_img_l">
+             <!-- Billeder -->
+    </main>
+
+    <section id="fritidshjemmet">
+        <div class="content">
+            <div class="intro">
+                <h1>Fritidshjemmet</h1>
+                <div class="container">
+                    <a href="#" class="back-link">&lt; Tilbage</a>
+                    <h1>Opret</h1>
+                    <form action="#" method="post">
+                        <label for="barn-cpr">Barns cpr-nummer</label>
+                        <input type="text" id="barn-cpr" name="barn-cpr">
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="barn-fornavn">Barns fornavn</label>
+                                <input type="text" id="barn-fornavn" name="barn-fornavn">
+                            </div>
+                            <div>
+                                <label for="barn-efternavn">Barns efternavn</label>
+                                <input type="text" id="barn-efternavn" name="barn-efternavn">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="indmeldt-dato">Indmeldt d.</label>
+                                <input type="date" id="indmeldt-dato" name="indmeldt-dato">
+                            </div>
+                            <div>
+                                <label for="gruppe">Gruppe</label>
+                                <select id="gruppe" name="gruppe">
+                                    <option value="">Vælg..</option>
+                                    <option value="1">Gruppe 1</option>
+                                    <option value="2">Gruppe 2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label for="cpr">Dit cpr-nummer</label>
+                        <input type="text" id="cpr" name="cpr">
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="fornavn">Dit fornavn</label>
+                                <input type="text" id="fornavn" name="fornavn">
+                            </div>
+                            <div>
+                                <label for="efternavn">Dit efternavn</label>
+                                <input type="text" id="efternavn" name="efternavn">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div>
+                                <label for="telefon-mobil">Telefon (mobil)</label>
+                                <input type="tel" id="telefon-mobil" name="telefon-mobil">
+                            </div>
+                            <div>
+                                <label for="telefon-arbejde">Telefon (arbejde)</label>
+                                <input type="tel" id="telefon-arbejde" name="telefon-arbejde">
+                            </div>
+                        </div>
+
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" name="adresse">
+
+                        <label for="postnr">Postnr. og by</label>
+                        <input type="text" id="postnr" name="postnr">
+
+                        <div class="checkbox">
+                            <input type="checkbox" id="vis-info" name="vis-info">
+                            <label for="vis-info">Adresse, telefon og email må vises på legeliste</label>
+                        </div>
+
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email">
+
+                        <label for="email-repeat">E-mail (gentag)</label>
+                        <input type="email" id="email-repeat" name="email-repeat">
+
+                        <label for="kode">Ønsket loginkode (minimum 5 tegn)</label>
+                        <input type="password" id="kode" name="kode" minlength="5">
+
+                        <button type="submit">Opret bruger</button>
+                    </form>
+                </div>  
+            </div>
+            <div class="guide-container">
+                <h1>Sådan indmelder du dit barn</h1>
+                <ol>
+                    <li><strong>Åbn formularen:</strong> Find indmeldelsesformularen på børnehavens hjemmeside under fanen "Indmeldelse".</li>
+                    <li><strong>Udfyld barnets oplysninger:</strong>
+                        <ul>
+                            <li>Indtast <strong>barnets CPR-nummer</strong> (10 cifre).</li>
+                            <li>Angiv <strong>barnets fornavn</strong> og <strong>efternavn</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Udfyld tilmeldingsdetaljer:</strong>
+                        <ul>
+                            <li>Angiv dato under <strong>Indmeldt d.</strong> (dd-mm-åååå).</li>
+                            <li>Vælg en gruppe fra dropdown-menuen.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Indtast dine oplysninger:</strong>
+                        <ul>
+                            <li>Indtast <strong>dit CPR-nummer</strong>
+                            <li>Skriv <strong>dit fornavn</strong> og <strong>efternavn</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Indtast kontaktoplysninger:</strong>
+                        <ul>
+                            <li>Angiv <strong>telefon (mobil)</strong>.</li>
+                            <li>Indtast <strong>telefon (arbejde)</strong> (valgfrit).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Udfyld adresseoplysninger:</strong>
+                        <ul>
+                            <li>Skriv <strong>adresse</strong>, <strong>postnummer</strong>, og <strong>by</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Særlige tilladelser:</strong> Marker feltet, hvis <strong>adresse, telefon og e-mail</strong> må vises til andre forældre.</li>
+                    <li><strong>Indtast din e-mail:</strong>
+                        <ul>
+                            <li>Udfyld <strong>e-mail</strong>.</li>
+                            <li>Gentag e-mail for at bekræfte.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Opret login:</strong> Vælg en adgangskode på minimum 5 tegn.</li>
+                    <li><strong>Indsend formularen:</strong> Klik på knappen <span class="highlight">"Opret bruger"</span> for at indsende.</li>
+                    <li><strong>Bekræftelse:</strong> Du modtager en e-mail, når formularen er sendt korrekt.</li>
+                </ol>
+            </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container_footer">
+            <div class="footer-content">
+                <p>Copyright &copy; Børnegården Katholt 20-12-2024</p>
+                <p>Dette site er kun til undervisningsformål</p>
+                <div class="footer-links">
+                    <a href="../Vilkår_Privatlivspolitik/Privatlivspolitik_boernegaarden_Katholt.html"> Privatlivspolitik </a>
+                    <span>&middot;</span>
+                    <a href="../Vilkår_Privatlivspolitik/vilkår_boernegaarden_Katholt.html"> Vilkår </a>
+                    <span>&middot;</span>
+                    <a href="../om_os/Kontakt.html">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

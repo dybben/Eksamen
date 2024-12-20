@@ -1,0 +1,196 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Indholdssektion Styling */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sikrer, at hele højden af viewport bruges */
+  margin: 0; /* Fjerner uønsket margin */
+  overflow-x: hidden;
+}
+
+/* Brødkrummesti */
+.breadcrumb {
+  padding-top: 110px;
+  font-size: 13px;
+  text-align: left; /* Centrerer indholdet */
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+
+/* Styling for hvem er vi section */
+
+main {
+flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
+  padding: 140px;
+  background-color: #f5dc71;
+  text-align: left;
+}
+
+main h1 { 
+  color: #333;
+}
+
+/* billeder */
+
+.left-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+  border-radius: 8px;
+  position:absolute; /* Gør det muligt at justere med top og left */
+  top: 1800px; /* Ryk billedet længere op */
+  left: -100px; /* Fra venstre side til højre */
+}
+
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+  border-radius: 8px;
+  position: absolute;
+  top: 200px;
+  margin-left: 1540px;
+}
+
+
+.image_4_img_r{
+  display: block;
+  position: absolute;
+  top: 1370px;
+  margin-left:-140px;
+}
+
+
+.image_4_img_l{
+  display: block;
+  position: absolute;
+  top: 2770px;
+  margin-left: 1120px;
+}
+/* billeder */
+
+section {
+flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
+  padding: 140px;
+  background-color: #BEF49A;
+  text-align: left;
+}
+
+section h1 {
+  color: #333;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}  
+
+/* Generel styling */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #FCFBFB;
+  padding: 20px;
+  margin-left: 500px;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-row div {
+  flex: 1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox input {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #a8d4ff;
+  color: #FCFBFB;
+  border: none;
+  padding: 10px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-align: left;
+  text-decoration: underline;
+}
+
+.guide-container {
+  width: 40%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 20px;
+  /* background-color: #FCFBFB; */
+}
+
+.guide-container h1 {
+  color: #333;
+}
+ol {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.highlight {
+  color: #333; /* Fremhæv knapper eller vigtige detaljer */
+  font-weight: bold;
+}
+
+.guide-container h1 {
+  color: #333;
+}
+

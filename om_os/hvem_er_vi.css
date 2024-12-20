@@ -1,0 +1,203 @@
+
+/* Reset - Fjerner standard marginer, padding og sikrer, at elementernes bredde beregnes inklusiv padding og border */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Indholdssektion Styling - Definerer kroppens layout som en fleksibel kolonne og sikrer, at siden mindst fylder hele vinduets højde */
+  
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sikrer, at hele højden af viewport bruges */
+  margin: 0; /* Fjerner uønsket margin */
+  overflow-x: hidden;
+}
+
+/* Brødkrummesti - Tilføjer afstand fra toppen, sætter en mindre skrifttype og justerer teksten til venstre */
+.breadcrumb {
+  padding-top: 110px; /* Placerer brødkrummestien længere nede på siden */
+  font-size: 13px;    /* Gør teksten mindre */
+  text-align: left;   /* Sørger for, at teksten er venstrestillet */
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+/* Brødkrummesti */
+
+main {
+  flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
+  padding: 140px;
+  background-color: #f5dc71;
+  text-align: center;
+}
+.hvem_er_vi h1 {
+  color: #333;
+  font-size: 55px;
+  position: relative;
+  top: -30px; /* Juster top-afstanden */ /* Juster denne værdi for at rykke det længere op */
+  right: 40px; /* Juster højre-afstanden */
+}  
+  
+.hvem_er_vi h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+  
+.hvem_er_vi p {
+  font-family: 'PT Sans';
+  text-align: left;
+}  
+  
+.hvem_er_vi a {
+  font-family: 'PT Sans';
+  margin-bottom: 20px;
+}  
+
+.hvem_er_vi ul,li {
+  font-family: 'PT Sans';
+  margin-bottom: 20px;
+}  
+
+.image img {
+  max-width: 100%;
+}    
+    
+.image-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.image_who_are_we {
+  width: 610px;
+  height: 407px;
+  position: absolute;
+  top: 250px; /* Juster top-afstanden */ /* Juster denne værdi for at rykke det længere op */
+  right: 110px; /* Juster højre-afstanden */
+}
+  
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+  border-radius: 8px;
+}
+
+.content-wrapper_R {
+  display: flex;
+  justify-content: flex-end; /* Flyt billedet til højre */
+  align-items: flex-start;
+}
+
+.image-container_R {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 650px; /* Øg denne værdi for at flytte billedet længere ned */
+  right: -100px; /* Gør billedet helt ud til højre */
+  margin: 0; /* Sørg for, at der ikke er margin */
+  padding: 0; /* Fjern eventuel padding */
+}
+  
+/* Styling for gul section end */
+
+/* Styling for grøn section */
+section {
+  width: 100%;
+  height: 200vh; /* Fylder hele skærmen, uanset indholdets størrelse */
+  background-color: #BEF49A;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Placerer indholdet i toppen */
+  text-align: left;
+  position: relative; /* Gør det muligt at justere med top og left */
+}
+
+.image_4_img {
+  width: 473px; /* Fast bredde */
+  height: 193px; /* Fast højde */
+  display: block; /* Fjerner mellemrum og gør elementet blokbaseret */
+  margin: 20px auto; /* Centrerer billedet og tilføjer afstand */
+  position: relative; /* Gør det muligt at justere med top og left */
+  top: 168px; /* Ryk billedet længere op */
+  left: -1290px; /* Fra venstre side til højre */
+}
+
+.vores_vision_for_fremtiden {
+  width: 750px; /* Fast bredde */
+  height: 300px; /* Fast højde */
+  position: absolute;
+  top: 100px; /* Øg denne værdi for at flytte billedet længere ned */
+  left: 200px; /* Gør billedet helt ud til højre */
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+.hverdagen_på_Katholt {
+  width: 750px; /* Fast bredde */
+  height: 300px; /* Fast højde */
+  position: absolute;
+  top: 100px; /* Øg denne værdi for at flytte billedet længere ned */
+  left: 1200px; /* Gør billedet helt ud til højre */
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+.et_værdibaseret_fællesskab {
+  width: 450px; /* Fast bredde */
+  height: 450px; /* Fast højde */
+  position: absolute;
+  top: 500px; /* Øg denne værdi for at flytte billedet længere ned */
+  left: 200px; 
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+}
+
+.praktiske_information, .praktiske-info ul,.praktiske-info ul li {
+  width: 750px; /* Fast bredde */
+  height: 300px; /* Fast højde */
+  position: absolute;
+  top: 500px; /* Øg denne værdi for at flytte billedet længere ned */
+  left: 1200px; /* Øg denne værdi for at flytte billedet længere  til højre */
+  border-radius: 10px;
+  padding: 20px;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.pictures_with_the_employees_1 { 
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 1200px; /* Øg denne værdi for at flytte billedet længere ned  1850px*/
+  left: 200px; /* Fra venstre side til højre */
+}
+  
+.pictures_with_the_employees_2 { 
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 1200px ; /* Øg denne værdi for at flytte billedet længere ned */
+  right: 254px; /* Fra højre side til venstre */
+}
+/* Styling for grøn section ennd */

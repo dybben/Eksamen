@@ -1,0 +1,61 @@
+/* === Grundlæggende Reset og Font === */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+@font-face {
+    font-family: "cooper-black";
+    src: url("../assets/fonts/cooper-black/COOPBL.TTF") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1 {
+  color: #ffffff;
+  font-family: 'cooper-black';
+  font-size: 55px;
+}
+
+h2 {
+  color: #333; 
+  font-family: "Lato";
+  font-size: 34px;
+}
+
+p {
+  font-family: 'PT Sans';
+  font-size: 21px;
+  color: #333;
+} 
+
+a {
+  font-family: 'PT Sans';
+  font-size: 21px;
+  color: #333;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+ul,li {
+  font-family: 'PT Sans';
+  font-size: 21px;
+  color: #333;
+  width: auto;
+  height: auto;
+}
+
+span{
+  font-family: 'PT Sans';
+  font-size: 21px;
+  color: #333;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+

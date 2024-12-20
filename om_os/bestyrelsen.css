@@ -1,0 +1,176 @@
+/* Reset - Fjerner standard marginer, padding og sikrer, at elementernes bredde beregnes inklusiv padding og border */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generel styling */
+body {
+    height: 100%; /* Fylder hele skærmen */
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh; /* Sørg for at hele skærmen fyldes */
+    overflow-x: hidden; /* Fjerner horisontal scroll */
+    overflow-y: auto; /* Tillader lodret scroll, hvis nødvendigt */
+}
+
+/* Brødkrummesti */
+.breadcrumb {
+    padding-top: 110px;
+    text-align: left;
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #d83d53;
+}
+
+
+/* Sikrer, at elementet fylder hele skærmen */
+main {
+    width: 100%;
+    height: 150vh;
+    background-color: #f5dc71;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.midt_h1{
+    color: #333;
+    margin-top: 50px;
+    margin-left: 700px;
+}
+
+
+.the_board_of_directors_1 {
+    margin-top: 22px;
+    margin-left: 700px;
+}
+
+.Board_members_1 {
+    margin-top: 100px;
+    margin-left: 200px;
+}
+.Board_members_2 {
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+.Board_members_3 {
+    margin-top: 50px;
+    margin-left: 200px;
+}
+
+/* billeder */
+.right-image {
+    width: 320px;
+    height: 600px;
+    object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+    border-radius: 8px;
+    position: relative;
+    top: -270px;
+    margin-left: 1680px;
+}
+
+.image_4_img_l {
+    width: 473px;
+    height: 200px;
+    display: block;
+    position: absolute;
+    top: 1170px;
+    margin-left: 920px;
+}
+
+.image_4_img {
+    width: 473px; /* Fast bredde */
+    height: 193px; /* Fast højde */
+    display: block; /* Fjerner mellemrum og gør elementet blokbaseret */
+    margin: 20px auto; /* Centrerer billedet og tilføjer afstand */
+    position: relative; /* Gør det muligt at justere med top og left */
+    top: 125px; /* Ryk billedet længere op */
+    right: -710px; /* Fra venstre side til højre */
+}
+
+.bestyrelse_billede {
+    width: 800px; /* Fast bredde */
+    height: 500px; /* Fast højde */
+    display: block; /* Fjerner mellemrum og gør elementet blokbaseret */
+    position: absolute; /* Gør det muligt at justere med top og left */
+    top: 500px; /* Ryk billedet længere op */
+    right: 250px; /* Fra venstre side til højre */
+    object-fit: cover; /* Sørg for at billedet dækker området uden at forvrænge proportionerne */
+}
+
+/* billeder */
+
+
+/* den Grønne section */
+section {
+    width: 100%;
+    height: 750px;
+    background-color: #BEF49A;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    position: relative;
+} 
+
+/* Kontaktoplysninger */
+.Contact_information_1 {
+    text-align: left;
+    padding: 20px;
+}
+
+.Contact_information_1 h2 {
+    font-size: 34px;
+    color: #1E3445;
+    position: relative;
+    top: 77px;
+    left: 900px;
+}
+
+.Contact_information_2 p {
+    color: #1E3445;
+    text-align: left;
+    position: relative;
+    top: 100px;
+    left: 900px;
+}
+
+.Contact_information_2 li {
+    color: #1E3445;
+    text-align: left;
+    position: relative;
+    top: 100px;
+    left: 900px;
+}
+
+.Contact_information {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+
+
+
+

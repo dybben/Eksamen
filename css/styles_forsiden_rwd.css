@@ -1,0 +1,63 @@
+
+/* Responsiv styling */
+@media (max-width: 1024px) {
+  .hero {
+      height: 70vh;
+      background-size: cover;
+  }
+
+  .hero-content h1 {
+      font-size: 3rem;
+  }
+
+  .hero-content h2 {
+      font-size: 1.5rem;
+  }
+
+  .container_box {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .box {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+      height: 60vh;
+      background-position: top;
+      text-align: center;
+  }
+
+  .hero-content h1 {
+      font-size: 2rem;
+  }
+
+  .hero-content h2 {
+      font-size: 1rem;
+  }
+
+  .container_box {
+      grid-template-columns: 1fr;
+      gap: 10px;
+  }
+
+  .box {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+
+  .image_3_img {
+      width: 100%;
+      margin: 10px auto;
+  }
+
+  #find-os iframe {
+      height: 300px;
+  }
+}
+
+
+
+  

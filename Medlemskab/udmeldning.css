@@ -1,0 +1,130 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Indholdssektion Styling */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sikrer, at hele højden af viewport bruges */
+  margin: 0; /* Fjerner uønsket margin */
+  overflow-x: hidden;
+}
+
+/* Brødkrummesti */
+.breadcrumb {
+  padding-top: 110px;
+  font-size: 13px;
+  text-align: left; /* Centrerer indholdet */
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #d83d53;
+}
+
+/* Styling for hvem er vi section */
+
+main {
+  height: 1200px;
+  
+
+  background-color: #f5dc71;
+  text-align: left;
+}
+
+/* Generel styling */
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ufb_h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.flex-row {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-row div {
+  flex: 1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox input {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #a8d4ff;
+  color: #FCFBFB;
+  border: none;
+  padding: 10px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.right-image {
+  width: 320px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative;
+  top: -975px;
+  left: 1600px;
+}
+
+.image_4_img_r {
+  width: 473px;
+  height: 200px;
+  position: absolute;
+  top: 1150px;
+  left: 0px;
+}
+
+section {
+  flex: 1; /* Gør main fleksibel og fylder alt tilgængelig plads */
+  padding: 140px;
+  background-color: #BEF49A;
+  text-align: left;
+}
+
