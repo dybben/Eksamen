@@ -1,4 +1,0 @@
-Rød = A42D3E
-Gul = FFC61C
-Grøn = 036652
-Blå = 002D78
