@@ -1,0 +1,364 @@
+/* =====================================================
+   ARENA X – UNDERSIDER
+   Layout / Reset / Components / Responsive
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+:root {
+
+  /* COLORS */
+
+  --arena-white: #FFFFFF;
+  --arena-cream: #F7F6F5;
+  --arena-orange: #FF6F42;
+  --arena-yellow: #FFFDBA;
+  --arena-green: #1B4129;
+  --arena-green-dark: #1F2D23;
+  --arena-text: #1F2D23;
+  --arena-blue: #A1D2E7;
+  --arena-black: #000000;
+  --arena-border: #E1E5E2;
+  --arena-muted: #6B6B6B;
+
+
+  /* CONTAINERS */
+
+  --container: 1080px;
+  --container-wide: 1180px;
+
+
+  /* RADIUS */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-round: 50%;
+
+
+  /* SPACING */
+
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+
+
+  /* TEXT */
+
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+
+
+  /* TRANSITION */
+
+  --transition: 180ms ease;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--arena-white);
+  color: var(--arena-text);
+}
+
+
+/* =====================================================
+   MEDIA
+===================================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CONTAINERS
+===================================================== */
+
+.container {
+  width: min(
+    calc(100% - 40px),
+    var(--container)
+  );
+
+  margin-inline: auto;
+}
+
+
+.container-wide {
+  width: min(
+    calc(100% - 40px),
+    var(--container-wide)
+  );
+
+  margin-inline: auto;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+/*
+   VIGTIGT:
+
+   Denne H1 får IKKE en ny font-size.
+
+   Den bruger den globale:
+   
+   h1 {
+     font-size: var(--arena-x-h1);
+   }
+
+   Derfor er page-header H1 altid samme størrelse
+   som alle andre H1'er.
+*/
+
+.page-header {
+  padding: 38px 16px 0;
+  margin-bottom: 2rem;
+
+  text-align: center;
+}
+
+
+.page-header h1 {
+  margin: 0;
+
+  color: var(--arena-text);
+
+  /*
+     H1-STØRRELSEN KOMMER FRA
+     arena_x_styles_font.css
+  */
+
+  font-weight: 400;
+
+  letter-spacing: -1px;
+  line-height: var(--arena-x-heading-line);
+
+  overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   BREADCRUMBS
+===================================================== */
+
+.breadcrumbs {
+  padding-top: 15px;
+}
+
+
+/* =====================================================
+   HORIZONTAL RULE
+===================================================== */
+
+hr {
+  width: 100%;
+  height: 4px;
+
+  margin: 0 0 20px;
+
+  border: 0;
+  border-radius: var(--radius-sm);
+
+  background: var(--arena-orange);
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--arena-orange);
+  outline-offset: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+   ≤1000px
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .nav__links {
+    gap: 1rem;
+  }
+
+  .nav__links a {
+    font-size: .82rem;
+  }
+
+  .page-header {
+    padding: 34px 16px 0;
+    margin-bottom: 70px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET / MOBILE
+   ≤768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .page-header {
+    padding: 30px 14px 0;
+    margin-bottom: 55px;
+  }
+
+  .page-header h1 {
+    letter-spacing: -.5px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ≤480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .container,
+  .container-wide {
+    width: min(
+      calc(100% - 30px),
+      var(--container)
+    );
+  }
+
+
+  .breadcrumbs {
+    padding-top: 15px;
+    font-size: .7rem;
+  }
+
+
+  .page-header {
+    padding: 25px 12px 0;
+    margin-bottom: 40px;
+  }
+
+
+  .page-header h1 {
+    letter-spacing: 0;
+    line-height: 1.15;
+  }
+
+}
+
+
+/* =====================================================
+   320PX – IPHONE 4
+===================================================== */
+
+@media (max-width: 320px) {
+
+  .container,
+  .container-wide {
+    width: calc(100% - 20px);
+  }
+
+
+  .breadcrumbs {
+    font-size: .65rem;
+    gap: 5px;
+  }
+
+
+  .page-header {
+    padding: 22px 8px 0;
+    margin-bottom: 32px;
+  }
+
+
+  .page-header h1 {
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+}

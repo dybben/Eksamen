@@ -1,0 +1,351 @@
+/* =====================================================
+   ARENA X – FONT / TYPOGRAPHY
+   Galano Classic | RWD 1920px → 320px
+===================================================== */
+
+
+/* =====================================================
+   FONT
+===================================================== */
+
+@font-face {
+  font-family: "GalanoClassicRegular";
+  src: url("/arena_x_css/GalanoClassic/GalanoClassicRegular.woff2")
+       format("woff2");
+  font-display: swap;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY VARIABLES
+===================================================== */
+
+:root {
+
+  /* FONT */
+  --arena-x-font: "GalanoClassicRegular", sans-serif;
+
+
+  /* COLORS */
+  --arena-x-text: #1F2D23;
+  --arena-x-green-dark: #1F2D23;
+  --arena-x-green: #1B4129;
+  --arena-x-orange: #FF6F42;
+  --arena-x-muted: #6B6B6B;
+
+
+  /* HEADINGS */
+  --arena-x-h1: 34px;
+  --arena-x-h2: 27px;
+  --arena-x-h3: 21px;
+
+
+  /* BODY TEXT */
+  --arena-x-text-size: 17px;
+  --arena-x-small: 13px;
+
+
+  /* LINE HEIGHT */
+  --arena-x-heading-line: 1.15;
+  --arena-x-text-line: 1.5;
+
+
+  /* SPACING */
+  --arena-x-space-xs: .5rem;
+  --arena-x-space-sm: 1rem;
+  --arena-x-space-md: 1.5rem;
+  --arena-x-space-lg: 2.5rem;
+  --arena-x-space-xl: 4rem;
+
+
+  /* TRANSITION */
+  --arena-x-transition: 180ms ease;
+}
+
+
+/* =====================================================
+   GLOBAL TYPOGRAPHY
+===================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+label,
+strong,
+ul,
+ol,
+li,
+th,
+td,
+tr,
+button,
+input,
+textarea,
+select {
+  font-family: var(--arena-x-font);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+/*
+   ALLE H1 bruger samme H1-størrelse.
+   ALLE H2 bruger samme H2-størrelse.
+   ALLE H3 bruger samme H3-størrelse.
+
+   .page-header h1 ændrer IKKE størrelsen.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--arena-x-green-dark);
+  line-height: var(--arena-x-heading-line);
+  font-weight: 700;
+}
+
+
+/* H1 */
+
+h1 {
+  font-size: var(--arena-x-h1);
+}
+
+
+/* H2 */
+
+h2 {
+  font-size: var(--arena-x-h2);
+}
+
+
+/* H3 */
+
+h3 {
+  font-size: var(--arena-x-h3);
+}
+
+
+/*
+   H4–H6 følger H3-størrelsen.
+   Det giver et enkelt og ensartet system.
+*/
+
+h4,
+h5,
+h6 {
+  font-size: var(--arena-x-h3);
+}
+
+
+/* =====================================================
+   BODY TEXT
+===================================================== */
+
+body,
+p,
+ul,
+ol,
+li {
+  font-size: var(--arena-x-text-size);
+  line-height: var(--arena-x-text-line);
+}
+
+
+/* PARAGRAPHS */
+
+p {
+  margin: 0 0 var(--arena-x-space-md);
+}
+
+
+/* =====================================================
+   LISTS
+===================================================== */
+
+ul {
+  margin: 0 0 var(--arena-x-space-md);
+  padding-left: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+ol {
+  margin: 0 0 var(--arena-x-space-md);
+  padding-left: 1.4rem;
+  text-decoration: none;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+a {
+  color: var(--arena-x-green-dark);
+  text-decoration: none;
+
+  transition: color var(--arena-x-transition);
+}
+
+a:hover {
+  color: var(--arena-x-orange);
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+label {
+  display: block;
+  padding: 10px 0;
+}
+
+
+/* =====================================================
+   STRONG
+===================================================== */
+
+strong {
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   TABLET
+   ≤1024px
+===================================================== */
+
+@media (max-width: 1024px) {
+
+  :root {
+    --arena-x-h1: 32px;
+    --arena-x-h2: 26px;
+    --arena-x-h3: 20px;
+
+    --arena-x-text-size: 16px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ≤767px
+===================================================== */
+
+@media (max-width: 767px) {
+
+  :root {
+    --arena-x-h1: 31px;
+    --arena-x-h2: 25px;
+    --arena-x-h3: 20px;
+
+    --arena-x-text-size: 16px;
+    --arena-x-small: 12px;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.2rem;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ≤600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+  :root {
+    --arena-x-h1: 30px;
+    --arena-x-h2: 24px;
+    --arena-x-h3: 19px;
+
+    --arena-x-text-size: 16px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ≤400px
+===================================================== */
+
+@media (max-width: 400px) {
+
+  :root {
+    --arena-x-h1: 29px;
+    --arena-x-h2: 23px;
+    --arena-x-h3: 18px;
+
+    --arena-x-text-size: 15px;
+    --arena-x-small: 11px;
+  }
+
+  body {
+    line-height: 1.45;
+  }
+
+  ul,
+  ol {
+    padding-left: 1rem;
+  }
+
+}
+
+
+/* =====================================================
+   320PX
+===================================================== */
+
+@media (max-width: 320px) {
+
+  :root {
+    --arena-x-h1: 27px;
+    --arena-x-h2: 21px;
+    --arena-x-h3: 17px;
+    --arena-x-text-size: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}
