@@ -1,0 +1,372 @@
+/* =========================================================
+   ARENA X – HVERDAGEN / EFTERSKOLELIVET
+   Samlet, moderne og responsiv CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GRUNDLÆGGENDE
+   ========================================================= */
+
+.hverdagen-content {
+    width: min(100% - 32px, 1100px);
+    margin: 0 auto;
+    padding: 60px 0;
+    color: var(--arena-text);
+}
+
+
+/* =========================================================
+   TEKST OG OVERSKRIFTER
+   ========================================================= */
+
+.hverdagen-content h2 {
+    margin: 48px 0 18px;
+    color: var(--arena-green);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hverdagen-content h2:first-child {
+    margin-top: 0;
+}
+
+.hverdagen-content p {
+    max-width: 760px;
+    margin: 0 0 20px;
+    color: var(--arena-text);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   FREMHÆVET INDHOLD
+   ========================================================= */
+
+.hverdagen-highlight {
+    margin: 48px 0;
+    padding: 30px 32px;
+    background: var(--arena-orange-light);
+    border-left: 5px solid var(--arena-orange);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.hverdagen-highlight h2 {
+    margin: 0 0 12px;
+    color: var(--arena-green);
+}
+
+.hverdagen-highlight p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BILLEDGALLERI
+   ========================================================= */
+
+.hverdagen-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-top: 42px;
+}
+
+
+/* Billedkort */
+.hverdagen-gallery figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+
+    background: var(--arena-green-light);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Billeder */
+.hverdagen-gallery img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+
+/* Hover på billedkort */
+.hverdagen-gallery figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Zoom-effekt */
+.hverdagen-gallery figure:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ANIMATIONER OG UX
+   ========================================================= */
+
+.hverdagen-ux {
+    margin-top: 70px;
+}
+
+
+/* Sektionens introduktion */
+.hverdagen-ux-intro {
+    max-width: 780px;
+    margin-bottom: 40px;
+}
+
+
+/* Kort-layout */
+.hverdagen-ux-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 35px;
+}
+
+
+/* UX-kort */
+.hverdagen-ux-card {
+    padding: 30px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* UX-kort overskrift */
+.hverdagen-ux-card h3 {
+    margin: 0 0 14px;
+    color: var(--arena-green);
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+
+/* UX-kort tekst */
+.hverdagen-ux-card p {
+    margin: 0;
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* Hover */
+.hverdagen-ux-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   MICRO-INTERACTION EKSEMPEL
+   ========================================================= */
+
+.hverdagen-ux-card::before {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 4px;
+
+    margin-bottom: 22px;
+
+    background: var(--arena-orange);
+    border-radius: 10px;
+
+    transition: width 0.3s ease;
+}
+
+.hverdagen-ux-card:hover::before {
+    width: 70px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hverdagen-content {
+        padding: 45px 0;
+    }
+
+    .hverdagen-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .hverdagen-gallery img {
+        height: 250px;
+    }
+
+    .hverdagen-ux-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hverdagen-content {
+        width: min(100% - 28px, 100%);
+        padding: 35px 0;
+    }
+
+
+    /* Tekst */
+    .hverdagen-content h2 {
+        margin-top: 38px;
+        font-size: 1.5rem;
+    }
+
+    .hverdagen-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+
+    /* Highlight */
+    .hverdagen-highlight {
+        margin: 35px 0;
+        padding: 24px 20px;
+
+        border-left-width: 4px;
+        border-radius: 14px;
+    }
+
+
+    /* Galleri */
+    .hverdagen-gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 32px;
+    }
+
+    .hverdagen-gallery figure {
+        border-radius: 16px;
+    }
+
+    .hverdagen-gallery img {
+        height: 240px;
+    }
+
+
+    /* UX */
+    .hverdagen-ux {
+        margin-top: 50px;
+    }
+
+    .hverdagen-ux-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 28px;
+    }
+
+    .hverdagen-ux-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .hverdagen-ux-card h3 {
+        font-size: 1.2rem;
+    }
+
+
+    /* Fjern hover-bevægelser på touch */
+    .hverdagen-gallery figure:hover,
+    .hverdagen-ux-card:hover {
+        transform: none;
+    }
+
+    .hverdagen-gallery figure:hover img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   EKSTRA LILLE MOBIL
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hverdagen-content {
+        width: calc(100% - 24px);
+        padding: 28px 0;
+    }
+
+    .hverdagen-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .hverdagen-content p {
+        font-size: 0.98rem;
+    }
+
+    .hverdagen-gallery img {
+        height: 210px;
+    }
+
+    .hverdagen-highlight {
+        padding: 20px 16px;
+    }
+}
+
+
+/* =========================================================
+   TILGÆNGELIGHED
+   Brugere der ikke ønsker animationer
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hverdagen-gallery figure,
+    .hverdagen-gallery img,
+    .hverdagen-ux-card,
+    .hverdagen-ux-card::before {
+        transition: none;
+    }
+
+    .hverdagen-gallery figure:hover,
+    .hverdagen-ux-card:hover {
+        transform: none;
+    }
+
+    .hverdagen-gallery figure:hover img {
+        transform: none;
+    }
+}

@@ -1,0 +1,497 @@
+/* =====================================================
+   ARENA X – HVAD ER ARENA X?
+   Samlet og kompakt RWD CSS
+   1920px → 320px
+===================================================== */
+
+:root {
+
+    /* FARVER */
+    --arena-x-white: #FFFFFF;
+    --arena-x-cream: #f7f6f5;
+    --arena-x-orange: #FF6F42;
+    --arena-x-yellow: #FFFDBA;
+    --arena-x-green: #1B4129;
+    --arena-x-green-dark: #173f32;
+    --arena-x-text: #173f32;
+    --arena-x-blue: #A1D2E7;
+    --arena-x-black: #000000;
+    --arena-x-border: #e1e5e2;
+    --arena-x-muted: #6b6b6b;
+
+    /* LAYOUT */
+    --arena-x-container: 1080px;
+    --arena-x-container-wide: 1180px;
+
+    /* RADIUS */
+    --arena-x-radius-sm: 6px;
+    --arena-x-radius-md: 12px;
+    --arena-x-radius-lg: 24px;
+    --arena-x-radius-round: 50%;
+
+    /* AFSTANDE */
+    --arena-x-space-xs: .5rem;
+    --arena-x-space-sm: 1rem;
+    --arena-x-space-md: 1.5rem;
+    --arena-x-space-lg: 2.5rem;
+    --arena-x-space-xl: 4rem;
+    --arena-x-space-section: clamp(4rem, 8vw, 8rem);
+
+    /* TYPOGRAFI */
+    --arena-x-h1: 34px;
+    --arena-x-h2: 27px;
+    --arena-x-h3: 21px;
+    --arena-x-text: 17px;
+    --arena-x-small: 13px;
+
+    /* LINJEHØJDE */
+    --arena-x-heading-line: 1.15;
+    --arena-x-text-line: 1.6;
+
+    /* EFFEKT */
+    --arena-x-shadow: 0 10px 30px rgba(0,0,0,.08);
+    --arena-x-transition: 180ms ease;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--arena-x-cream);
+    color: var(--arena-x-text);
+    font-size: var(--arena-x-text);
+    line-height: var(--arena-x-text-line);
+    -webkit-text-size-adjust: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 var(--arena-x-space-md);
+    color: var(--arena-x-green-dark);
+    font-weight: 700;
+    line-height: var(--arena-x-heading-line);
+    letter-spacing: -.02em;
+}
+
+h1 { font-size: var(--arena-x-h1); }
+h2 { font-size: var(--arena-x-h2); }
+h3 { font-size: var(--arena-x-h3); }
+
+p,
+ul,
+ol,
+li {
+    font-size: var(--arena-x-text);
+}
+
+p {
+    margin: 0 0 var(--arena-x-space-md);
+}
+
+ul,
+ol {
+    margin: 0 0 var(--arena-x-space-md);
+    padding-left: 1.4em;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+a {
+    color: var(--arena-x-green-dark);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =====================================================
+   HOVEDINDHOLD
+===================================================== */
+
+.arena-x-section {
+    width: min(
+        calc(100% - 40px),
+        var(--arena-x-container)
+    );
+
+    margin: 0 auto var(--arena-x-space-xl);
+}
+
+.arena-x-section--intro {
+    margin-bottom: 90px;
+}
+
+.arena-x-section p,
+.arena-x-final p,
+.arena-x-highlight p {
+    color: var(--arena-x-text);
+}
+
+.arena-x-section p:last-child,
+.arena-x-final p:last-child,
+.arena-x-highlight p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.arena-x-section--intro h2 {
+    margin-bottom: var(--arena-x-space-md);
+}
+
+.arena-x-section--intro .lead {
+    max-width: 900px;
+    margin-bottom: var(--arena-x-space-lg);
+    color: var(--arena-x-green-dark);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-icon {
+    flex: 0 0 62px;
+    width: 62px;
+    height: 62px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: var(--arena-x-radius-round);
+
+    background: var(--arena-x-green-dark);
+    color: var(--arena-x-white);
+
+    font-size: 22px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--arena-x-orange);
+
+    font-size: var(--arena-x-small);
+    font-weight: 800;
+
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   HIGHLIGHT
+===================================================== */
+
+.arena-x-highlight {
+    width: min(
+        calc(100% - 40px),
+        900px
+    );
+
+    margin: 0 auto 90px;
+    padding: 45px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+
+    background: var(--arena-x-yellow);
+
+    border-left: 6px solid var(--arena-x-orange);
+    border-radius: var(--arena-x-radius-lg);
+
+    box-shadow: var(--arena-x-shadow);
+}
+
+.arena-x-highlight__icon {
+    flex: 0 0 64px;
+
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: var(--arena-x-radius-md);
+
+    background: var(--arena-x-orange);
+    color: var(--arena-x-white);
+
+    font-size: 24px;
+}
+
+.arena-x-highlight__content {
+    flex: 1;
+}
+
+.arena-x-highlight h2 {
+    margin-bottom: var(--arena-x-space-md);
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.arena-x-final {
+    width: min(calc(100% - 40px),850px );
+    margin: 0 auto;
+    padding: var(--arena-x-space-xl) 0;
+    text-align: center;
+    border-top: 2px solid var(--arena-x-orange);
+}
+
+.arena-x-final p {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.arena-x-final p:last-child {
+    font-weight: 600;
+    color: var(--arena-x-green-dark);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.arena-x-logo {
+    display: grid;
+    place-items: center;
+    padding: 20px 0 80px;
+}
+
+.arena-x-logo img {
+    width: min(280px, 70vw);
+}
+
+
+
+
+/* =====================================================
+   TABLET
+   ≤ 1024px
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .arena-x-section {
+        width: calc(100% - 40px);
+        margin-bottom: 70px;
+    }
+
+    .arena-x-highlight {
+        width: calc(100% - 40px);
+        margin-bottom: 70px;
+        padding: 35px;
+        gap: 25px;
+    }
+}
+
+
+/* =====================================================
+   MOBIL
+   ≤ 600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+        --arena-x-h1: 32px;
+        --arena-x-h2: 27px;
+        --arena-x-h3: 22px;
+        --arena-x-text: 18px;
+        --arena-x-space-md: 1.25rem;
+        --arena-x-space-lg: 2rem;
+        --arena-x-space-xl: 3rem;
+    }
+
+    .arena-x-section {
+        width: calc(100% - 24px);
+        margin-bottom: 55px;
+    }
+
+    .arena-x-section--intro {
+        margin-bottom: 60px;
+    }
+
+    .arena-x-section--intro .lead {
+        font-size: 19px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .section-icon {
+        flex: 0 0 52px;
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .arena-x-highlight {
+        width: calc(100% - 24px);
+        display: block;
+        margin-bottom: 60px;
+        padding: 28px 22px;
+        border-left-width: 4px;
+    }
+
+    .arena-x-highlight__icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+
+    .arena-x-final {
+        width: calc(100% - 24px);
+        padding: 45px 0;
+    }
+
+    .arena-x-logo {
+        padding: 10px 0 50px;
+    }
+
+    .arena-x-logo img {
+        width: min(230px, 65vw);
+    }
+}
+
+
+/* =====================================================
+   400px
+===================================================== */
+
+@media (max-width: 400px) {
+
+    :root {
+        --arena-x-h1: 31px;
+        --arena-x-h2: 26px;
+        --arena-x-h3: 21px;
+        --arena-x-text: 17px;
+    }
+
+    .arena-x-section,
+    .arena-x-highlight,
+    .arena-x-final {
+        width: calc(100% - 20px);
+    }
+
+    .arena-x-highlight {
+        padding: 22px 18px;
+    }
+
+    .section-heading {
+        gap: 10px;
+    }
+
+    .section-icon {
+        flex: 0 0 46px;
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+}
+
+
+/* =====================================================
+   320px – IPHONE 4
+===================================================== */
+
+@media (max-width: 320px) {
+
+    :root {
+        --arena-x-h1: 30px;
+        --arena-x-h2: 25px;
+        --arena-x-h3: 20px;
+        --arena-x-text: 16px;
+    }
+
+    .arena-x-section,
+    .arena-x-highlight,
+    .arena-x-final {
+        width: calc(100% - 16px);
+    }
+
+    .arena-x-highlight {
+        padding: 20px 16px;
+    }
+
+    .section-heading {
+        gap: 8px;
+    }
+
+    .section-icon {
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .arena-x-logo img {
+        width: min(200px, 70vw);
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+}

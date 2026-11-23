@@ -1,0 +1,26 @@
+
+.kost-content{ 
+    width:100%;max-width:1440px;margin:40px auto;padding:40px; background:var(--arena-white);
+    border:1px solid var(--arena-border);border-radius:20px;box-shadow:0 8px 24px rgba(0,0,0,.08)
+}
+
+.kost-content h2{ color:var(--arena-green);font-size:1.8rem;margin-bottom:20px}
+.kost-content p{ margin-bottom:18px;font-size:1.05rem}
+
+.kost-box{
+    margin-top:35px;padding:30px;background:var(--arena-green-light);
+    border:1px solid var(--arena-border);border-radius:16px;text-align:center
+}
+
+.kost-box h3{ color:var(--arena-green);margin-bottom:10px}
+.kost-box p{ color:var(--arena-text);margin-bottom:20px}
+
+.cta_kost{
+    display:inline-block;background:var(--arena-orange);color:var(--arena-white);text-decoration:none;
+    font-weight:700;padding:14px 28px;border-radius:50px;transition:.25s
+}
+
+.cta_kost:hover{ background:var(--arena-green);transform:translateY(-2px)}
+.cta_kost:focus{ outline:3px solid var(--arena-yellow-strong);outline-offset:3px}
+
+@media(max-width:768px){.kost-content{margin:20px 16px;padding:24px;width:auto}.kost-content h2{font-size:1.5rem}.kost-content p{font-size:1rem}.cta_kost{display:block;width:100%;text-align:center}}

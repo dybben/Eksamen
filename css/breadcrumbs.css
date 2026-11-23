@@ -1,0 +1,280 @@
+/* =========================================================
+   ARENA X – BREADCRUMBS
+   RWD: 320px → 1920px+
+   Kun Arena X root-farver
+========================================================= */
+
+
+/* =========================================================
+   ARENA X ROOT COLORS
+========================================================= */
+
+:root {
+
+    --arena-green: #173f32;
+    --arena-orange: #f28c28;
+
+    --arena-black: #000000;
+    --arena-text: #173f32;
+    --arena-muted: #6b6b6b;
+
+    --arena-white: #f7f6f5;
+    --arena-border: #e1e5e2;
+
+    --arena-radius: 18px;
+
+}
+
+
+/* =========================================================
+   BREADCRUMBS – CONTAINER
+========================================================= */
+
+.breadcrumbs {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: clamp(1rem, 2vw, 1.5rem) 0 0;
+
+    color: var(--arena-green);
+
+    font-size: clamp(0.75rem, 0.8vw, 0.9375rem);
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – LIST
+========================================================= */
+
+.breadcrumbs__list {
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: clamp(5px, 0.6vw, 8px);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – ITEMS
+========================================================= */
+
+.breadcrumbs__list li {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – LINKS
+========================================================= */
+
+.breadcrumbs a {
+    display: inline-flex;
+
+    align-items: center;
+
+    color: var(--arena-orange);
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – LINK HOVER / FOCUS
+========================================================= */
+
+.breadcrumbs a:hover {
+    color: var(--arena-green);
+}
+
+.breadcrumbs a:focus-visible {
+    color: var(--arena-green);
+
+    outline: 2px solid var(--arena-orange);
+    outline-offset: 3px;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – CURRENT PAGE
+========================================================= */
+
+.breadcrumbs__current {
+    color: var(--arena-green);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – SEPARATOR
+========================================================= */
+
+.breadcrumbs__separator {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--arena-muted);
+
+    font-size: 0.85em;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – ICONS
+========================================================= */
+
+.breadcrumbs i {
+    font-size: inherit;
+
+    line-height: 1;
+}
+
+
+/* Hvis Font Awesome bruges som separator */
+
+.breadcrumbs .fa-chevron-right {
+    color: var(--arena-muted);
+
+    font-size: 0.75em;
+}
+
+
+/* =========================================================
+   BREADCRUMBS – LINK + ICON
+========================================================= */
+
+.breadcrumbs a i {
+    margin-right: clamp(4px, 0.4vw, 6px);
+}
+
+
+/* =========================================================
+   TABLET
+   481px → 767px
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .breadcrumbs {
+        padding-top: 1.25rem;
+
+        font-size: 0.8125rem;
+    }
+
+    .breadcrumbs__list {
+        gap: 6px 8px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   320px → 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .breadcrumbs {
+        padding-top: 1rem;
+
+        font-size: 0.8125rem;
+
+        line-height: 1.4;
+    }
+
+    .breadcrumbs__list {
+        gap: 5px 7px;
+    }
+
+    .breadcrumbs__separator {
+        font-size: 0.75rem;
+    }
+
+    .breadcrumbs .fa-chevron-right {
+        font-size: 0.7rem;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px → 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .breadcrumbs {
+        padding-top: 0.875rem;
+
+        font-size: 0.75rem;
+    }
+
+    .breadcrumbs__list {
+        gap: 4px 6px;
+    }
+
+    .breadcrumbs__separator {
+        font-size: 0.7rem;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1440px+
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .breadcrumbs {
+        padding-top: 1.5rem;
+
+        font-size: 0.9375rem;
+    }
+
+    .breadcrumbs__list {
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .breadcrumbs a {
+        transition: none;
+    }
+
+}

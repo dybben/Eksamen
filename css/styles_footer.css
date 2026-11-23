@@ -1,0 +1,507 @@
+/* =========================================================
+   SITE FOOTER
+   Responsive: 1920px → 320px
+   ========================================================= */
+
+:root{
+
+  --color-dark-green:#1f2d23;
+  --color-cream:#f7f6f5;
+  --color-yellow:#FFFDBA;
+  --color-text:#263129;
+  --color-muted:#5d665f;
+  --color-white:#fff;
+  --color-focus:#FF6F42;
+}
+
+
+
+.site-footer{
+  background:var(--color-dark-green);
+  color:var(--color-focus);
+  padding:42px 0 56px;
+  width:100%;
+  overflow:hidden;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr auto;
+  gap:55px;
+  align-items:start;
+}
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-brand{
+  min-width:0;
+}
+
+.footer-brand strong{
+  display:block;
+  font-size:.78rem;
+  line-height:1.4;
+}
+
+/* =========================================================
+   ARENA X FOOTER LOGO
+   ========================================================= */
+
+.footer-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-mark a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   FOOTER HEADINGS
+   ========================================================= */
+
+.site-footer h2{
+  margin:0 0 12px;
+  font-size:1rem;
+  line-height:1.3;
+  color:var(--yellow);
+}
+
+/* =========================================================
+   FOOTER TEXT
+   ========================================================= */
+
+.site-footer p,
+.site-footer li,
+.site-footer a{
+  font-size:.72rem;
+  line-height:1.6;
+  color:var(--color-yellow);
+}
+
+.site-footer p{
+  margin:13px 0;
+}
+
+/* =========================================================
+   FOOTER LIST
+   ========================================================= */
+
+.site-footer ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.site-footer li{
+  margin:0;
+  padding:0;
+}
+
+.site-footer a{
+  color:var(--color-yellow);
+  text-decoration:none;
+  overflow-wrap:anywhere;
+  transition:
+    opacity .2s ease,
+    text-decoration .2s ease;
+}
+
+.site-footer a:hover{
+  text-decoration:underline;
+  opacity:.85;
+}
+
+/* =========================================================
+   SOCIAL MEDIA
+   ========================================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-yellow);
+  color: var(--color-dark-green);
+
+  border-radius: 50%;
+  text-decoration: none;
+
+  font-size: 24px;
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Hover */
+.footer-socials a:hover {
+  background-color: var(--color-focus);
+  color: var(--color-cream);
+  transform: translateY(-3px);
+  font-size: 17px;
+}
+
+/* Tastatur-fokus */
+.footer-socials a:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   1600px+
+   ========================================================= */
+
+@media (min-width:1600px){
+
+  .site-footer{
+    padding:52px 0 64px;
+  }
+
+  .footer-grid{
+    gap:70px;
+  }
+
+  .footer-mark{
+    width:44px;
+    height:44px;
+    font-size:1.5rem;
+  }
+
+  .site-footer h2{
+    font-size:1.05rem;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.76rem;
+  }
+
+  .footer-socials{
+    gap:12px;
+  }
+
+  .footer-socials a{
+    width:36px;
+    height:36px;
+  }
+
+  .footer-socials svg{
+    width:24px;
+    height:24px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   1200px – 1599px
+   ========================================================= */
+
+@media (max-width:1599px) and (min-width:1200px){
+
+  .footer-grid{
+    grid-template-columns:1.2fr 1fr 1fr auto;
+    gap:45px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   769px – 1199px
+   ========================================================= */
+
+@media (max-width:1199px) and (min-width:769px){
+
+  .site-footer{
+    padding:40px 0 50px;
+  }
+
+  .footer-brand{
+    grid-column:1 / -1;
+  }
+
+  .site-footer h2{
+    font-size:.95rem;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.72rem;
+  }
+}
+
+/* =========================================================
+   TABLET
+   768px
+   ========================================================= */
+
+@media (max-width:768px){
+
+  .site-footer{
+    padding:38px 0 46px;
+  }
+
+
+
+  .footer-brand{
+    grid-column:1 / -1;
+  }
+
+  .footer-mark{
+    width:40px;
+    height:40px;
+    font-size:1.35rem;
+  }
+
+  .site-footer h2{
+    margin-bottom:10px;
+    font-size:.92rem;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.71rem;
+    line-height:1.55;
+  }
+
+  .footer-socials{
+    gap:9px;
+  }
+
+  .footer-socials a{
+    width:33px;
+    height:33px;
+  }
+
+  .footer-socials svg{
+    width:22px;
+    height:22px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   600px
+   ========================================================= */
+
+@media (max-width:600px){
+
+  .site-footer{
+    padding:36px 0 42px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footer-brand{
+    grid-column:auto;
+  }
+
+  .footer-brand strong{
+    font-size:.76rem;
+  }
+
+  .site-footer h2{
+    margin-bottom:9px;
+    font-size:.9rem;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.7rem;
+    line-height:1.55;
+  }
+
+  .site-footer p{
+    margin:10px 0;
+  }
+
+  .footer-socials{
+    gap:10px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   480px
+   ========================================================= */
+
+@media (max-width:480px){
+
+  .site-footer{
+    padding:32px 0 38px;
+  }
+
+  .footer-grid{
+    gap:25px;
+  }
+
+  .footer-mark{
+    width:38px;
+    height:38px;
+    font-size:1.25rem;
+    margin-bottom:9px;
+  }
+
+  .footer-brand strong{
+    font-size:.74rem;
+  }
+
+  .site-footer h2{
+    font-size:.86rem;
+    margin-bottom:8px;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.68rem;
+    line-height:1.5;
+  }
+
+  .footer-socials{
+    gap:8px;
+  }
+
+  .footer-socials a{
+    width:32px;
+    height:32px;
+  }
+
+  .footer-socials svg{
+    width:21px;
+    height:21px;
+  }
+}
+
+/* =========================================================
+   IPHONE / SMALL MOBILE
+   375px
+   ========================================================= */
+
+@media (max-width:375px){
+
+  .site-footer{
+    padding:30px 0 34px;
+  }
+
+  .footer-grid{
+    gap:23px;
+  }
+
+  .footer-mark{
+    width:36px;
+    height:36px;
+    font-size:1.2rem;
+  }
+
+  .footer-brand strong{
+    font-size:.72rem;
+  }
+
+  .site-footer h2{
+    font-size:.82rem;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.66rem;
+    line-height:1.5;
+  }
+
+  .footer-socials{
+    gap:7px;
+  }
+
+  .footer-socials a{
+    width:31px;
+    height:31px;
+  }
+
+  .footer-socials svg{
+    width:20px;
+    height:20px;
+  }
+}
+
+/* =========================================================
+   IPHONE 4
+   320px
+   ========================================================= */
+
+@media (max-width:320px){
+
+  .site-footer{
+    padding:27px 0 32px;
+  }
+
+  .footer-grid{
+    gap:21px;
+  }
+
+  .footer-mark{
+    width:34px;
+    height:34px;
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+
+  .footer-brand strong{
+    font-size:.7rem;
+  }
+
+  .site-footer h2{
+    font-size:.8rem;
+    margin-bottom:7px;
+  }
+
+  .site-footer p,
+  .site-footer li,
+  .site-footer a{
+    font-size:.64rem;
+    line-height:1.45;
+  }
+
+  .site-footer p{
+    margin:8px 0;
+  }
+
+  .footer-socials{
+    gap:6px;
+  }
+
+  .footer-socials a{
+    width:30px;
+    height:30px;
+  }
+
+  .footer-socials svg{
+    width:19px;
+    height:19px;
+  }
+}

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <title>Faciliteter | Arena X</title>
+     <meta name="description" content="Se Arena X's faciliteter, hovedbygning, plantegninger, kantine og idrætsfaciliteter.">
+     <link rel="stylesheet" href="/css/undersider.css">
+
+     <style>
+          
+     /* ==================== FARVER ==================== */
+     :root{--arena-dark-deep:#17221b;--arena-white:#fff;--arena-cream:#f7f6f5;--arena-orange:#FF6F42;--arena-orange-light:#fff3e5;--arena-yellow:#FFFDBA;--arena-yellow-strong:#fff08a;--arena-green-light:#eaf1ed;--arena-green:#1B4129;--arena-green-dark:#173f32;--arena-dark:#1f2d23;--arena-text:#173f32;--arena-blue:#A1D2E7;--arena-black:#000;--arena-muted:#6b6b6b;--arena-border:#e1e5e2}
+
+     /* ==================== GENERELT ==================== */
+     .facilities{color:var(--arena-text);background:var(--arena-white)}
+     .facilities__container{width:min(1180px,calc(100% - 40px));margin:auto}
+     .facilities__intro{text-align:center;padding:60px 0}
+     .facilities__intro h2{max-width:850px;margin:0 auto 20px;color:var(--arena-dark);font-size:clamp(2rem,4vw,3.2rem);}
+     .facilities__intro p,.facilities__heading p{max-width:850px;margin:0 auto 15px;color:var(--arena-muted);line-height:1.7}
+     .facilities strong{color:var(--arena-green)}
+
+     /* ==================== HIGHLIGHTS ==================== */
+     .facilities__highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:65px}
+     .facility-highlight{padding:25px;border:1px solid var(--arena-border);border-radius:16px;background:var(--arena-green-light);text-align:center}
+     .facility-highlight h3{margin:0 0 8px;color:var(--arena-green-dark)}
+     .facility-highlight p{margin:0;color:var(--arena-muted);line-height:1.5}
+
+     /* ==================== SEKTIONER ==================== */
+     .facilities__section{padding:65px 0}
+     .facilities__section--cream{background:var(--arena-cream)}
+     .facilities__heading{text-align:center;margin:0 auto 35px}
+     .facilities__heading h2{margin:0 0 12px;color:var(--arena-dark);font-size:clamp(1.8rem,3vw,2.5rem)}
+
+     /* ==================== BILLEDER ==================== */
+     .facility-gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+     .facility-card{grid-column:span 2;overflow:hidden;border:1px solid var(--arena-border);border-radius:16px;background:var(--arena-white);box-shadow:0 6px 20px rgba(23,63,50,.07)}
+     .facility-card:nth-child(4),.facility-card:nth-child(5){grid-column:span 3}
+     .facility-card__image{aspect-ratio:16/10;overflow:hidden;background:var(--arena-green-light)}
+     .facility-card__image button{width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+     .facility-card__image img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s ease}
+     .facility-card:hover img,.facility-card__image button:focus-visible img{transform:scale(1.03)}
+     .facility-card__image button:focus-visible{outline:4px solid var(--arena-orange);outline-offset:-4px}
+     .facility-card__content{padding:20px}
+     .facility-card__content h3{margin:0 0 7px;color:var(--arena-green-dark)}
+     .facility-card__content p{margin:0;color:var(--arena-muted);line-height:1.55}
+
+     /* ==================== VIDEO ==================== */
+     .facility-video{max-width:1000px;margin:0 auto 35px;overflow:hidden;border-radius:18px;background:var(--arena-dark)}
+     .facility-video video{display:block;width:100%;height:auto}
+     .facility-info{max-width:900px;margin:auto;padding:30px;border-left:5px solid var(--arena-orange);border-radius:18px;background:var(--arena-orange-light)}
+     .facility-info h2{margin:0 0 10px;color:var(--arena-dark)}
+     .facility-info p{margin:0;color:var(--arena-text);line-height:1.7}
+
+     /* ==================== SPORT ==================== */
+     .sports-center{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+     .sports-center h2{margin:0 0 18px;color:var(--arena-dark);font-size:clamp(1.9rem,3vw,2.6rem)}
+     .sports-center p{margin:0 0 15px;color:var(--arena-muted);line-height:1.7}
+     .sports-center__image{overflow:hidden;border-radius:20px}
+     .sports-center__image img{width:100%;display:block}
+
+     /* ==================== CTA ==================== */
+     .facilities__cta{padding:70px 20px;background:var(--arena-green-dark);color:var(--arena-white);text-align:center}
+     .facilities__cta h2{margin:0 0 12px;font-size:clamp(1.9rem,3vw,2.6rem)}
+     .facilities__cta p{max-width:700px;margin:auto;color:rgba(255,255,255,.82);line-height:1.7}
+
+     /* ==================== LIGHTBOX ==================== */
+     .image-lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:25px;background:rgba(0,0,0,.92)}
+     .image-lightbox.is-open{display:flex}
+     .lightbox-image{max-width:90vw;max-height:85vh;object-fit:contain;transition:transform .2s ease;cursor:grab}
+     .lightbox-image.is-dragging{cursor:grabbing}
+     .lightbox-close,.lightbox-prev,.lightbox-next,.lightbox-zoom-in,.lightbox-zoom-out{position:absolute;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:24px}
+     .lightbox-close{top:20px;right:20px;font-size:30px}
+     .lightbox-prev{left:20px;top:50%;transform:translateY(-50%)}
+     .lightbox-next{right:20px;top:50%;transform:translateY(-50%)}
+     .lightbox-zoom-out{bottom:20px;left:20px}
+     .lightbox-zoom-in{bottom:20px;left:76px}
+     .lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover,.lightbox-zoom-in:hover,.lightbox-zoom-out:hover,.lightbox-close:focus-visible,.lightbox-prev:focus-visible,.lightbox-next:focus-visible,.lightbox-zoom-in:focus-visible,.lightbox-zoom-out:focus-visible{background:var(--arena-orange)}
+     .lightbox-status{position:absolute;right:25px;bottom:25px;color:#fff;font-size:.9rem}
+
+     /* ==================== RESPONSIVE ==================== */
+     @media(max-width:800px){
+     .facilities__highlights,.sports-center{grid-template-columns:1fr}
+     .facility-gallery{grid-template-columns:repeat(2,1fr)}
+     .facility-card,.facility-card:nth-child(4),.facility-card:nth-child(5){grid-column:span 1}
+     .facilities__intro,.facilities__section{padding:50px 0}
+     }
+
+     @media(max-width:500px){
+     .facilities__container{width:calc(100% - 28px)}
+     .facility-gallery{grid-template-columns:1fr}
+     .facility-highlight,.facility-card__content,.facility-info{padding:20px}
+     .lightbox-image{max-width:96vw;max-height:80vh}
+     .lightbox-prev{left:8px}.lightbox-next{right:8px}
+     }
+
+     </style>
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main>
+
+<div class="container">
+<nav class="breadcrumbs" aria-label="Brødkrummer">
+<ol class="breadcrumbs__list">
+<li><a href="/"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Hjem</span></a></li>
+<li class="breadcrumbs__separator" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+<li><a href="/om/">Om Arena X</a></li>
+<li class="breadcrumbs__separator" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+<li aria-current="page">Faciliteter</li>
+</ol>
+</nav>
+</div>
+
+<header class="page-header">
+<h1>Faciliteter</h1>
+</header>
+
+<div class="facilities">
+
+<!-- ==================== INTRO ==================== -->
+<section class="facilities__intro">
+<div class="facilities__container">
+<h2>Moderne rammer for sport, fællesskab og efterskoleliv</h2>
+<p>Arena X etableres i et tidligere vandrehjem, som gennemgår en omfattende renovering. Til skolestart i august 2026 fremstår hovedbygningen fuldstændig nyistandsat med moderne faciliteter til undervisning, fællesskab og hverdagsliv.</p>
+<p>Hovedbygningen kommer blandt andet til at rumme <strong>topmoderne køkken, spisesal, opholdsrum, grupperum, lærerværelse, vagtværelser og seks fleksible klasseværelser.</strong></p>
+</div>
+</section>
+
+<!-- ==================== HIGHLIGHTS ==================== -->
+<section class="facilities__container">
+<div class="facilities__highlights">
+
+<article class="facility-highlight">
+<h3>6 fleksible klasseværelser</h3>
+<p>Moderne undervisningsmiljøer til forskellige fag og aktiviteter.</p>
+</article>
+
+<article class="facility-highlight">
+<h3>Moderne fællesområder</h3>
+<p>Gode rammer til samvær, afslapning og fællesskab.</p>
+</article>
+
+<article class="facility-highlight">
+<h3>Sport lige i nærheden</h3>
+<p>Alle vores idrætsgrene ligger i gåafstand fra skolen.</p>
+</article>
+
+</div>
+</section>
+
+
+<!-- ==================== BILLEDER ==================== -->
+<section class="facilities__section facilities__section--cream">
+<div class="facilities__container">
+
+<div class="facilities__heading">
+<h2>Se hovedbygningen</h2>
+<p>Se skitserne nedenfor og få et indtryk af hovedbygningens stueplan og 1. sal.</p>
+</div>
+
+<div class="facility-gallery">
+
+<!-- STUEPLAN -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/Plantegning-af-efterskolen-Stueplan.webp"
+data-title="Plantegning af Arena X stueplan"
+aria-label="Åbn billede af Arena X stueplan i stor størrelse">
+<img src="/om/faciliteter/Plantegning-af-efterskolen-Stueplan.webp"
+alt="Plantegning af Arena X stueplan" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Stueplan</h3>
+<p>Se indretningen af hovedbygningens stueplan.</p>
+</div>
+</article>
+
+<!-- 1. SAL -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/Plantegning-af-efterskolen-1sal.webp"
+data-title="Plantegning af Arena X 1. sal"
+aria-label="Åbn billede af Arena X 1. sal i stor størrelse">
+<img src="/om/faciliteter/Plantegning-af-efterskolen-1sal.webp"
+alt="Plantegning af Arena X 1. sal" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>1. sal</h3>
+<p>Se indretningen af hovedbygningens 1. sal.</p>
+</div>
+</article>
+
+<!-- KANTINEN -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/KANTINE2.webp"
+data-title="Kantinen på Arena X"
+aria-label="Åbn billede af kantinen i stor størrelse">
+<img src="/om/faciliteter/KANTINE2.webp"
+alt="Kantinen på Arena X" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Kantinen</h3>
+<p>Et centralt samlingspunkt for måltider og fællesskab.</p>
+</div>
+</article>
+
+<!-- HOVEDBYGNINGEN -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/faciliteter/assets/hovedbygningen.jpg"
+data-title="Arena X hovedbygning"
+aria-label="Åbn billede af Arena X hovedbygning i stor størrelse">
+<img src="/faciliteter/assets/hovedbygningen.jpg"
+alt="Arena X hovedbygning" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Hovedbygningen</h3>
+<p>Følg udviklingen og renoveringen af Arena X.</p>
+</div>
+</article>
+
+<!-- SPORTSCENTER HERNING -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/faciliteter/assets/sportscenter-herning.jpg"
+data-title="Sportscenter Herning"
+aria-label="Åbn billede af Sportscenter Herning i stor størrelse">
+<img src="/faciliteter/assets/sportscenter-herning.jpg"
+alt="Sportsfaciliteter ved Arena X" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Sportscenter Herning</h3>
+<p>Fantastiske idrætsfaciliteter lige som nabo.</p>
+</div>
+</article>
+
+<!-- OPHOLDSRUM 1 -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/M_office_1.webp"
+data-title="Opholdsrum på Arena X"
+aria-label="Åbn billede af opholdsrum på Arena X i stor størrelse">
+<img src="/om/faciliteter/M_office_1.webp"
+alt="Opholdsrum på Arena X" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Opholdsrum på Arena X</h3>
+<p>Et centralt samlingspunkt for gruppearbejde og hygge.</p>
+</div>
+</article>
+
+<!-- OPHOLDSRUM 2 -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/M_office_2.webp"
+data-title="Opholdsrum på Arena X"
+aria-label="Åbn billede af opholdsrum på Arena X i stor størrelse">
+<img src="/om/faciliteter/M_office_2.webp"
+alt="Opholdsrum på Arena X" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Opholdsrum på Arena X</h3>
+<p>Et centralt samlingspunkt for gruppearbejde og hygge.</p>
+</div>
+</article>
+
+<!-- OPHOLDSRUM 3 -->
+<article class="facility-card">
+<div class="facility-card__image">
+<button type="button" class="gallery-open"
+data-image="/om/faciliteter/M_office_3.webp"
+data-title="Opholdsrum på Arena X"
+aria-label="Åbn billede af opholdsrum på Arena X i stor størrelse">
+<img src="/om/faciliteter/M_office_3.webp"
+alt="Opholdsrum på Arena X" loading="lazy">
+</button>
+</div>
+<div class="facility-card__content">
+<h3>Opholdsrum på Arena X</h3>
+<p>Et centralt samlingspunkt for gruppearbejde og hygge.</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- ==================== VIDEO ==================== -->
+<section class="facilities__section">
+<div class="facilities__container">
+
+<div class="facilities__heading">
+<h2>Et kig indenfor</h2>
+<p>Tag med på en rundtur i Arena X og få et indtryk af vores bygninger og faciliteter.</p>
+</div>
+
+<div class="facility-video">
+<video controls playsinline preload="metadata">
+<source src="/om/faciliteter/rundtur.mp4" type="video/mp4">
+Din browser understøtter ikke video.
+</video>
+</div>
+
+<div class="facility-info">
+<h2>Faciliteterne udvikler sig</h2>
+<p>Arena X er under etablering, og siden opdateres løbende med nye billeder, plantegninger og information om skolens faciliteter.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ==================== SPORT ==================== -->
+<section class="facilities__section facilities__section--cream">
+<div class="facilities__container">
+
+<div class="sports-center">
+<div>
+<h2>Sport lige som nabo</h2>
+<p>Et besøg hos os kan give et godt indtryk af skolen og ikke mindst vores fantastiske idrætsfaciliteter i <strong>Sportscenter Herning</strong>, som ligger som nærmeste nabo.</p>
+<p>Alle vores idrætsgrene er i gåafstand til skolen, hvilket giver en optimal logistik for eleverne.</p>
+<p>ARENA X er samtidig en bynær efterskole med kun <strong>3 km til gågaden i Herning midtby.</strong></p>
+</div>
+
+<div class="sports-center__image">
+<img src="/om/faciliteter/Sportscenter-Herning-Sport-faellesskab-og-events.webp" alt="Sportsfaciliteter ved Arena X" loading="lazy">
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="facilities__cta">
+<div class="facilities__container">
+<h2>Kom og oplev Arena X</h2>
+<p>Et besøg på skolen er den bedste måde at få et indtryk af vores rammer, faciliteter og det liv, der skal være på Arena X.</p>
+</div>
+</section>
+
+</div>
+</main>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="Billedvisning">
+
+<button class="lightbox-close" type="button" aria-label="Luk billedvisning">&times;</button>
+<button class="lightbox-prev" type="button" aria-label="Forrige billede">&#10094;</button>
+
+<img class="lightbox-image" id="lightboxImage" src="" alt="">
+
+<button class="lightbox-next" type="button" aria-label="Næste billede">&#10095;</button>
+
+<button class="lightbox-zoom-out" type="button" aria-label="Zoom ud">−</button>
+<button class="lightbox-zoom-in" type="button" aria-label="Zoom ind">+</button>
+
+<span class="lightbox-status" id="lightboxStatus" aria-live="polite"></span>
+
+</div>
+
+<div id="footer"></div>
+
+<script src="/navbar/navbar.js"></script>
+<script src="/footer/footer.js"></script>
+
+<script>
+/* ==================== BILLEDVISER ==================== */
+const lightbox=document.getElementById('imageLightbox'),
+image=document.getElementById('lightboxImage'),
+status=document.getElementById('lightboxStatus'),
+items=[...document.querySelectorAll('.gallery-open')];
+let current=0,zoom=1;
+
+function showImage(i){
+current=(i+items.length)%items.length;
+const item=items[current];
+image.src=item.dataset.image;
+image.alt=item.dataset.title;
+zoom=1;
+image.style.transform='scale(1)';
+status.textContent=`${current+1} af ${items.length}`;
+lightbox.classList.add('is-open');
+document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+lightbox.classList.remove('is-open');
+document.body.style.overflow='';
+image.src='';
+}
+
+items.forEach((item,i)=>item.addEventListener('click',()=>showImage(i)));
+
+document.querySelector('.lightbox-close').onclick=closeLightbox;
+document.querySelector('.lightbox-prev').onclick=()=>showImage(current-1);
+document.querySelector('.lightbox-next').onclick=()=>showImage(current+1);
+
+document.querySelector('.lightbox-zoom-in').onclick=()=>{
+zoom=Math.min(zoom+.25,3);
+image.style.transform=`scale(${zoom})`;
+};
+
+document.querySelector('.lightbox-zoom-out').onclick=()=>{
+zoom=Math.max(zoom-.25,1);
+image.style.transform=`scale(${zoom})`;
+};
+
+lightbox.addEventListener('click',e=>{
+if(e.target===lightbox)closeLightbox();
+});
+
+document.addEventListener('keydown',e=>{
+if(!lightbox.classList.contains('is-open'))return;
+if(e.key==='Escape')closeLightbox();
+if(e.key==='ArrowLeft')showImage(current-1);
+if(e.key==='ArrowRight')showImage(current+1);
+if(e.key==='+'||e.key==='='){
+zoom=Math.min(zoom+.25,3);
+image.style.transform=`scale(${zoom})`;
+}
+if(e.key==='-'){
+zoom=Math.max(zoom-.25,1);
+image.style.transform=`scale(${zoom})`;
+}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* =====================================================
+   ARENA X – BESTYRELSEN / PERSONALE
+   RWD: 1920px → 320px
+===================================================== */
+
+:root{
+ --arena-x-white:#fff;--arena-x-cream:#f7f6f5;--arena-x-orange:#FF6F42;--arena-x-yellow:#FFFDBA;
+ --arena-x-green:#1B4129;--arena-x-green-dark:#173f32;--arena-x-text:#173f32;--arena-x-blue:#A1D2E7;
+ --arena-x-black:#000;--arena-x-border:#e1e5e2;--arena-x-muted:#6b6b6b;
+
+ --arena-x-container:1080px;--arena-x-container-wide:1180px;
+ --arena-x-radius-sm:6px;--arena-x-radius-md:12px;--arena-x-radius-lg:24px;--arena-x-radius-round:50%;
+
+ --arena-x-space-xs:.5rem;--arena-x-space-sm:1rem;--arena-x-space-md:1.5rem;
+ --arena-x-space-lg:2.5rem;--arena-x-space-xl:4rem;--arena-x-space-section:clamp(4rem,8vw,8rem);
+
+ --arena-x-h1:34px;--arena-x-h2:27px;--arena-x-h3:21px;--arena-x-text:17px;--arena-x-small:13px;
+ --arena-x-heading-line:1.15;--arena-x-text-line:1.5;--arena-x-transition:180ms ease;
+ --arena-x-shadow:0 12px 30px rgba(31,45,35,.12);
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+ margin:0;background:var(--arena-x-cream);color:var(--arena-x-text);
+ font-family:"GalanoClassicRegular","Montserrat",Arial,sans-serif;
+ font-size:var(--arena-x-text);line-height:var(--arena-x-text-line)
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,a{touch-action:manipulation}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--arena-x-orange);outline-offset:4px}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.board-intro{padding:22px 0 0}
+.board-intro__inner{width:min(calc(100% - 40px),860px);margin-inline:auto}
+.board-intro h2{margin:0 0 12px;font-size:var(--arena-x-h2);font-weight:500;line-height:1.25;color:var(--arena-x-green-dark)}
+.board-intro p{margin:0;font-size:var(--arena-x-text);line-height:1.45;color:var(--arena-x-text)}
+
+
+/* =========================
+   BESTYRELSE
+========================= */
+
+.board{padding:clamp(70px,9vw,105px) 0 115px}
+.board-grid{
+ width:min(calc(100% - 40px),var(--arena-x-container-wide));
+ margin-inline:auto;
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ column-gap:clamp(30px,5vw,65px);
+ row-gap:clamp(70px,8vw,105px);
+ align-items:start
+}
+.board-member{min-width:0;text-align:center}
+
+
+/* =========================
+   PORTRAIT
+========================= */
+
+.board-member__image{
+ width:250px;height:250px;margin:40px auto 15px;
+ overflow:hidden;position:relative;
+ border:2px solid var(--arena-x-text);
+ border-radius:var(--arena-x-radius-round);
+ background:var(--arena-x-border)
+}
+.board-member__image img{
+ width:100%;height:100%;object-fit:cover;object-position:center 0;
+ filter:grayscale(100%)
+}
+
+
+/* =========================
+   TEKST
+========================= */
+
+.board-member__role{
+ margin:0;color:var(--arena-x-text);
+ font-size:var(--arena-x-small);font-weight:700;line-height:1.3
+}
+
+.board-member__name{
+ margin:10px 0 0;color:var(--arena-x-green-dark);
+ font-size:var(--arena-x-small);font-weight:400;line-height:1.3
+}
+
+.board-member__description{
+ max-width:285px;margin:14px auto 0;
+ text-align:left;font-size:var(--arena-x-small);line-height:1.45;
+ color:var(--arena-x-text)
+}
+
+
+/* =========================
+   EMAIL
+========================= */
+
+.board-member__email{
+ display:inline-block;margin-top:9px;
+ color:var(--arena-x-orange);font-size:var(--arena-x-small);
+ text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;
+ overflow-wrap:anywhere;transition:color var(--arena-x-transition),transform var(--arena-x-transition)
+}
+.board-member__email:hover,.board-member__email:focus-visible{
+ color:var(--arena-x-green-dark)
+}
+
+
+/* =========================
+   SIDSTE MEDLEM
+========================= */
+
+.board-member--center{grid-column:2}
+
+
+/* =========================
+   TABLET ≤1000px
+========================= */
+
+@media(max-width:1000px){
+ .board-grid{column-gap:30px}
+}
+
+
+/* =========================
+   TABLET / MOBIL ≤780px
+========================= */
+
+@media(max-width:780px){
+ .board-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:70px}
+ .board-member--center{grid-column:1/-1;max-width:360px;width:100%;margin-inline:auto}
+}
+
+
+/* =========================
+   MOBIL ≤560px
+========================= */
+
+@media(max-width:560px){
+ :root{
+  --arena-x-h1:30px;--arena-x-h2:24px;--arena-x-h3:19px;--arena-x-text:16px;--arena-x-small:13px
+ }
+
+ .board-intro{padding-top:20px}
+ .board-intro__inner{width:calc(100% - 30px);text-align:left}
+ .board{padding:60px 0 75px}
+ .board-grid{width:calc(100% - 30px);grid-template-columns:1fr;row-gap:65px}
+ .board-member--center{grid-column:auto;max-width:none}
+ .board-member__description{max-width:330px}
+}
+
+
+/* =========================
+   IPHONE 4 ≤400px
+========================= */
+
+@media(max-width:400px){
+ :root{
+  --arena-x-h1:29px;--arena-x-h2:23px;--arena-x-h3:18px;--arena-x-text:15px;--arena-x-small:12px
+ }
+
+ .board-intro__inner,.board-grid{width:calc(100% - 20px)}
+ .board{padding:50px 0 60px}
+ .board-grid{row-gap:55px}
+ .board-member__image{width:210px;height:210px;margin-top:25px}
+ .board-member__description{max-width:290px}
+}
+
+
+/* =========================
+   320px
+========================= */
+
+@media(max-width:320px){
+ :root{
+  --arena-x-h1:28px;--arena-x-h2:22px;--arena-x-h3:18px;--arena-x-text:15px;--arena-x-small:12px
+ }
+
+ .board-intro__inner,.board-grid{width:calc(100% - 16px)}
+ .board-member__image{width:190px;height:190px}
+ .board-member__description{max-width:270px}
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{
+  animation-duration:.01ms!important;animation-iteration-count:1!important;
+  transition-duration:.01ms!important
+ }
+}

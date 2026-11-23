@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fællesskab | Arena X Efterskole</title>
+<meta name="description" content="På Arena X bliver du en del af et stærkt fællesskab med familiegrupper, venskaber, sport, oplevelser og plads til forskellighed.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="hvad_er_arena_x.css">
+<link rel="stylesheet" href="/css/undersider.css">
+<link rel="preconnect" href="https://images.unsplash.com">
+
+<style>
+:root{
+--arena-x-white:#FFF;--arena-x-cream:#f7f6f5;--arena-x-orange:#FF6F42;--arena-x-yellow:#FFFDBA;
+--arena-x-green:#1B4129;--arena-x-green-dark:#1F2D23;--arena-x-text:#1F2D23;--arena-x-blue:#A1D2E7;
+--arena-x-black:#000;--arena-x-border:#e1e5e2;--arena-x-muted:#6b6b6b;
+--arena-x-h1:34px;--arena-x-h2:27px;--arena-x-h3:21px;--arena-x-text-size:17px;--arena-x-small:13px;
+--arena-x-max-width:1200px;--arena-x-radius:20px;--arena-x-shadow:0 15px 40px rgba(31,45,35,.10);--arena-x-transition:.3s ease;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--arena-x-cream);color:var(--arena-x-text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:var(--arena-x-text-size);line-height:1.6}
+img{display:block;width:100%;max-width:100%}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:var(--arena-x-h1);line-height:1.1;font-weight:800}
+h2{font-size:var(--arena-x-h2);line-height:1.15;font-weight:800}
+h3{font-size:var(--arena-x-h3);line-height:1.25;font-weight:800}
+p{font-size:var(--arena-x-text-size)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--arena-x-orange);outline-offset:4px}
+
+.container{width:min(calc(100% - 40px),var(--arena-x-max-width));margin-inline:auto}
+.section{padding:90px 0}
+.label{display:block;margin-bottom:12px;color:var(--arena-x-orange);font-size:var(--arena-x-small);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:8px;background:var(--arena-x-orange);color:var(--arena-x-white);text-decoration:none;font-size:var(--arena-x-text-size);font-weight:800;transition:var(--arena-x-transition)}
+.button:hover{background:var(--arena-x-green);transform:translateY(-2px)}
+
+/* HERO */
+.community-hero{position:relative;min-height:85vh;display:flex;align-items:flex-end;overflow:hidden;margin-top:10px;border-radius:var(--arena-x-radius);background:var(--arena-x-green);color:var(--arena-x-white)}
+.community-hero__image{position:absolute;inset:0;height:100%;object-fit:cover;z-index:0}
+.community-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(31,45,35,.92),rgba(31,45,35,.55) 45%,rgba(31,45,35,.08));z-index:1}
+.community-hero__content{position:relative;z-index:2;width:100%;padding:80px 4rem 65px}
+.community-hero__eyebrow{display:inline-flex;align-items:center;margin-bottom:18px;padding:7px 13px;border:1px solid rgba(255,255,255,.35);border-radius:50px;background:rgba(255,255,255,.08);font-size:var(--arena-x-small);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.community-hero h1{margin-bottom:18px;font-size:clamp(42px,7vw,78px);line-height:.95;letter-spacing:-.04em}
+.community-hero p{max-width:700px;margin:0;font-size:clamp(17px,2vw,21px)}
+
+/* SCROLL */
+.hero-scroll{position:absolute;z-index:3;bottom:28px;left:50%; align-items:center;gap:6px;padding:10px 14px;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:rgba(31,45,35,.4);color:var(--arena-x-white);font-size:var(--arena-x-small);font-weight:800;letter-spacing:.15em;text-transform:uppercase;transform:translateX(-50%);backdrop-filter:blur(5px);transition:opacity .4s ease,transform .4s ease} 
+
+.hero-scroll i{font-size:12px;animation:scrollArrow 1.4s ease-in-out infinite}
+.hero-scroll.hidden{opacity:0;transform:translate(-50%,10px);pointer-events:none}
+@keyframes scrollArrow{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* INTRO */
+.intro{display:grid;grid-template-columns:1fr .85fr; gap:70px; align-items:center }
+.intro__text{max-width:680px}
+.intro__text .lead{font-weight:700;font-size:20px}
+.intro__text p{line-height:1.75}
+.intro__image{position:relative}
+.intro__image img{aspect-ratio:4/5;object-fit:cover;border-radius:var(--arena-x-radius);box-shadow:var(--arena-x-shadow)}
+.community-badge{position:absolute;right:-20px;bottom:25px;width:min(250px,70%);padding:20px;border-radius:16px;background:var(--arena-x-green);color:var(--arena-x-white);box-shadow:var(--arena-x-shadow)}
+.community-badge i{display:block;margin-bottom:10px;color:var(--arena-x-orange);font-size:24px}
+.community-badge strong,.community-badge span{display:block}
+.community-badge strong{margin-bottom:5px}
+.community-badge span{font-size:var(--arena-x-small);line-height:1.5;opacity:.9}
+
+/* FAMILY */
+.family{display:grid;grid-template-columns:.9fr 1.1fr;overflow:hidden;border-radius:var(--arena-x-radius);background:var(--arena-x-green);color:var(--arena-x-white);box-shadow:var(--arena-x-shadow)}
+.family__image{min-height:520px}
+.family__image img{height:100%;object-fit:cover}
+.family__content{display:flex;flex-direction:column;justify-content:center;padding:60px}
+.family__content .label{color:var(--arena-x-orange)}
+.family__content p{max-width:620px;line-height:1.75}
+.family__icon{width:58px;height:58px;display:grid;place-items:center;margin-bottom:22px;border-radius:50%;background:rgba(255,255,255,.12);color:var(--arena-x-orange);font-size:22px}
+
+/* HEADINGS */
+.section-heading{max-width:760px;margin-bottom:45px}
+.section-heading p{max-width:700px;line-height:1.75}
+
+/* CARDS */
+.community-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.community-card{overflow:hidden;border:1px solid var(--arena-x-border);border-radius:18px;background:var(--arena-x-white);box-shadow:0 8px 25px rgba(31,45,35,.06);transition:var(--arena-x-transition)}
+.community-card:hover{transform:translateY(-6px);box-shadow:var(--arena-x-shadow)}
+.community-card__image{aspect-ratio:16/10;overflow:hidden}
+.community-card__image img{height:100%;object-fit:cover;transition:.5s ease}
+.community-card:hover .community-card__image img{transform:scale(1.05)}
+.community-card__content{padding:28px}
+.community-card__icon{width:48px;height:48px;display:grid;place-items:center;margin-bottom:18px;border-radius:12px;background:var(--arena-x-yellow);color:var(--arena-x-green)}
+.community-card h3{margin-bottom:10px}
+.community-card p{margin:0;line-height:1.7}
+
+/* STORY */
+.story{position:relative;min-height:570px;overflow:hidden;border-radius:var(--arena-x-radius);color:var(--arena-x-white)}
+.story__image{position:absolute;inset:0;height:100%;object-fit:cover}
+.story::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,45,35,.9),rgba(31,45,35,.15))}
+.story__content{position:relative;z-index:1;width:58%;min-height:570px;display:flex;flex-direction:column;justify-content:center;padding:60px}
+.story__content .label{color:var(--arena-x-orange)}
+.story__content p{max-width:600px;line-height:1.75}
+
+/* DIFFERENCE */
+.difference{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.difference__text{max-width:680px}
+.difference__text p{line-height:1.75}
+.quote{padding:42px;border-left:5px solid var(--arena-x-orange);border-radius:0 16px 16px 0;background:var(--arena-x-yellow)}
+.quote i{display:block;margin-bottom:18px;color:var(--arena-x-orange);font-size:28px}
+.quote p{margin:0;font-size:24px;font-weight:800;line-height:1.35}
+
+/* VALUES */
+.values{background:var(--arena-x-blue)}
+.values__heading{max-width:750px;margin:0 auto 50px;text-align:center}
+.values__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.value{min-height:250px;padding:30px;border-radius:18px;background:var(--arena-x-cream);transition:var(--arena-x-transition)}
+.value:hover{transform:translateY(-5px);box-shadow:var(--arena-x-shadow)}
+.value__number{display:block;margin-bottom:28px;color:var(--arena-x-muted);font-size:var(--arena-x-small);font-weight:800;letter-spacing:.15em}
+.value i{display:block;margin-bottom:18px;color:var(--arena-x-orange);font-size:25px}
+.value h3{margin-bottom:10px}
+.value p{margin:0;line-height:1.65}
+
+/* CTA */
+.cta{padding:90px 0}
+.cta__box{padding:70px 40px;border-radius:var(--arena-x-radius);background:var(--arena-x-orange);color:var(--arena-x-white);text-align:center}
+.cta__box h2{max-width:750px;margin:0 auto 20px}
+.cta__box p{max-width:650px;margin:0 auto 30px;line-height:1.75}
+.cta__box .button{background:var(--arena-x-white);color:var(--arena-x-green)}
+.cta__box .button:hover{background:var(--arena-x-green);color:var(--arena-x-white)}
+
+/* LOGO + REVEAL */
+.arena-x-logo{display:grid;place-items:center;padding:20px 0 80px}
+.arena-x-logo img{width:min(280px,70vw)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:950px){
+.intro,.family,.difference{grid-template-columns:1fr}
+.family__image{min-height:420px}
+.family__content{padding:50px 40px}
+.community-cards{grid-template-columns:repeat(2,1fr)}
+.values__grid{grid-template-columns:repeat(2,1fr)}
+.story__content{width:72%}
+}
+
+@media(max-width:650px){
+.container{width:calc(100% - 30px)}
+.section{padding:65px 0}
+.breadcrumbs{padding:14px 0}
+.community-hero{min-height:540px;border-radius:15px}
+.community-hero__content{padding:65px 0 45px}
+.community-hero h1{font-size:48px}
+.community-hero p{font-size:17px}
+.hero-scroll{bottom:18px}
+.intro{gap:45px}
+.community-badge{right:10px;bottom:15px}
+.family{border-radius:15px}
+.family__image{min-height:320px}
+.family__content{padding:40px 25px}
+.community-cards{grid-template-columns:1fr}
+.story{min-height:600px;border-radius:15px}
+.story__content{width:100%;min-height:600px;justify-content:flex-end;padding:35px 25px}
+.story::after{background:linear-gradient(to top,rgba(31,45,35,.92),rgba(31,45,35,.12))}
+.difference{gap:40px}
+.quote{padding:30px}
+.quote p{font-size:21px}
+.values__grid{grid-template-columns:1fr}
+.value{min-height:auto}
+.cta{padding:65px 0}
+.cta__box{padding:55px 25px}
+.arena-x-logo{padding-bottom:55px}
+}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{transition:none!important;animation:none!important}
+.reveal{opacity:1;transform:none}
+.hero-scroll{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main>
+<div class="container">
+<nav class="breadcrumbs" aria-label="Brødkrummer">
+<ol class="breadcrumbs__list">
+<li><a href="/"><i class="fa-solid fa-house" aria-hidden="true"></i><span>Hjem</span></a></li>
+<li class="breadcrumbs__separator" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+<li><a href="#">Efterskolelivet</a></li>
+<li class="breadcrumbs__separator" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+<li aria-current="page">Fællesskab</li>
+</ol>
+</nav>
+</div>
+
+<section class="community-hero" id="hero">
+<img class="community-hero__image" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2000&q=85" 
+    alt="En gruppe unge mennesker, der er sammen udendørs" fetchpriority="high" >
+
+<div class="container community-hero__content">
+<span class="community-hero__eyebrow">Efterskolelivet</span>
+<h1>Fællesskab</h1>
+<p>Et år med mennesker, oplevelser og relationer, der bliver en del af historien.</p>
+</div>
+
+<a class="hero-scroll" href="#intro" aria-label="Scroll ned til mere indhold">
+<!-- <span> Scroll </span> -->
+<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+</a>
+</section>
+
+<section class="section" id="intro">
+<div class="container intro">
+<div class="intro__text reveal">
+<span class="label">Sammen</span>
+<h2>Du skal ikke gå året alene.</h2>
+<p class="lead">På Arena X bliver du en del af et fællesskab, hvor vi bor, lærer, træner og oplever sammen.</p>
+<p>Noget af det særlige ved efterskolelivet er, at hverdagen bliver delt med andre. Du møder mennesker, som måske har andre interesser, erfaringer og drømme end dig.</p>
+<p>Det er netop forskelligheden, der gør fællesskabet interessant.</p>
+</div>
+
+<div class="intro__image reveal">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85" alt="Unge sidder sammen og hygger sig" loading="lazy">
+<div class="community-badge">
+<i class="fa-solid fa-people-group" aria-hidden="true"></i>
+<strong>Plads til dig</strong>
+<span>Du kan være dig selv og stadig være en del af fællesskabet.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:0">
+<div class="container">
+<div class="family reveal">
+<div class="family__image">
+<img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85" alt="En gruppe unge sammen" loading="lazy">
+</div>
+<div class="family__content">
+<div class="family__icon"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></div>
+<span class="label">Tryghed</span>
+<h2>Du får en familie på skolen.</h2>
+<p>På Arena X bliver du en del af en familiegruppe med en fast lærer, som følger dig gennem året.</p>
+<p>Familiegruppen bliver et sted, hvor der er plads til både de gode dage og de dage, der er lidt sværere.</p>
+<p>Det handler om at skabe tryghed, ansvar og relationer, som gør det lettere at være sig selv.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-heading reveal">
+<span class="label">Hverdagen</span>
+<h2>Fællesskabet findes i de små ting.</h2>
+<p>Fællesskab handler ikke kun om de store arrangementer og oplevelser. Det opstår også i hverdagen.</p>
+</div>
+
+<div class="community-cards">
+<article class="community-card reveal">
+<div class="community-card__image"><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=85" alt="Unge hygger sig sammen" loading="lazy"></div>
+<div class="community-card__content">
+<div class="community-card__icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+<h3>Hverdagen</h3>
+<p>Når man spiser sammen, snakker på gangen eller hænger ud efter undervisningen, bliver man en del af hinandens liv.</p>
+</div>
+</article>
+
+<article class="community-card reveal">
+<div class="community-card__image"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=85" alt="Unge dyrker sport sammen" loading="lazy"></div>
+<div class="community-card__content">
+<div class="community-card__icon"><i class="fa-solid fa-person-running" aria-hidden="true"></i></div>
+<h3>Sport & aktiviteter</h3>
+<p>Når vi træner, leger og bliver udfordret sammen, lærer vi også at stole på hinanden.</p>
+</div>
+</article>
+
+<article class="community-card reveal">
+<div class="community-card__image"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85" alt="Unge samarbejder om en aktivitet" loading="lazy"></div>
+<div class="community-card__content">
+<div class="community-card__icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+<h3>Samarbejde</h3>
+<p>Man behøver ikke kunne alting selv. Vi lærer at hjælpe hinanden og løfte i fællesskab.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:0">
+<div class="container">
+<div class="story reveal">
+<img class="story__image" src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=1800&q=85" alt="Unge oplever noget sammen udendørs" loading="lazy">
+<div class="story__content">
+<span class="label">Oplevelser</span>
+<h2>Noget at huske sammen.</h2>
+<p>Ture, aktiviteter, sport og udfordringer bliver til oplevelser, som man kan se tilbage på længe efter efterskoleåret.</p>
+<p>Nogle af de bedste minder opstår, når man gør noget sammen for første gang.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container difference">
+<div class="difference__text reveal">
+<span class="label">Forskellighed</span>
+<h2>Du behøver ikke være som alle andre.</h2>
+<p>Et stærkt fællesskab betyder ikke, at alle skal være ens.</p>
+<p>På Arena X skal der være plads til forskellige interesser, personligheder, ambitioner og måder at være på.</p>
+<p>Du skal kunne være dig selv og samtidig være en del af noget større.</p>
+</div>
+
+<div class="quote reveal">
+<i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+<p>Vi er forskellige, og det er en styrke.</p>
+</div>
+</div>
+</section>
+
+<section class="section values">
+<div class="container">
+<div class="values__heading reveal">
+<span class="label">Vores værdier</span>
+<h2>Det fællesskab vi vil skabe.</h2>
+<p>Fællesskab bliver først stærkt, når det bliver omsat til handling.</p>
+</div>
+
+<div class="values__grid">
+<article class="value reveal"><span class="value__number">01</span><i class="fa-solid fa-heart" aria-hidden="true"></i><h3>Ærlighed</h3><p>Vi tør være ærlige over for os selv og hinanden.</p></article>
+<article class="value reveal"><span class="value__number">02</span><i class="fa-solid fa-mountain" aria-hidden="true"></i><h3>Mod</h3><p>Vi tør udfordre os selv og prøve noget nyt.</p></article>
+<article class="value reveal"><span class="value__number">03</span><i class="fa-solid fa-handshake" aria-hidden="true"></i><h3>Respekt</h3><p>Vi giver plads til hinanden og respekterer forskelligheder.</p></article>
+<article class="value reveal"><span class="value__number">04</span><i class="fa-solid fa-people-group" aria-hidden="true"></i><h3>Fællesskab</h3><p>Vi står sammen og hjælper hinanden med at lykkes.</p></article>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<div class="cta__box reveal">
+<h2>Et år du ikke skal opleve alene.</h2>
+<p>Fællesskabet bliver en del af din hverdag, dine oplevelser og de minder, du tager med dig videre.</p>
+<a class="button" href="/efterskolelivet/livet.html">Oplev livet på Arena X <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</div>
+</div>
+</section>
+
+<section class="arena-x-logo" aria-label="Arena X logo">
+<img src="/om/assets/Arena_x´s_logo_Efterskole_Arena_Forest.png" alt="Arena X Efterskole logo" loading="lazy">
+</section>
+</main>
+
+<div id="footer"></div>
+
+<script src="/navbar/navbar.js"></script>
+<script src="/footer/footer.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=> {
+    const reveal=document.querySelectorAll(".reveal");
+    const scroll=document.querySelector(".hero-scroll");
+
+    if("IntersectionObserver" in window){
+        const observer=new IntersectionObserver(entries=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{threshold:.12});
+        reveal.forEach(item=>observer.observe(item));
+    }else reveal.forEach(item=>item.classList.add("visible"));
+
+    const hideScroll=()=> {
+        if(window.scrollY>80) scroll?.classList.add("hidden");
+        else scroll?.classList.remove("hidden");
+    };
+
+    window.addEventListener("scroll",hideScroll,{passive:true});
+    hideScroll();
+});
+</script>
+
+</body>
+</html>

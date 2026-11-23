@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+/* =====================================================
+   GENERELLE INDSTILLINGER
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color: #222222;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: 100%;
+    min-height: 70vh;
+}
+
+
+/* =====================================================
+   HISTORIE
+===================================================== */
+
+.history {
+    padding: 60px 0 20px;
+}
+
+.history .container {
+    max-width: 900px;
+}
+
+.history p {
+    margin-bottom: 25px;
+    font-size: 21px;
+    color: #333333;
+}
+
+.history p:last-of-type {
+    margin-bottom: 0;
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   FØRSTE AFSNIT
+===================================================== */
+
+.history p:first-child {
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   ARENA X LOGOER
+===================================================== */
+
+.arena-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin-top: 65px;
+    padding: 45px 0 60px;
+    border-top: 1px solid #e5e5e5;
+}
+
+
+/* Logo */
+
+.arena-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    min-height: 120px;
+}
+
+.arena-logo img {
+    display: block;
+    width: auto;
+    max-width: 220px;
+    max-height: 140px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.arena-logo img:hover {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   PIL MELLEM LOGOERNE
+===================================================== */
+
+.arena-logo-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    font-size: 32px;
+    color: #222222;
+}
+
+
+/* =====================================================
+   MOBIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .arena-logos {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .arena-logo-arrow {
+        width: 50px;
+        height: 50px;
+
+        font-size: 28px;
+
+        /* Pil nedad på mobil */
+        transform: rotate(90deg);
+    }
+
+    .arena-logo {
+        width: 100%;
+    }
+
+    .arena-logo img {
+        max-width: 190px;
+        max-height: 120px;
+    }
+
+}
+
+/* =====================================================
+   TILGÆNGELIGHED / FOKUS
+===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+img:focus-visible {
+    outline: 3px solid #222222;
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 32px, 800px);
+    }
+
+    .breadcrumbs {
+        padding-top: 20px;
+    }
+
+    .page-header {
+        padding: 40px 0 35px;
+    }
+
+    .history {
+        padding-top: 45px;
+    }
+
+    .history p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .history p:first-child {
+        font-size: 18px;
+    }
+
+    .arena-logos {
+        gap: 40px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+
+    /* ---------------------------------------------
+       Breadcrumbs
+    --------------------------------------------- */
+
+    .breadcrumbs {
+        padding: 18px 0 12px;
+    }
+
+    .breadcrumbs__list {
+        gap: 7px;
+
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------------------------------------------
+       Page header
+    --------------------------------------------- */
+
+    .page-header {
+        padding: 32px 0;
+    }
+
+    .page-header h1 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+
+    /* ---------------------------------------------
+       Historie
+    --------------------------------------------- */
+
+    .history {
+        padding: 35px 0 10px;
+    }
+
+    .history p {
+        margin-bottom: 21px;
+
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .history p:first-child {
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+
+    /* ---------------------------------------------
+       Logoer
+    --------------------------------------------- */
+
+    .arena-logos {
+        flex-direction: column;
+
+        gap: 35px;
+
+        margin-top: 45px;
+        padding: 35px 0 45px;
+    }
+
+    .arena-logo {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .arena-logo img {
+        max-width: 190px;
+        max-height: 120px;
+    }
+
+}
+
+
+/* =====================================================
+   MEGET SMÅ SKÆRME
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .history p {
+        font-size: 15px;
+    }
+
+    .history p:first-child {
+        font-size: 17px;
+    }
+
+    .arena-logo img {
+        max-width: 165px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCERET BEVÆGELSE
+   Til brugere der har slået animationer fra
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}

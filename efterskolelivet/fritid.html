@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fritid | Arena X</title>
+<meta name="description" content="Fritid på Arena X – sport, fællesskab, aktiviteter, afslapning og plads til at være dig selv.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/css/undersider.css">
+
+<style>
+:root{
+--arena-white:#FFFFFF;--arena-cream:#f7f6f5;--arena-orange:#FF6F42;--arena-yellow:#FFFDBA;
+--arena-green:#1B4129;--arena-green-dark:#1F2D23;--arena-text:#1F2D23;--arena-blue:#A1D2E7;
+--arena-black:#000000;--arena-border:#e1e5e2;--arena-muted:#6b6b6b;
+--container:1080px;--container-wide:1180px;--radius-sm:6px;--radius-md:12px;--radius-lg:24px;
+--space-sm:1rem;--space-md:1.5rem;--space-lg:2.5rem;--space-xl:4rem;
+--space-section:clamp(4rem,8vw,8rem);--transition:180ms ease
+}
+
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(calc(100% - 40px),var(--container));margin:auto}
+h1,h2,h3{line-height:1.08}
+h2{font-size:clamp(32px,5vw,58px);letter-spacing:-.045em;margin:0 0 20px;color:var(--arena-green)}
+h3{font-size:23px; color:var(--arena-green);margin:15px 0 8px}
+p{margin:0 0 18px}
+.section-label{display:inline-flex;align-items:center;gap:10px;margin-bottom:15px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--arena-orange)}
+.section-label:before{content:"";width:28px;height:3px;background:var(--arena-orange);border-radius:99px}
+
+.hero{min-height: 82vh;position:relative;display:grid;align-items:end;overflow:hidden;color:var(--arena-white);background:var(--arena-green);  margin-top: 2rem; }
+.hero-bg{position:absolute; inset:0;background:linear-gradient(90deg,rgba(31,45,35,.94),rgba(31,45,35,.55),rgba(31,45,35,.18)),url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-120px;top:-100px;background:var(--arena-orange);opacity:.9}
+.hero-content{position:relative;z-index:2;padding:100px 0 90px;max-width:900px}
+.hero .section-label{color:var(--arena-yellow)}
+.hero h1{font-size:clamp(55px,10vw,120px);letter-spacing:-.07em;margin:0 0 25px}
+.hero p{font-size:clamp(18px,2vw,23px);max-width:760px;color:var(--arena-white)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.button{display:inline-flex;align-items:center;gap:9px;padding:14px 23px;border-radius:999px;background:var(--arena-yellow);color:var(--arena-green);text-decoration:none;font-weight:800;transition:transform var(--transition),box-shadow var(--transition)}
+.button:hover{transform:translateY(-4px);box-shadow:0 12px 25px #0003}
+.button.dark{background:var(--arena-orange);color:var(--arena-white)}
+
+.intro{padding:var(--space-section) 0;background:var(--arena-white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.intro-text p{font-size:18px;color:var(--arena-muted)}
+.big-number{font-size:clamp(80px,12vw,150px);font-weight:900;line-height:.8;color:var(--arena-yellow);-webkit-text-stroke:2px var(--arena-green);margin-bottom:25px}
+.quote{padding:25px;border-left:5px solid var(--arena-orange);font-size:20px;font-weight:700;color:var(--arena-green)}
+.photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 45px #1f2d2318}
+.photo img{height:500px;transition:transform .7s ease}
+.photo:hover img{transform:scale(1.05)}
+
+.section{padding:var(--space-section) 0}
+.section.light{background:var(--arena-cream)}
+.section.green{background:var(--arena-green);color:var(--arena-white)}
+.section.green h2{color:var(--arena-white)}
+.section.green .section-label{color:var(--arena-yellow)}
+/* .section.green p{color:var(--arena-white)} */
+
+.heading{max-width:760px;margin-bottom:50px}
+.heading p{font-size: 17px;color:var(--arena-white)}
+
+.activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.activity{position:relative;min-height:300px;border-radius:var(--radius-lg);overflow:hidden;color:var(--arena-white);background:var(--arena-green)}
+.activity img{position:absolute;inset:0;height:100%;transition:transform .6s ease}
+.activity:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#1f2d23e8,#1f2d2320)}
+.activity:hover img{transform:scale(1.08)}
+.activity-content{position:absolute;z-index:2;bottom:0;padding:25px}
+.activity h3{color:var(--arena-white);margin:0 0 8px}
+.activity p{font-size:14px;color:var(--arena-white);margin:0}
+
+.life-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.life-card{background:var(--arena-white); border:1px solid var(--arena-border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+.life-card:hover{transform:translateY(-7px);box-shadow:0 20px 40px #1f2d2315}
+.life-card img{height:270px}
+.life-body{padding:27px}
+.life-body p{color:var(--arena-green-dark)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.split-image{min-height:500px;background:url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1400&q=85") center/cover}
+.split-content{padding:80px 8vw;background:var(--arena-blue);display:flex;flex-direction:column;justify-content:center}
+.split-content p{font-size:18px;max-width:580px}
+.points{display:grid;gap:13px;margin-top:15px}
+.point{display:flex;gap:13px;align-items:flex-start;font-weight:700}
+.point i{color:var(--arena-orange);margin-top:5px}
+
+.gallery{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-template-rows:250px 250px;gap:15px}
+.gallery figure{margin:0;overflow:hidden;border-radius:var(--radius-md)}
+.gallery img{height:100%;transition:transform .6s ease}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figure:first-child{grid-row:span 2}
+
+.quote-section{padding:var(--space-section) 0;background:var(--arena-yellow);text-align:center}
+.quote-section blockquote{max-width:850px;margin:auto;font-size:clamp(28px,5vw,52px);font-weight:900;line-height:1.1;letter-spacing:-.04em;color:var(--arena-green)}
+.quote-section span{display:block;margin-top:25px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--arena-orange)}
+
+.final{padding:var(--space-section) 0;background:var(--arena-green-dark);color:var(--arena-white);text-align:center;position:relative;overflow:hidden}
+.final:before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:var(--arena-orange);opacity:.15;left:-180px;top:-180px}
+.final-content{position:relative;z-index:2;max-width:800px;margin:auto}
+.final h2{color:var(--arena-white);font-size:clamp(38px,6vw,70px)}
+.final p{font-size:19px;color:var(--arena-white)}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+.delay1{transition-delay:.1s}.delay2{transition-delay:.2s}.delay3{transition-delay:.3s}
+
+.backtop{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border:0;border-radius:50%;background:var(--arena-orange);color:var(--arena-white);cursor:pointer;opacity:0;pointer-events:none;transform:translateY(15px);transition:.25s;z-index:20}
+.backtop.show{opacity:1;pointer-events:auto;transform:none}
+.backtop:hover{transform:translateY(-4px)}
+
+:focus-visible{outline:3px solid var(--arena-orange);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:900px){
+.intro-grid,.split,.life-grid{grid-template-columns:1fr}
+.activity-grid{grid-template-columns:repeat(2,1fr)}
+.gallery{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px}
+.gallery figure:first-child{grid-row:auto;grid-column:span 2}
+.split-content{padding:65px 30px}
+}
+@media(max-width:550px){
+.container{width:min(calc(100% - 28px),var(--container))}
+.hero{min-height:780px}
+.hero-content{padding:80px 0 65px}
+.hero h1{font-size:58px}
+.activity-grid{grid-template-columns:1fr}
+.gallery{display:grid;grid-template-columns:1fr;grid-template-rows:240px 240px 240px}
+.gallery figure:first-child{grid-column:auto}
+.photo img{height:380px}
+.life-card img{height:230px}
+}
+</style>
+</head>
+
+<body>
+<!--  NAVBAR -->
+<div id="navbar"></div>
+
+
+
+<main>
+
+<!--  BREADCRUMBS -->
+<div class="container">
+    <nav class="breadcrumbs" aria-label="Brødkrummer" >
+        <ol class="breadcrumbs__list">
+            <li> <a href="/"> <i class="fa-solid fa-house" aria-hidden="true" ></i> <span>Hjem</span> </a> </li>
+            <li class="breadcrumbs__separator" aria-hidden="true" > <i class="fa-solid fa-chevron-right"></i> </li>
+            <li aria-current="page"> Fritid - Arena X  </li>
+        </ol>
+    </nav>
+</div>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="container hero-content reveal">
+<span class="section-label">Efterskolelivet · Arena X</span>
+<h1>Fritid.</h1>
+<p>Det er ikke kun timerne i undervisningen, der gør et efterskoleår til noget særligt. Når skoledagen slutter, begynder en anden del af livet – fyldt med venner, sport, grin, musik, spontane idéer og tid til bare at være dig.</p>
+<div class="hero-actions">
+<a class="button" href="#hverdagen">Se hvad man laver <i class="fa-solid fa-arrow-down"></i></a>
+<a class="button dark" href="#faellesskab">Fællesskab <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+
+<section class="intro">
+<div class="container intro-grid">
+<div class="intro-text reveal">
+<span class="section-label">Efter undervisningen</span>
+<h2>Din fritid. Dit valg.</h2>
+<p>På Arena X er fritiden en vigtig del af efterskolelivet. Når undervisningen er slut, er der ikke én rigtig måde at bruge tiden på.</p>
+<p>Måske har du lyst til at træne. Måske vil du hænge ud med vennerne, spille musik, game, tage en tur udenfor eller bare slappe af efter en lang dag.</p>
+<p>Det vigtigste er, at der er plads til forskellige mennesker og forskellige måder at være sammen på.</p>
+<div class="quote">“Du behøver ikke være med til alt. Men du skal have mulighed for at være med til noget.”</div>
+</div>
+<div class="photo reveal delay1">
+<img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=85" alt="Unge venner der hygger sammen">
+</div>
+</div>
+</section>
+
+<section class="section light" id="hverdagen">
+<div class="container">
+<div class="heading reveal">
+<span class="section-label">Når dagen fortsætter</span>
+<h2>Hvad laver man egentlig i sin fritid?</h2>
+<p>Efterskole er ikke kun skemaer og undervisning. Det er også alle de små ting, der sker mellem dagens faste aktiviteter.</p>
+</div>
+
+<div class="activity-grid">
+<article class="activity reveal"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=80" alt="Sport og aktivitet"><div class="activity-content"><h3>Sport</h3><p>En ekstra træning, en spontan kamp eller bare en tur ud og bevæge sig.</p></div></article>
+<article class="activity reveal delay1"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Venner sammen"><div class="activity-content"><h3>Venner</h3><p>Snak, grin, gåture og de samtaler, der fortsætter langt efter sengetid.</p></div></article>
+<article class="activity reveal delay2"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Musik og arrangement"><div class="activity-content"><h3>Events</h3><p>Fælles aktiviteter, aftener og oplevelser, som man husker bagefter.</p></div></article>
+<article class="activity reveal delay3"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Gaming"><div class="activity-content"><h3>Gaming</h3><p>Slå dig ned med vennerne og tag en omgang, når konkurrencelysten rammer.</p></div></article>
+</div>
+</div>
+</section>
+
+<section class="section green" id="faellesskab">
+<div class="container">
+<div class="heading reveal">
+<span class="section-label">Det uplanlagte</span>
+<h2>De bedste øjeblikke står sjældent i kalenderen.</h2>
+<p>På en efterskole sker der hele tiden noget. En idé opstår på gangen. Nogen spørger, om du vil med ud. En bold bliver sparket i gang. En gruppe ender med at sidde og snakke i flere timer.</p>
+</div>
+
+<div class="life-grid">
+<article class="life-card reveal"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85" alt="Venner der hygger"><div class="life-body"><h3>Vær sammen</h3><p>Fritiden giver plads til de relationer, der gør efterskoleåret personligt. Du lærer mennesker at kende på en helt anden måde, når I også deler hverdagen uden for undervisningen.</p></div></article>
+<article class="life-card reveal delay1"><img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=1000&q=85" alt="Unge udendørs"><div class="life-body"><h3>Gør noget nyt</h3><p>Du behøver ikke have en plan. Måske prøver du noget, du aldrig har gjort før, fordi en ven spørger, om du vil være med. Det er en del af oplevelsen.</p></div></article>
+</div>
+</div>
+</section>
+
+<section class="split">
+<div class="split-image reveal"></div>
+<div class="split-content">
+<span class="section-label">Plads til forskellighed</span>
+<h2>Fritid handler også om at koble af.</h2>
+<p>Et efterskoleår kan være intenst. Derfor er det vigtigt, at der også er tid til at trække vejret, være alene eller lave noget helt andet end det, du har lavet resten af dagen.</p>
+<p>Du kan læse, høre musik, se en film, tage en snak eller bare finde et roligt sted. Fritid skal ikke føles som endnu en opgave.</p>
+<div class="points">
+<div class="point"><i class="fa-solid fa-check"></i><span>Tid til venner og fællesskab</span></div>
+<div class="point"><i class="fa-solid fa-check"></i><span>Mulighed for sport og aktivitet</span></div>
+<div class="point"><i class="fa-solid fa-check"></i><span>Plads til egne interesser</span></div>
+<div class="point"><i class="fa-solid fa-check"></i><span>Ro, afslapning og tid for dig selv</span></div>
+</div>
+</div>
+</section>
+
+<section class="section light">
+<div class="container">
+<div class="heading reveal">
+<span class="section-label">En almindelig aften?</span>
+<h2>Der findes ikke én rigtig efterskoleaften.</h2>
+<p>Den ene aften kan være fuld af energi. Den næste kan være helt stille. Begge dele hører til.</p>
+</div>
+
+<div class="gallery reveal">
+<figure><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85" alt="Venner sammen udendørs"></figure>
+<figure><img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=85" alt="Musik og fællesskab"></figure>
+<figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Udendørs aktivitet"></figure>
+<figure><img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=900&q=85" alt="Venner der slapper af"></figure>
+<figure><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=85" alt="Fælles arrangement"></figure>
+</div>
+</div>
+</section>
+
+<section class="quote-section">
+<div class="container reveal">
+<blockquote>“Det er ofte de små øjeblikke efter undervisningen, man ender med at huske bedst.”</blockquote>
+<span>Arena X · Fritid & fællesskab</span>
+</div>
+</section>
+
+<section class="final">
+<div class="container final-content reveal">
+<span class="section-label">Dit år på Arena X</span>
+<h2>Et år med plads til mere end undervisning.</h2>
+<p>Fritiden er der, hvor du kan være sammen med andre, dyrke det du elsker, prøve noget nyt og finde ud af, hvem du er, når du selv vælger, hvad der skal ske.</p>
+<a class="button" href="#top">Til toppen <i class="fa-solid fa-arrow-up"></i></a>
+</div>
+</section>
+
+</main>
+
+<button class="backtop" aria-label="Til toppen"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- =====================================================
+FOOTER
+====================================================== -->
+<div id="footer"></div>
+
+<!-- =======================================================
+JAVASCRIPT
+======================================================= -->
+
+<script src="/arena_x_navbar/arena_x_navbar.js"></script>
+<script src="/arena_x_footer/arena_x_footer.js"></script>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});
+reveals.forEach(el=>observer.observe(el));
+
+const topBtn=document.querySelector(".backtop");
+window.addEventListener("scroll",()=>topBtn.classList.toggle("show",scrollY>500));
+topBtn.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+</script>
+
+</body>
+</html>

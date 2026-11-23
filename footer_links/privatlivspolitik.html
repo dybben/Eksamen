@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Privatlivspolitik | Arena X</title>
+
+  <meta
+    name="description"
+    content="Læs Arena X's privatlivspolitik og få overblik over, hvordan vi behandler personoplysninger."
+  >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >
+    <link rel="stylesheet" href="/arena_x_css/arena_x_undersider.css">
+
+  <style>
+    /* =========================================================
+       ARENA X — DESIGN TOKENS
+       ========================================================= */
+
+    :root {
+      --arena-white: #FFFFFF;
+      --arena-cream: #f7f6f5;
+      --arena-orange: #FF6F42;
+      --arena-yellow: #FFFDBA;
+      --arena-green: #1B4129;
+      --arena-green-dark: #1F2D23;
+      --arena-text: #1F2D23;
+      --arena-blue: #A1D2E7;
+      --arena-black: #000000;
+      --arena-border: #e1e5e2;
+      --arena-muted: #6b6b6b;
+
+      --container: 1080px;
+      --container-wide: 1180px;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+      --radius-round: 50%;
+
+      --space-xs: .5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      --space-section: clamp(4rem, 8vw, 8rem);
+
+      --text-xs: .75rem;
+      --text-sm: .875rem;
+      --text-base: 1rem;
+      --text-lg: 1.25rem;
+      --text-xl: clamp(2rem, 4vw, 3rem);
+
+      --transition: 180ms ease;
+
+      --shadow-sm:
+        0 4px 16px rgba(31, 45, 35, .06);
+
+      --shadow-md:
+        0 16px 40px rgba(31, 45, 35, .10);
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--arena-cream);
+      color: var(--arena-text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      font-size: var(--text-base);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    ::selection {
+      background: var(--arena-yellow);
+      color: var(--arena-green-dark);
+    }
+
+
+    /* =========================================================
+       ACCESSIBILITY
+       ========================================================= */
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -100px;
+      z-index: 9999;
+
+      padding: .75rem 1rem;
+      border-radius: var(--radius-sm);
+
+      background: var(--arena-orange);
+      color: var(--arena-white);
+      font-weight: 700;
+      text-decoration: none;
+
+      transition: top var(--transition);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--arena-orange);
+      outline-offset: 4px;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255, 255, 255, .94);
+      border-bottom: 1px solid rgba(225, 229, 226, .9);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 2rem), var(--container-wide));
+      min-height: 76px;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+
+      color: var(--arena-green);
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: var(--arena-orange);
+      color: var(--arena-white);
+
+      font-size: .8rem;
+      font-weight: 900;
+
+      transition:
+        transform var(--transition),
+        border-radius var(--transition);
+    }
+
+    .logo:hover .logo-mark {
+      transform: rotate(-5deg) scale(1.05);
+      border-radius: 7px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+
+      color: var(--arena-green);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link span {
+      transition: transform var(--transition);
+    }
+
+    .back-link:hover span {
+      transform: translateX(-4px);
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding:
+        clamp(4.5rem, 10vw, 8rem)
+        1rem
+        clamp(4rem, 8vw, 7rem);
+
+      background: var(--arena-green);
+      color: var(--arena-white);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 320px;
+      height: 320px;
+
+      top: -180px;
+      right: -100px;
+
+      background: var(--arena-orange);
+      opacity: .95;
+    }
+
+    .hero::after {
+      width: 220px;
+      height: 220px;
+
+      bottom: -140px;
+      left: 5%;
+
+      background: var(--arena-blue);
+      opacity: .8;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+
+      width: min(100%, var(--container));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+
+      margin-bottom: 1rem;
+
+      color: var(--arena-yellow);
+      font-size: var(--text-sm);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--arena-orange);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0;
+
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 1.75rem 0 0;
+
+      color: rgba(255, 255, 255, .78);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .updated {
+      display: inline-flex;
+      margin-top: 2rem;
+
+      padding: .55rem .8rem;
+
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, .07);
+
+      color: rgba(255, 255, 255, .75);
+      font-size: var(--text-sm);
+    }
+
+
+    /* =========================================================
+       MAIN LAYOUT
+       ========================================================= */
+
+    .page-layout {
+      width: min(calc(100% - 2rem), var(--container-wide));
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: clamp(2rem, 5vw, 5rem);
+
+      padding: var(--space-section) 0;
+    }
+
+
+    /* =========================================================
+       CONTENT NAVIGATION
+       ========================================================= */
+
+    .toc {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .toc-label {
+      margin-bottom: .8rem;
+
+      color: var(--arena-muted);
+      font-size: var(--text-xs);
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .toc-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      border-left: 2px solid var(--arena-border);
+    }
+
+    .toc-list li {
+      margin: 0;
+    }
+
+    .toc-link {
+      position: relative;
+
+      display: block;
+
+      padding: .55rem 1rem;
+
+      color: var(--arena-muted);
+      font-size: var(--text-sm);
+      line-height: 1.4;
+      text-decoration: none;
+
+      transition:
+        color var(--transition),
+        padding-left var(--transition);
+    }
+
+    .toc-link::before {
+      content: "";
+
+      position: absolute;
+      left: -2px;
+      top: 0;
+      bottom: 0;
+
+      width: 3px;
+
+      background: var(--arena-orange);
+
+      transform: scaleY(0);
+      transform-origin: center;
+
+      transition: transform var(--transition);
+    }
+
+    .toc-link:hover,
+    .toc-link.active {
+      color: var(--arena-green);
+      font-weight: 750;
+      padding-left: 1.25rem;
+    }
+
+    .toc-link.active::before {
+      transform: scaleY(1);
+    }
+
+
+    /* =========================================================
+       POLICY CONTENT
+       ========================================================= */
+
+    .policy {
+      min-width: 0;
+    }
+
+    .policy-section {
+      margin-bottom: 1.5rem;
+
+      scroll-margin-top: 100px;
+    }
+
+    .policy-card {
+      padding: clamp(1.5rem, 4vw, 2.75rem);
+
+      background: var(--arena-white);
+      border: 1px solid var(--arena-border);
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow-sm);
+    }
+
+    .policy-section h2 {
+      margin: 0 0 1rem;
+
+      color: var(--arena-green);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+    }
+
+    .policy-section h3 {
+      margin: 2rem 0 .6rem;
+
+      color: var(--arena-green-dark);
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .policy-section p {
+      margin: 0 0 1rem;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section ul {
+      margin: 1rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .policy-section li {
+      margin: .4rem 0;
+      padding-left: .2rem;
+    }
+
+    .policy-section li::marker {
+      color: var(--arena-orange);
+    }
+
+
+    /* =========================================================
+       HIGHLIGHT BOX
+       ========================================================= */
+
+    .highlight {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.4rem;
+
+      border-left: 5px solid var(--arena-orange);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+      background: var(--arena-yellow);
+    }
+
+    .highlight strong {
+      color: var(--arena-green);
+    }
+
+
+    /* =========================================================
+       ACCORDION
+       ========================================================= */
+
+    details {
+      margin-top: 1rem;
+
+      border: 1px solid var(--arena-border);
+      border-radius: var(--radius-md);
+
+      background: var(--arena-cream);
+
+      overflow: hidden;
+    }
+
+    details + details {
+      margin-top: .75rem;
+    }
+
+    summary {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      padding: 1rem 1.1rem;
+
+      cursor: pointer;
+      list-style: none;
+
+      color: var(--arena-green);
+      font-weight: 800;
+
+      transition:
+        background var(--transition),
+        color var(--transition);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+
+      flex: 0 0 auto;
+
+      width: 28px;
+      height: 28px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--arena-white);
+
+      font-size: 1.2rem;
+      font-weight: 500;
+
+      transition:
+        transform var(--transition),
+        background var(--transition);
+    }
+
+    details[open] summary {
+      background: var(--arena-white);
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+      background: var(--arena-orange);
+      color: var(--arena-white);
+    }
+
+    details .details-content {
+      padding: 0 1.1rem 1.2rem;
+      border-top: 1px solid var(--arena-border);
+    }
+
+
+    /* =========================================================
+       CONTACT CTA
+       ========================================================= */
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+
+      margin-top: 1.5rem;
+      padding: clamp(1.75rem, 5vw, 3rem);
+
+      border-radius: var(--radius-lg);
+
+      background: var(--arena-orange);
+      color: var(--arena-white);
+
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-card::after {
+      content: "X";
+
+      position: absolute;
+      right: 1rem;
+      bottom: -2rem;
+
+      color: rgba(255, 255, 255, .12);
+      font-size: 12rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card h2 {
+      margin: 0 0 .75rem;
+
+      color: var(--arena-white);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -.045em;
+    }
+
+    .contact-card p {
+      max-width: 600px;
+      margin: 0 0 1.5rem;
+      color: rgba(255, 255, 255, .88);
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+
+      padding: .85rem 1.15rem;
+
+      border-radius: 999px;
+
+      background: var(--arena-white);
+      color: var(--arena-green);
+
+      font-weight: 800;
+      text-decoration: none;
+
+      transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .site-footer {
+      padding: 3rem 1rem;
+
+      background: var(--arena-green-dark);
+      color: var(--arena-white);
+    }
+
+    .footer-inner {
+      width: min(100%, var(--container-wide));
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-weight: 900;
+      letter-spacing: -.03em;
+    }
+
+    .footer-meta {
+      margin-top: .25rem;
+
+      color: rgba(255, 255, 255, .6);
+      font-size: var(--text-sm);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, .75);
+      font-size: var(--text-sm);
+      text-decoration: none;
+
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--arena-yellow);
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+
+    .back-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 900;
+
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border: 0;
+      border-radius: 50%;
+
+      background: var(--arena-green);
+      color: var(--arena-white);
+
+      cursor: pointer;
+
+      box-shadow: var(--shadow-md);
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+
+      transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--arena-orange);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 800px) {
+
+      .page-layout {
+        display: block;
+        padding-top: 2rem;
+      }
+
+      .toc {
+        position: static;
+
+        margin-bottom: 1.5rem;
+      }
+
+      .toc-list {
+        display: flex;
+        gap: .5rem;
+
+        overflow-x: auto;
+
+        border-left: 0;
+        padding-bottom: .4rem;
+
+        scrollbar-width: thin;
+      }
+
+      .toc-list li {
+        flex: 0 0 auto;
+      }
+
+      .toc-link {
+        padding: .55rem .8rem;
+
+        border: 1px solid var(--arena-border);
+        border-radius: 999px;
+
+        background: var(--arena-white);
+      }
+
+      .toc-link:hover,
+      .toc-link.active {
+        padding-left: .8rem;
+
+        border-color: var(--arena-green);
+
+        background: var(--arena-green);
+        color: var(--arena-white);
+      }
+
+      .toc-link::before {
+        display: none;
+      }
+
+      .policy-card {
+        border-radius: var(--radius-md);
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .back-link {
+        font-size: var(--text-xs);
+      }
+
+      .back-link .back-text {
+        display: none;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .policy-card {
+        padding: 1.25rem;
+      }
+
+      .contact-card {
+        border-radius: var(--radius-md);
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+
+      transition:
+        opacity 500ms ease,
+        transform 500ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">
+    Gå til indhold
+  </a>
+
+  <!--  NAVBAR -->
+  <div id="navbar"></div>
+
+  <!--  BREADCRUMBS -->
+  <div class="container">
+      <nav class="breadcrumbs" aria-label="Brødkrummer" >
+          <ol class="breadcrumbs__list">
+              <li> <a href="/"> <i class="fa-solid fa-house" aria-hidden="true" ></i> <span>Hjem</span> </a> </li>
+              <li class="breadcrumbs__separator" aria-hidden="true" > <i class="fa-solid fa-chevron-right"></i> </li>
+              <li aria-current="page"> Privatlivspolitik - Arena X  </li>
+          </ol>
+      </nav>
+  </div>
+
+  <!-- =================================================
+  PAGE HEADER
+  ================================================== -->
+  <header class="page-header">
+      <div class="container">
+          <h1> Privatlivspolitik - Arena X  </h1>
+      </div>
+  </header>
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        Arena X
+      </div>
+
+      <h1>
+        Privatlivspolitik
+      </h1>
+
+      <p>
+        Her kan du læse, hvordan Arena X behandler personoplysninger,
+        og hvilke rettigheder du har.
+      </p>
+
+      <!-- TODO:
+           Opdater datoen, når politikken ændres.
+      -->
+      <div class="updated">
+        Senest opdateret: 3. september 2026
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =======================================================
+       MAIN
+       ======================================================= -->
+
+  <main id="main">
+
+    <div class="page-layout">
+
+
+      <!-- =====================================================
+           TABLE OF CONTENTS
+           ===================================================== -->
+
+      <aside class="toc" aria-label="Indholdsoversigt">
+
+        <div class="toc-label">
+          Indhold
+        </div>
+
+        <nav>
+          <ul class="toc-list">
+
+            <li>
+              <a class="toc-link active" href="#ansvarlig">
+                Dataansvarlig
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#oplysninger">
+                Oplysninger
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#formaal">
+                Formål
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#grundlag">
+                Behandlingsgrundlag
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#opbevaring">
+                Opbevaring
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#videregivelse">
+                Videregivelse
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#cookies">
+                Cookies
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#rettigheder">
+                Dine rettigheder
+              </a>
+            </li>
+
+            <li>
+              <a class="toc-link" href="#kontakt">
+                Kontakt
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </aside>
+
+
+      <!-- =====================================================
+           POLICY
+           ===================================================== -->
+
+      <div class="policy">
+
+
+        <!-- DATAANSVARLIG -->
+        <section
+          id="ansvarlig"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>1. Hvem er ansvarlig for dine oplysninger?</h2>
+
+            <p>
+              Arena X er dataansvarlig for behandlingen af de
+              personoplysninger, som vi modtager gennem vores
+              hjemmeside og vores kontakt med elever, forældre,
+              medarbejdere og andre, der er i kontakt med skolen.
+            </p>
+
+            <div class="highlight">
+              <strong>Dataansvarlig</strong><br>
+              Arena X<br>
+              <!-- TODO: Indsæt korrekt adresse -->
+              [Arena X's adresse]<br>
+              <!-- TODO: Indsæt korrekt CVR -->
+              CVR: [CVR-nummer]<br>
+              <!-- TODO: Indsæt korrekt e-mail -->
+              E-mail: [email]
+            </div>
+
+            <p>
+              Vi behandler personoplysninger i overensstemmelse med
+              gældende databeskyttelseslovgivning, herunder
+              databeskyttelsesforordningen (GDPR) og den danske
+              databeskyttelseslov.
+            </p>
+
+          </div>
+        </section>
+
+
+        <!-- OPLYSNINGER -->
+        <section
+          id="oplysninger"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>2. Hvilke personoplysninger behandler vi?</h2>
+
+            <p>
+              De oplysninger, vi behandler, afhænger af, hvordan du
+              bruger vores hjemmeside og er i kontakt med Arena X.
+            </p>
+
+            <details>
+              <summary>Kontaktformularer og henvendelser</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Hvis du kontakter os via en formular, e-mail eller
+                  anden digital kanal, kan vi eksempelvis behandle:
+                </p>
+
+                <ul>
+                  <li>Navn</li>
+                  <li>E-mailadresse</li>
+                  <li>Telefonnummer</li>
+                  <li>Indholdet af din henvendelse</li>
+                  <li>Andre oplysninger, som du selv vælger at sende til os</li>
+                </ul>
+
+              </div>
+            </details>
+
+
+            <details>
+              <summary>Henvendelser om efterskoleophold</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Hvis du eller dine forældre kontakter Arena X med
+                  spørgsmål om et efterskoleophold eller en ansøgning,
+                  kan vi behandle de oplysninger, der er nødvendige
+                  for at besvare henvendelsen og håndtere den
+                  relevante proces.
+                </p>
+
+              </div>
+            </details>
+
+
+            <details>
+              <summary>Tekniske oplysninger</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Når du besøger hjemmesiden, kan der automatisk
+                  blive registreret tekniske oplysninger såsom
+                  IP-adresse, browsertype, enhedstype og oplysninger
+                  om din brug af hjemmesiden.
+                </p>
+
+                <p>
+                  Omfanget afhænger af, hvilke tekniske løsninger,
+                  statistikværktøjer og cookies hjemmesiden anvender.
+                </p>
+
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+
+        <!-- FORMÅL -->
+        <section
+          id="formaal"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>3. Hvad bruger vi oplysningerne til?</h2>
+
+            <p>
+              Vi bruger personoplysninger, når det er nødvendigt
+              for at kunne drive Arena X og kommunikere med dig.
+            </p>
+
+            <ul>
+              <li>
+                At besvare spørgsmål og henvendelser.
+              </li>
+
+              <li>
+                At kommunikere med elever, forældre og andre
+                relevante personer.
+              </li>
+
+              <li>
+                At administrere henvendelser og processer i
+                forbindelse med skolen.
+              </li>
+
+              <li>
+                At sikre, vedligeholde og forbedre hjemmesiden.
+              </li>
+
+              <li>
+                At overholde juridiske forpligtelser.
+              </li>
+            </ul>
+
+            <p>
+              Vi forsøger altid at begrænse behandlingen til de
+              oplysninger, der er relevante og nødvendige for det
+              konkrete formål.
+            </p>
+
+          </div>
+        </section>
+
+
+        <!-- GRUNDLAG -->
+        <section
+          id="grundlag"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>4. Hvad er grundlaget for behandlingen?</h2>
+
+            <p>
+              Vi behandler kun personoplysninger, når der er et
+              lovligt grundlag for behandlingen.
+            </p>
+
+            <p>
+              Det konkrete behandlingsgrundlag afhænger af, hvilken
+              situation der er tale om. Det kan eksempelvis være,
+              at behandlingen er nødvendig for at opfylde en aftale,
+              for at overholde en retlig forpligtelse, fordi vi har
+              en legitim interesse, eller fordi du har givet dit
+              samtykke.
+            </p>
+
+            <div class="highlight">
+              <strong>Dit samtykke</strong><br>
+              Når behandlingen er baseret på samtykke, kan du til
+              enhver tid trække dit samtykke tilbage. Det påvirker
+              ikke lovligheden af den behandling, der allerede er
+              foretaget på baggrund af dit samtykke.
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- OPBEVARING -->
+        <section
+          id="opbevaring"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>5. Hvor længe gemmer vi dine oplysninger?</h2>
+
+            <p>
+              Vi opbevarer personoplysninger, så længe det er
+              nødvendigt for det formål, oplysningerne blev indsamlet
+              til, eller så længe vi er forpligtede til det efter
+              gældende lovgivning.
+            </p>
+
+            <p>
+              Når oplysningerne ikke længere er nødvendige, sletter
+              eller anonymiserer vi dem, medmindre vi har et andet
+              lovligt grundlag for at opbevare dem.
+            </p>
+
+            <!-- TODO:
+                 Indsæt konkrete slettefrister, hvis I har fastlagt dem.
+            -->
+
+          </div>
+        </section>
+
+
+        <!-- VIDEREGIVELSE -->
+        <section
+          id="videregivelse"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>6. Hvem kan få adgang til oplysningerne?</h2>
+
+            <p>
+              Vi videregiver ikke personoplysninger til andre, medmindre
+              det er nødvendigt og der er et lovligt grundlag for det.
+            </p>
+
+            <p>
+              Vi kan benytte leverandører, som behandler personoplysninger
+              på vores vegne. Disse leverandører fungerer som
+              databehandlere og må kun behandle oplysninger efter vores
+              instruks og i overensstemmelse med gældende regler.
+            </p>
+
+            <details>
+              <summary>Eksterne leverandører</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Det kan eksempelvis være leverandører af:
+                </p>
+
+                <ul>
+                  <li>Hosting og drift</li>
+                  <li>E-mail og kommunikation</li>
+                  <li>Kontaktformularer</li>
+                  <li>Analyse og statistik</li>
+                  <li>Andre tekniske funktioner på hjemmesiden</li>
+                </ul>
+
+                <p>
+                  <!-- TODO:
+                       Indsæt konkrete leverandører, når hjemmesidens
+                       tekniske setup er fastlagt.
+                  -->
+                  De konkrete leverandører afhænger af Arena X's
+                  aktuelle tekniske løsninger.
+                </p>
+
+              </div>
+            </details>
+
+            <p>
+              Hvis oplysninger overføres til lande uden for EU/EØS,
+              sørger vi for, at overførslen sker på et lovligt
+              grundlag og med de nødvendige sikkerhedsforanstaltninger.
+            </p>
+
+          </div>
+        </section>
+
+
+        <!-- COOKIES -->
+        <section
+          id="cookies"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>7. Cookies</h2>
+
+            <p>
+              Arena X's hjemmeside kan anvende cookies og lignende
+              teknologier.
+            </p>
+
+            <p>
+              Cookies kan blandt andet være nødvendige for, at
+              hjemmesiden fungerer korrekt, eller bruges til statistik,
+              funktionalitet og eventuel markedsføring.
+            </p>
+
+            <div class="highlight">
+              <strong>Bemærk:</strong>
+              Dette afsnit skal tilpasses den faktiske cookieopsætning
+              på Arena X's hjemmeside.
+            </div>
+
+            <details>
+              <summary>Nødvendige cookies</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Nødvendige cookies kan være nødvendige for at få
+                  hjemmesiden til at fungere og kan normalt ikke
+                  fravælges gennem hjemmesidens cookieindstillinger.
+                </p>
+
+              </div>
+            </details>
+
+            <details>
+              <summary>Statistik og analyse</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Hvis Arena X anvender analyseværktøjer, kan disse
+                  bruges til at forstå, hvordan hjemmesiden anvendes,
+                  så vi kan forbedre brugeroplevelsen.
+                </p>
+
+                <!-- TODO:
+                     Indsæt eksempelvis Google Analytics, Matomo,
+                     Plausible eller andet, hvis relevant.
+                -->
+
+              </div>
+            </details>
+
+            <details>
+              <summary>Sådan administrerer du cookies</summary>
+
+              <div class="details-content">
+
+                <p>
+                  Du kan administrere eller slette cookies via
+                  indstillingerne i din browser. Hvis hjemmesiden
+                  anvender et egentligt cookie-samtykkeværktøj, kan
+                  dine valg også administreres her.
+                </p>
+
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+
+        <!-- RETTIGHEDER -->
+        <section
+          id="rettigheder"
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>8. Dine rettigheder</h2>
+
+            <p>
+              Når vi behandler dine personoplysninger, har du som
+              udgangspunkt en række rettigheder efter
+              databeskyttelsesreglerne.
+            </p>
+
+            <details open>
+              <summary>Ret til indsigt</summary>
+
+              <div class="details-content">
+                <p>
+                  Du kan bede om at få indsigt i de personoplysninger,
+                  vi behandler om dig.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Ret til berigtigelse</summary>
+
+              <div class="details-content">
+                <p>
+                  Du kan bede om at få urigtige eller ufuldstændige
+                  oplysninger rettet.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Ret til sletning</summary>
+
+              <div class="details-content">
+                <p>
+                  I visse tilfælde kan du bede om at få dine
+                  personoplysninger slettet.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Ret til begrænsning</summary>
+
+              <div class="details-content">
+                <p>
+                  I visse tilfælde kan du bede om, at behandlingen
+                  af dine personoplysninger begrænses.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Ret til dataportabilitet</summary>
+
+              <div class="details-content">
+                <p>
+                  I visse tilfælde har du ret til at modtage
+                  oplysninger, du selv har givet os, i et struktureret,
+                  almindeligt anvendt og maskinlæsbart format.
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Ret til indsigelse</summary>
+
+              <div class="details-content">
+                <p>
+                  Du kan i visse tilfælde gøre indsigelse mod vores
+                  behandling af dine personoplysninger.
+                </p>
+              </div>
+            </details>
+
+            <p style="margin-top: 1.5rem;">
+              Hvis du ønsker at gøre brug af dine rettigheder, kan du
+              kontakte Arena X via kontaktoplysningerne nedenfor.
+            </p>
+
+            <div class="highlight">
+              <strong>Du har også mulighed for at klage.</strong><br>
+              Hvis du mener, at vores behandling af dine personoplysninger
+              ikke sker i overensstemmelse med reglerne, kan du kontakte
+              eller klage til Datatilsynet.
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- SIKKERHED -->
+        <section
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>9. Hvordan beskytter vi dine oplysninger?</h2>
+
+            <p>
+              Arena X arbejder for at beskytte personoplysninger mod
+              uautoriseret adgang, ændring, tab eller anden
+              uretmæssig behandling.
+            </p>
+
+            <p>
+              Vi anvender relevante tekniske og organisatoriske
+              sikkerhedsforanstaltninger, som løbende vurderes og
+              tilpasses efter behov.
+            </p>
+
+          </div>
+        </section>
+
+
+        <!-- ÆNDRINGER -->
+        <section
+          class="policy-section reveal"
+          data-section
+        >
+          <div class="policy-card">
+
+            <h2>10. Ændringer til privatlivspolitikken</h2>
+
+            <p>
+              Vi kan opdatere denne privatlivspolitik, hvis vores
+              behandling af personoplysninger ændrer sig, eller hvis
+              reglerne ændres.
+            </p>
+
+            <p>
+              Den seneste version vil altid være tilgængelig på
+              Arena X's hjemmeside.
+            </p>
+
+          </div>
+        </section>
+
+
+        <!-- KONTAKT -->
+        <section
+          id="kontakt"
+          class="policy-section reveal"
+          data-section
+        >
+
+          <div class="contact-card">
+
+            <h2>Har du spørgsmål?</h2>
+
+            <p>
+              Hvis du har spørgsmål til vores behandling af
+              personoplysninger eller ønsker at gøre brug af dine
+              rettigheder, er du altid velkommen til at kontakte os.
+            </p>
+
+            <!-- TODO: Erstat mailadressen -->
+            <a
+              class="contact-button"
+              href="mailto:[email]"
+            >
+              Kontakt Arena X
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </section>
+
+
+      </div>
+    </div>
+
+  </main>
+
+    <!-- =======================================================
+    BACK TO TOP
+    ======================================================= -->
+    <button class="back-to-top" type="button" aria-label="Til toppen" title="Til toppen" > ↑ </button>
+
+<!-- =====================================================
+FOOTER
+====================================================== -->
+<div id="footer"></div>
+
+<!-- =======================================================
+JAVASCRIPT
+======================================================= -->
+
+<script src="/arena_x_navbar/arena_x_navbar.js"></script>
+<script src="/arena_x_footer/arena_x_footer.js"></script>
+
+  <script>
+    (() => {
+      "use strict";
+
+      /*
+       * ======================================================
+       * ARENA X — PRIVATLIVSPOLITIK
+       * Micro-interactions & UX
+       * ======================================================
+       */
+
+
+      /* ------------------------------------------------------
+         1. ACTIVE TABLE OF CONTENTS
+         ------------------------------------------------------ */
+
+      const sections = document.querySelectorAll("[data-section]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+
+      const updateActiveToc = (id) => {
+        tocLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${id}`;
+
+          link.classList.toggle("active", isActive);
+
+          if (isActive) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+
+          const visibleSections = entries
+            .filter(entry => entry.isIntersecting)
+            .sort(
+              (a, b) =>
+                b.intersectionRatio - a.intersectionRatio
+            );
+
+          if (visibleSections.length > 0) {
+            updateActiveToc(
+              visibleSections[0].target.id
+            );
+          }
+
+        },
+        {
+          rootMargin: "-20% 0px -65% 0px",
+          threshold: [0, .2, .5, 1]
+        }
+      );
+
+
+      sections.forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+
+      /* ------------------------------------------------------
+         2. SMOOTH TOC NAVIGATION
+         ------------------------------------------------------ */
+
+      tocLinks.forEach(link => {
+
+        link.addEventListener("click", (event) => {
+
+          const targetId = link.getAttribute("href");
+
+          if (!targetId || !targetId.startsWith("#")) {
+            return;
+          }
+
+          const target = document.querySelector(targetId);
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior:
+              window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+              ).matches
+                ? "auto"
+                : "smooth",
+            block: "start"
+          });
+
+          history.replaceState(
+            null,
+            "",
+            targetId
+          );
+
+        });
+
+      });
+
+
+      /* ------------------------------------------------------
+         3. REVEAL ANIMATIONS
+         ------------------------------------------------------ */
+
+      const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+      if (
+        "IntersectionObserver" in window &&
+        revealElements.length
+      ) {
+
+        const revealObserver =
+          new IntersectionObserver(
+            (entries, observer) => {
+
+              entries.forEach(entry => {
+
+                if (!entry.isIntersecting) {
+                  return;
+                }
+
+                entry.target.classList.add(
+                  "is-visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              });
+
+            },
+            {
+              threshold: .08
+            }
+          );
+
+
+        revealElements.forEach(element => {
+          revealObserver.observe(element);
+        });
+
+      } else {
+
+        revealElements.forEach(element => {
+          element.classList.add("is-visible");
+        });
+
+      }
+
+
+      /* ------------------------------------------------------
+         4. BACK TO TOP
+         ------------------------------------------------------ */
+
+      const backToTop =
+        document.querySelector(".back-to-top");
+
+
+      const updateBackToTop = () => {
+
+        if (window.scrollY > 500) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+
+      };
+
+
+      window.addEventListener(
+        "scroll",
+        updateBackToTop,
+        { passive: true }
+      );
+
+
+      backToTop.addEventListener(
+        "click",
+        () => {
+
+          window.scrollTo({
+            top: 0,
+            behavior:
+              window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+              ).matches
+                ? "auto"
+                : "smooth"
+          });
+
+        }
+      );
+
+
+      updateBackToTop();
+
+
+      /* ------------------------------------------------------
+         5. ACCORDION MICRO-INTERACTION
+         ------------------------------------------------------ */
+
+      const detailsElements =
+        document.querySelectorAll("details");
+
+
+      detailsElements.forEach(details => {
+
+        details.addEventListener(
+          "toggle",
+          () => {
+
+            if (!details.open) {
+              return;
+            }
+
+            /*
+             * Kun én accordion kan være åben ad gangen
+             * inden for samme policy-card.
+             */
+            const parent =
+              details.parentElement;
+
+            if (!parent) {
+              return;
+            }
+
+            parent
+              .querySelectorAll("details")
+              .forEach(other => {
+
+                if (
+                  other !== details &&
+                  other.open
+                ) {
+                  other.open = false;
+                }
+
+              });
+
+          }
+        );
+
+      });
+
+
+      /* ------------------------------------------------------
+         6. KEYBOARD FRIENDLY DETAILS
+         ------------------------------------------------------ */
+
+      detailsElements.forEach(details => {
+
+        const summary =
+          details.querySelector("summary");
+
+        if (!summary) {
+          return;
+        }
+
+        summary.addEventListener(
+          "keydown",
+          (event) => {
+
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+
+              event.preventDefault();
+
+              details.open =
+                !details.open;
+
+            }
+
+          }
+        );
+
+      });
+
+
+      /* ------------------------------------------------------
+         7. YEAR
+         ------------------------------------------------------ */
+
+      const yearElement =
+        document.querySelector("[data-current-year]");
+
+      if (yearElement) {
+        yearElement.textContent =
+          new Date().getFullYear();
+      }
+
+    })();
+  </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* =====================================================
+   ARENA X – FONT / TYPOGRAPHY
+   Galano Classic | RWD 1920px → 320px
+===================================================== */
+
+@font-face{font-family:"GalanoClassicRegular";src:url("/css/GalanoClassic/GalanoClassicRegular.woff2") format("woff2");font-display:swap}
+
+:root{
+ --arena-x-white:#FFF;
+ --arena-x-cream:#f7f6f5;
+ --arena-x-orange:#FF6F42;
+ --arena-x-yellow:#FFFDBA;
+ --arena-x-green:#1B4129;
+ --arena-x-green-dark: #1F2D23; 
+ --arena-x-text:#1F2D23; 
+ --arena-x-blue:#A1D2E7;
+ --arena-x-black:#000;
+ --arena-x-border:#e1e5e2;
+ --arena-x-muted:#6b6b6b;
+
+ --arena-x-container:1080px;
+ --arena-x-container-wide:1180px;
+
+ --arena-x-radius-sm:6px;
+ --arena-x-radius-md:12px;
+ --arena-x-radius-lg:24px;
+ --arena-x-radius-round:50%;
+
+ --arena-x-space-xs:.5rem;
+ --arena-x-space-sm:1rem;
+ --arena-x-space-md:1.5rem;
+ --arena-x-space-lg:2.5rem;
+ --arena-x-space-xl:4rem;
+ --arena-x-space-section:clamp(4rem,8vw,8rem);
+
+ --arena-x-h1:34px;
+ --arena-x-h2:27px;
+ --arena-x-h3:21px;
+ --arena-x-text:17px;
+ --arena-x-small:13px;
+
+ --arena-x-heading-line:1.15;
+ --arena-x-text-line:1.5;
+ --arena-x-transition:180ms ease;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+*,
+*::before,
+*::after{box-sizing:border-box}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+ margin:0;
+ padding:0;
+ font-family:"GalanoClassicRegular",sans-serif;
+ color:var(--arena-x-text);
+ background:var(--arena-x-cream);
+ font-size:var(--arena-x-text);
+ line-height:var(--arena-x-text-line);
+}
+
+h1,h2,h3,p,a,span,label,strong,ul,ol,li,th,td,tr,button,input,textarea,select{
+ font-family:"GalanoClassicRegular",sans-serif;
+}
+
+h1,h2,h3{
+ margin:0 0 var(--arena-x-space-md);
+ color:var(--arena-x-green-dark);
+ line-height:var(--arena-x-heading-line);
+ font-weight:700;
+}
+
+h1{font-size:var(--arena-x-h1)}
+h2{font-size:var(--arena-x-h2)}
+h3{font-size:var(--arena-x-h3)}
+
+p,ul,ol,li{
+ font-size:var(--arena-x-text);
+ line-height:var(--arena-x-text-line);
+}
+
+p{margin:0 0 var(--arena-x-space-md)}
+ul,ol{list-style: none; margin:0 0 var(--arena-x-space-md);padding-left:1.4rem}
+li{margin-bottom:5px}
+
+
+a{
+ color:var(--arena-x-green-dark);
+ text-decoration:none;
+ transition:color var(--arena-x-transition);
+}
+
+a:hover{color:var(--arena-x-orange)}
+
+label{display:block;padding:10px 0}
+strong{font-weight:700}
+
+hr{
+ width:100%;
+ height:4px;
+ margin:0 0 20px;
+ border:0;
+ border-radius:var(--arena-x-radius-sm);
+ background:var(--arena-x-orange);
+}
+
+
+/* =========================
+   TABLET ≤1024px
+========================= */
+
+@media(max-width:1024px){
+ :root{
+  --arena-x-h1:32px;
+  --arena-x-h2:26px;
+  --arena-x-h3:20px;
+  --arena-x-text:16px;
+ }
+}
+
+
+/* =========================
+   MOBIL ≤767px
+========================= */
+
+@media(max-width:767px){
+ :root{
+  --arena-x-h1:31px;
+  --arena-x-h2:25px;
+  --arena-x-h3:20px;
+  --arena-x-text:16px;
+  --arena-x-small:12px;
+ }
+ ul,ol{padding-left:1.2rem}
+ hr{height:3px}
+}
+
+
+/* =========================
+   MOBIL ≤600px
+========================= */
+
+@media(max-width:600px){
+ :root{
+  --arena-x-h1:30px;
+  --arena-x-h2:24px;
+  --arena-x-h3:19px;
+  --arena-x-text:16px;
+ }
+}
+
+
+/* =========================
+   400px
+========================= */
+
+@media(max-width:400px){
+ :root{
+  --arena-x-h1:29px;
+  --arena-x-h2:23px;
+  --arena-x-h3:18px;
+  --arena-x-text:15px;
+  --arena-x-small:11px;
+ }
+ body{line-height:1.45}
+ ul,ol{padding-left:1rem}
+}
+
+
+/* =========================
+   320px – IPHONE 4
+========================= */
+
+@media(max-width:320px){
+ :root{
+  --arena-x-h1:28px;
+  --arena-x-h2:22px;
+  --arena-x-h3:18px;
+  --arena-x-text:15px;
+ }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+}

@@ -1,0 +1,912 @@
+/* =====================================================
+   ARENA X – REJSER
+   Layout / Travel Sections / Gallery / Responsive
+
+   TYPOGRAFI HENTES FRA:
+   arena_x_styles_font.css
+
+   H1 / H2 / H3 ændres IKKE her.
+===================================================== */
+
+
+/* =====================================================
+   REJSE-SPECIFIKKE VARIABLES
+===================================================== */
+
+:root {
+
+  /* REJSE-FARVER */
+
+  --arena-dark-deep: #17221b;
+  --arena-orange-light: #fff3e5;
+  --arena-yellow-strong: #fff08a;
+  --arena-green-light: #eaf1ed;
+  --arena-border-light: rgba(255, 255, 255, .15);
+
+  /* FONT */
+  --arena-x-font: "GalanoClassicRegular", sans-serif;
+
+
+  /* COLORS */
+  --arena-x-text: #1F2D23;
+  --arena-x-green-dark: #1F2D23;
+  --arena-x-green: #1B4129;
+  --arena-x-orange: #FF6F42;
+  --arena-x-muted: #6B6B6B;
+
+
+
+  /* COLORS */
+
+  --arena-white: #FFFFFF;
+  --arena-cream: #F7F6F5;
+  --arena-orange: #FF6F42;
+  --arena-yellow: #FFFDBA;
+  --arena-green: #1B4129;
+  --arena-green-dark: #1F2D23;
+  --arena-text: #1F2D23;
+  --arena-blue: #A1D2E7;
+  --arena-black: #000000;
+  --arena-border: #E1E5E2;
+  --arena-muted: #6B6B6B;
+
+
+  /* CONTAINERS */
+
+  --container: 1080px;
+  --container-wide: 1180px;
+
+
+  /* RADIUS */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-round: 50%;
+
+
+  /* SPACING */
+
+  --space-xs: .5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+
+
+  /* TEXT */
+
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+
+
+  /* TRANSITION */
+
+  --transition: 180ms ease;
+
+  /* HEADINGS */
+  --arena-x-h1: 34px;
+  --arena-x-h2: 27px;
+  --arena-x-h3: 21px;
+
+
+  /* BODY TEXT */
+  --arena-x-text-size: 17px;
+  --arena-x-small: 13px;
+
+
+  /* LINE HEIGHT */
+  --arena-x-heading-line: 1.15;
+  --arena-x-text-line: 1.5;
+
+
+  /* SPACING */
+  --arena-x-space-xs: .5rem;
+  --arena-x-space-sm: 1rem;
+  --arena-x-space-md: 1.5rem;
+  --arena-x-space-lg: 2.5rem;
+  --arena-x-space-xl: 4rem;
+
+
+  /* TRANSITION */
+  --arena-x-transition: 180ms ease;
+}
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  color: var(--arena-x-text);
+  background: var(--arena-white);
+
+  font-family: var(--arena-x-font);
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+  width: min(
+    1200px,
+    calc(100% - 40px)
+  );
+
+  margin-inline: auto;
+}
+
+
+/* =====================================================
+   TRAVEL INTRO
+===================================================== */
+
+.travel-intro {
+  max-width: 900px;
+
+  margin: 0 auto 80px;
+
+  text-align: center;
+}
+
+
+.travel-intro p {
+  margin: 0 0 18px;
+
+  color: var(--arena-x-text);
+
+  font-size: var(--arena-x-text-size);
+  line-height: var(--arena-x-text-line);
+}
+
+
+/* =====================================================
+   TRAVEL SECTION
+===================================================== */
+
+.travel-section {
+  max-width: 1100px;
+
+  margin: 0 auto 100px;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.travel-section__heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   SECTION NUMBER
+===================================================== */
+
+.travel-section__number {
+  flex: 0 0 55px;
+
+  width: 55px;
+  height: 55px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: var(--radius-round);
+
+  background: var(--arena-green);
+
+  color: var(--arena-white);
+
+  font-family: var(--arena-x-font);
+  font-size: var(--arena-x-text-size);
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.travel-section__label {
+  margin: 0 0 5px;
+
+  color: var(--arena-orange);
+
+  font-family: var(--arena-x-font);
+  font-size: var(--arena-x-small);
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+
+/* =====================================================
+   SECTION H2
+===================================================== */
+
+/*
+   VIGTIGT:
+
+   H2-størrelsen kommer fra
+   arena_x_styles_font.css:
+
+   h2 {
+     font-size: var(--arena-x-h2);
+   }
+
+   Derfor bruger rejser samme H2 som resten af hjemmesiden.
+*/
+
+.travel-section h2 {
+  position: relative;
+
+  margin: 0;
+
+  padding-bottom: 12px;
+
+  color: var(--arena-x-green-dark);
+
+  font-family: var(--arena-x-font);
+
+  font-size: var(--arena-x-h2);
+  line-height: var(--arena-x-heading-line);
+  font-weight: 700;
+}
+
+
+/* ORANGE UNDERSTREGNING */
+
+.travel-section h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 60px;
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: var(--arena-orange);
+}
+
+
+/* =====================================================
+   SECTION CONTENT
+===================================================== */
+
+.travel-section__content {
+  max-width: 950px;
+
+  margin-left: 73px;
+}
+
+
+.travel-section__content p {
+  margin: 0 0 20px;
+
+  color: var(--arena-x-text);
+
+  font-family: var(--arena-x-font);
+
+  font-size: var(--arena-x-text-size);
+  line-height: var(--arena-x-text-line);
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.travel-gallery {
+  position: relative;
+
+  margin: 40px 0 0;
+}
+
+
+/* =====================================================
+   GALLERY VIEWPORT
+===================================================== */
+
+.travel-gallery__viewport {
+  overflow: hidden;
+
+  border: 1px solid var(--arena-border);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 45px var(--arena-border);
+}
+
+
+/* =====================================================
+   GALLERY TRACK
+===================================================== */
+
+.travel-gallery__track {
+  display: flex;
+
+  transform: translateX(0);
+
+  transition: transform .45s ease;
+}
+
+
+/* =====================================================
+   GALLERY SLIDE
+===================================================== */
+
+.travel-gallery__slide {
+  flex: 0 0 33.333%;
+
+  aspect-ratio: 4 / 3;
+
+  min-width: 0;
+
+  padding: 5px;
+
+  cursor: zoom-in;
+}
+
+
+/* =====================================================
+   GALLERY IMAGE
+===================================================== */
+
+.travel-gallery__slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  transition: transform .35s ease;
+}
+
+
+.travel-gallery__slide:hover img {
+  transform: scale(1.025);
+}
+
+
+/* =====================================================
+   GALLERY BUTTONS
+===================================================== */
+
+.gallery-button {
+  position: absolute;
+
+  top: 50%;
+  z-index: 5;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--arena-border-light);
+  border-radius: var(--radius-round);
+
+  background: var(--arena-dark-deep);
+
+  color: var(--arena-white);
+
+  font-family: var(--arena-x-font);
+  font-size: 25px;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    background var(--arena-x-transition),
+    transform var(--arena-x-transition);
+}
+
+
+.gallery-button:hover {
+  background: var(--arena-orange);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+
+.gallery-button--previous {
+  left: 6px;
+}
+
+
+.gallery-button--next {
+  right: 6px;
+}
+
+
+/* =====================================================
+   GALLERY FOCUS
+===================================================== */
+
+.gallery-button:focus-visible,
+.fullscreen-button:focus-visible,
+.fullscreen-close:focus-visible {
+  outline: 3px solid var(--arena-yellow-strong);
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   GALLERY DOTS
+===================================================== */
+
+.gallery-dots {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin: 18px 0 0;
+}
+
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-round);
+
+  background: var(--arena-dark);
+
+  cursor: pointer;
+
+  transition:
+    background var(--arena-x-transition),
+    transform var(--arena-x-transition);
+}
+
+
+.gallery-dot:hover {
+  background: var(--arena-orange);
+}
+
+
+.gallery-dot.active {
+  background: var(--arena-orange);
+
+  transform: scale(1.3);
+}
+
+
+/* =====================================================
+   GALLERY INFO
+===================================================== */
+
+.gallery-info {
+  margin: 10px 0 0;
+
+  color: var(--arena-muted);
+
+  text-align: center;
+
+  font-family: var(--arena-x-font);
+  font-size: var(--arena-x-small);
+}
+
+
+/* =====================================================
+   FULLSCREEN GALLERY
+===================================================== */
+
+.fullscreen-gallery {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: var(--arena-dark-deep);
+}
+
+
+.fullscreen-gallery.active {
+  display: flex;
+}
+
+
+/* =====================================================
+   FULLSCREEN IMAGE CONTAINER
+===================================================== */
+
+.fullscreen-image-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   FULLSCREEN IMAGE
+===================================================== */
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+
+  object-fit: contain;
+
+  cursor: zoom-in;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  transition: transform .25s ease;
+}
+
+
+.fullscreen-image.zoomed {
+  max-width: none;
+  max-height: none;
+
+  transform: scale(1.7);
+
+  cursor: zoom-out;
+}
+
+
+/* =====================================================
+   FULLSCREEN BUTTONS
+===================================================== */
+
+.fullscreen-close,
+.fullscreen-button {
+  position: absolute;
+
+  z-index: 10;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--arena-border-light);
+
+  border-radius: var(--radius-round);
+
+  background: var(--arena-green);
+
+  color: var(--arena-white);
+
+  font-family: var(--arena-x-font);
+
+  cursor: pointer;
+
+  transition:
+    background var(--arena-x-transition),
+    transform var(--arena-x-transition);
+}
+
+
+/* CLOSE */
+
+.fullscreen-close {
+  top: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  font-size: 28px;
+}
+
+
+/* PREVIOUS / NEXT */
+
+.fullscreen-button {
+  top: 50%;
+
+  width: 58px;
+  height: 58px;
+
+  font-size: 32px;
+
+  transform: translateY(-50%);
+}
+
+
+.fullscreen-button:hover,
+.fullscreen-close:hover {
+  background: var(--arena-orange);
+}
+
+
+.fullscreen-button:hover {
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+
+.fullscreen-button--previous {
+  left: 20px;
+}
+
+
+.fullscreen-button--next {
+  right: 20px;
+}
+
+
+/* =====================================================
+   FULLSCREEN COUNTER
+===================================================== */
+
+.fullscreen-counter {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: var(--arena-green);
+
+  color: var(--arena-white);
+
+  font-family: var(--arena-x-font);
+  font-size: var(--arena-x-small);
+
+  transform: translateX(-50%);
+}
+
+
+/* =====================================================
+   TABLET
+   ≤1000px
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .travel-section__content {
+    margin-left: 0;
+  }
+
+
+  .travel-gallery__slide {
+    flex-basis: 50%;
+  }
+
+
+  .gallery-button--previous {
+    left: 10px;
+  }
+
+
+  .gallery-button--next {
+    right: 10px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ≤700px
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: min(
+      calc(100% - 30px),
+      var(--container)
+    );
+  }
+
+
+  .travel-intro {
+    margin-bottom: 60px;
+
+    text-align: left;
+  }
+
+
+  .travel-section {
+    margin-bottom: 70px;
+  }
+
+
+  /* SECTION HEADING */
+
+  .travel-section__heading {
+    gap: 12px;
+
+    margin-bottom: 25px;
+  }
+
+
+  /* NUMBER */
+
+  .travel-section__number {
+    flex-basis: 43px;
+
+    width: 43px;
+    height: 43px;
+
+    font-size: var(--arena-x-small);
+  }
+
+
+  /* LABEL */
+
+  .travel-section__label {
+    font-size: var(--arena-x-small);
+  }
+
+
+  /*
+     H2 bruger stadig den globale
+     --arena-x-h2.
+
+     Ingen ny mobil-font-size.
+  */
+
+  .travel-section h2 {
+    font-size: var(--arena-x-h2);
+  }
+
+
+  /* CONTENT */
+
+  .travel-section__content p {
+    font-size: var(--arena-x-text-size);
+    line-height: var(--arena-x-text-line);
+  }
+
+
+  /* GALLERY */
+
+  .travel-gallery__slide {
+    flex-basis: 100%;
+
+    aspect-ratio: 4 / 3;
+  }
+
+
+  .travel-gallery__viewport {
+    border-radius: 12px;
+  }
+
+
+  /* GALLERY BUTTONS */
+
+  .gallery-button {
+    width: 42px;
+    height: 42px;
+
+    font-size: 21px;
+  }
+
+
+  .gallery-button--previous {
+    left: 8px;
+  }
+
+
+  .gallery-button--next {
+    right: 8px;
+  }
+
+
+  /* FULLSCREEN IMAGE */
+
+  .fullscreen-image {
+    max-width: 94%;
+    max-height: 88%;
+  }
+
+
+  /* FULLSCREEN BUTTONS */
+
+  .fullscreen-button {
+    width: 44px;
+    height: 44px;
+
+    font-size: 24px;
+  }
+
+
+  .fullscreen-button--previous {
+    left: 8px;
+  }
+
+
+  .fullscreen-button--next {
+    right: 8px;
+  }
+
+
+  .fullscreen-close {
+    top: 10px;
+    right: 10px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  .travel-gallery__track,
+  .travel-gallery__slide img,
+  .gallery-button,
+  .gallery-dot,
+  .fullscreen-image,
+  .fullscreen-close,
+  .fullscreen-button {
+    transition: none;
+  }
+
+}

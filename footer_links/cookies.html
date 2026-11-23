@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cookies | Arena X</title>
+<meta name="description" content="Læs om Arena X's brug af cookies og lignende teknologier.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/arena_x_css/arena_x_undersider.css">
+<style>
+:root{--arena-white:#FFFFFF;--arena-cream:#f7f6f5;--arena-orange:#FF6F42;--arena-yellow:#FFFDBA;--arena-green:#1B4129;--arena-green-dark:#1F2D23;--arena-text:#1F2D23;--arena-blue:#A1D2E7;--arena-black:#000000;--arena-border:#e1e5e2;--arena-muted:#6b6b6b;--container:1080px;--container-wide:1180px;--radius-sm:6px;--radius-md:12px;--radius-lg:24px;--radius-round:50%;--space-xs:.5rem;--space-sm:1rem;--space-md:1.5rem;--space-lg:2.5rem;--space-xl:4rem;--space-section:clamp(4rem,8vw,8rem);--text-xs:.75rem;--text-sm:.875rem;--text-base:1rem;--text-lg:1.25rem;--text-xl:clamp(2rem,4vw,3rem);--transition:180ms ease}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+.cookies-page{min-height:100vh;background:var(--arena-cream);color:var(--arena-text)}
+.cookies-hero{position:relative;overflow:hidden;padding:clamp(5rem,10vw,8rem) 1rem clamp(4rem,8vw,7rem);background:var(--arena-green);color:var(--arena-white)}
+.cookies-hero:before,.cookies-hero:after{content:"";position:absolute;border-radius:50%}
+.cookies-hero:before{width:330px;height:330px;top:-170px;right:-80px;background:var(--arena-orange)}
+.cookies-hero:after{width:220px;height:220px;left:5%;bottom:-150px;background:var(--arena-blue)}
+.cookies-hero-inner{position:relative;z-index:2;width:min(100%,var(--container));margin:auto}
+.cookies-eyebrow{display:inline-flex;align-items:center;gap:.6rem;margin-bottom:1rem;color:var(--arena-yellow);font-size:var(--text-sm);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.cookies-eyebrow:before{content:"";width:28px;height:3px;border-radius:99px;background:var(--arena-orange)}
+.cookies-hero h1{max-width:800px;margin:0;font-size:clamp(3rem,8vw,5.5rem);line-height:.95;letter-spacing:-.06em}
+.cookies-hero p{max-width:650px;margin:1.75rem 0 0;color:rgba(255,255,255,.8);font-size:clamp(1.05rem,2vw,1.25rem)}
+.cookies-layout{width:min(calc(100% - 2rem),var(--container));margin:auto;padding:var(--space-section) 0}
+.cookies-intro{max-width:760px;margin-bottom:2rem}
+.cookies-intro h2{margin:0 0 .75rem;color:var(--arena-green);font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.1;letter-spacing:-.04em}
+.cookies-intro p{margin:0;color:var(--arena-muted);font-size:var(--text-lg)}
+.cookie-list{display:grid;gap:1rem}
+.cookie-card{background:var(--arena-white);border:1px solid var(--arena-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 5px 20px rgba(31,45,35,.05);transition:transform var(--transition),box-shadow var(--transition)}
+.cookie-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(31,45,35,.08)}
+.cookie-summary{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.35rem 1.5rem;border:0;background:transparent;color:var(--arena-green);cursor:pointer;text-align:left}
+.cookie-title{display:flex;align-items:center;gap:1rem}
+.cookie-icon{width:44px;height:44px;flex:0 0 auto;display:grid;place-items:center;border-radius:12px;background:var(--arena-yellow);color:var(--arena-green);transition:transform var(--transition),background var(--transition)}
+.cookie-summary:hover .cookie-icon{transform:rotate(-5deg) scale(1.05);background:var(--arena-orange);color:var(--arena-white)}
+/* .cookie-title strong,.cookie-title span{display:block} */
+.cookie-title strong{font-size:1.1rem}
+.cookie-title span span{margin-top:.15rem;color:var(--arena-muted);font-size:var(--text-sm);font-weight:400}
+.cookie-arrow{width:34px;height:34px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%;background:var(--arena-cream);transition:transform var(--transition),background var(--transition),color var(--transition)}
+.cookie-card.open .cookie-arrow{transform:rotate(180deg);background:var(--arena-orange);color:var(--arena-white)}
+.cookie-content{display:none;padding:0 1.5rem 1.5rem;border-top:1px solid var(--arena-border)}
+.cookie-card.open .cookie-content{display:block;animation:open .22s ease}
+@keyframes open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.cookie-content p{margin:1rem 0 0;line-height:1.75}
+.cookie-content ul{margin:1rem 0 0;padding-left:1.2rem}
+.cookie-content li{margin:.4rem 0}
+.cookie-content li::marker{color:var(--arena-orange)}
+.cookie-status{display:inline-flex;align-items:center;gap:.45rem;margin-top:1rem;padding:.4rem .7rem;border-radius:999px;background:#edf4ef;color:var(--arena-green);font-size:var(--text-xs);font-weight:800}
+.cookie-status:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--arena-green)}
+.cookie-info{margin-top:2rem;padding:1.5rem;border-left:5px solid var(--arena-orange);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--arena-yellow)}
+.cookie-info h3{margin:0 0 .5rem;color:var(--arena-green);font-size:1.1rem}
+.cookie-info p{margin:0}
+.cookies-contact{position:relative;overflow:hidden;margin-top:2rem;padding:clamp(2rem,5vw,3rem);border-radius:var(--radius-lg);background:var(--arena-orange);color:var(--arena-white)}
+.cookies-contact:after{content:"X";position:absolute;right:1rem;bottom:-3rem;color:rgba(255,255,255,.1);font-size:13rem;font-weight:900;line-height:1}
+.cookies-contact-content{position:relative;z-index:2;max-width:650px}
+.cookies-contact h2{margin:0 0 .6rem;color:var(--arena-white);font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em}
+.cookies-contact p{margin:0 0 1.5rem;color:rgba(255,255,255,.88)}
+.contact-button{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.2rem;border-radius:999px;background:var(--arena-white);color:var(--arena-green);font-weight:800;text-decoration:none;transition:transform var(--transition),box-shadow var(--transition)}
+.contact-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.cookies-top{position:fixed;right:1rem;bottom:1rem;z-index:100;width:46px;height:46px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--arena-green);color:var(--arena-white);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity var(--transition),visibility var(--transition),transform var(--transition),background var(--transition)}
+.cookies-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.cookies-top:hover{background:var(--arena-orange)}
+:focus-visible{outline:3px solid var(--arena-orange);outline-offset:4px}
+@media(max-width:650px){.cookies-layout{width:min(calc(100% - 1.5rem),var(--container))}.cookie-summary{padding:1rem}.cookie-content{padding:0 1rem 1rem}.cookie-icon{width:38px;height:38px}.cookie-title{gap:.75rem}.cookie-title strong{font-size:1rem}.cookie-title span span{display:none}.cookies-contact{border-radius:var(--radius-md)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!--  NAVBAR -->
+<div id="navbar"></div>
+
+<!--  BREADCRUMBS -->
+<div class="container">
+    <nav class="breadcrumbs" aria-label="Brødkrummer" >
+        <ol class="breadcrumbs__list">
+            <li> <a href="/"> <i class="fa-solid fa-house" aria-hidden="true" ></i> <span>Hjem</span> </a> </li>
+            <li class="breadcrumbs__separator" aria-hidden="true" > <i class="fa-solid fa-chevron-right"></i> </li>
+            <li aria-current="page"> Cookies - Arena X  </li>
+        </ol>
+    </nav>
+</div>
+
+<!-- =================================================
+PAGE HEADER
+================================================== -->
+<header class="page-header">
+    <div class="container">
+        <h1> Cookies - Arena X  </h1>
+    </div>
+</header>
+
+<div class="cookies-page">
+<section class="cookies-hero"><div class="cookies-hero-inner"><div class="cookies-eyebrow">Arena X</div><h1>Cookies</h1><p>Her kan du få et enkelt overblik over, hvad cookies er, hvorfor de kan blive brugt på hjemmesiden, og hvordan du kan administrere dem.</p></div></section>
+
+<main class="cookies-layout">
+<div class="cookies-intro"><h2>Du skal vide, hvad der sker</h2><p>Vi ønsker, at det skal være nemt og overskueligt at forstå, hvordan Arena X bruger cookies og lignende teknologier.</p></div>
+
+<div class="cookie-list">
+
+<article class="cookie-card open" >
+    <button class="cookie-summary" type="button" aria-expanded="false" aria-controls="functional-content">
+        <span class="cookie-title">
+            <span class="cookie-icon"> <i class="fa-solid fa-sliders" aria-hidden="true"></i> </span>
+            <span> 
+                <strong>Nødvendige cookies</strong>
+                <br>    
+                <span>Cookies der hjælper hjemmesiden med at fungere</span> 
+            </span>
+        </span>
+        <span class="cookie-arrow"> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> </span>
+    </button>
+    
+    <div class="cookie-content" id="necessary-content">
+        <p>Nødvendige cookies kan være nødvendige for, at hjemmesiden fungerer korrekt. De kan eksempelvis bruges til tekniske funktioner, navigation og sikkerhed.</p>
+        <p>Disse cookies kan som udgangspunkt ikke fravælges, hvis de er nødvendige for at levere en funktion, som brugeren har bedt om.</p>
+        <div class="cookie-status">Nødvendige</div>
+    </div>
+</article>
+
+<article class="cookie-card">
+    <button class="cookie-summary" type="button" aria-expanded="false" aria-controls="statistics-content">
+        <span class="cookie-title">
+            <span class="cookie-icon"> <i class="fa-solid fa-chart-simple" aria-hidden="true"></i> </span>
+            <span> 
+                <strong>Statistik og analyse</strong>
+                <br>
+                <span>Hjælper os med at forstå brugen af hjemmesiden</span>
+            </span>
+        </span>
+        <span class="cookie-arrow"> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> </span>
+    </button>
+    
+    <div class="cookie-content" id="statistics-content">
+        <p>Hvis Arena X anvender analyseværktøjer, kan cookies bruges til at forstå, hvordan hjemmesiden bliver anvendt.</p>
+        <p>Det kan eksempelvis hjælpe os med at se, hvilke sider der bliver besøgt, og hvordan vi kan gøre hjemmesiden mere brugervenlig.</p>
+        
+        <div class="cookie-info">
+        <h3>Bemærk</h3>
+        <p>De konkrete analyseværktøjer skal fremgå af hjemmesidens endelige cookieopsætning.</p>
+    </div>
+</div>
+</article>
+
+<article class="cookie-card">
+    <button class="cookie-summary" type="button" aria-expanded="false" aria-controls="functional-content">
+        <span class="cookie-title">
+            <span class="cookie-icon"> <i class="fa-solid fa-sliders" aria-hidden="true"></i> </span>
+            <span> 
+                <strong>Funktionelle cookies</strong>
+                <br>    
+                <span>Giver hjemmesiden ekstra funktionalitet</span> 
+            </span>
+        </span>
+        <span class="cookie-arrow"> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> </span>
+    </button>
+    
+    <div class="cookie-content" id="functional-content">
+        <p>Funktionelle cookies kan bruges til at understøtte funktioner, der gør hjemmesiden mere praktisk og brugervenlig.</p>
+        <p>Hvilke funktionelle cookies der anvendes, afhænger af hjemmesidens konkrete funktioner.</p>
+    </div>
+</article>
+
+<article class="cookie-card">
+    <button class="cookie-summary" type="button" aria-expanded="false" aria-controls="marketing-content">
+        <span class="cookie-title">
+            <span class="cookie-icon"> <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> </span>
+            <span>
+                <strong>Markedsføring</strong> 
+                <br> 
+                <span>Eventuelle cookies til markedsføring  </span> 
+            </span>
+        </span>
+        <span class="cookie-arrow"> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> </span>
+    </button>
+
+    <div class="cookie-content" id="marketing-content">
+        <p>Arena X kan anvende teknologier til markedsføring, hvis hjemmesiden på et tidspunkt indeholder sådanne funktioner.</p>
+        <p>Eventuelle cookies til markedsføring skal som udgangspunkt være baseret på et gyldigt samtykke, når dette kræves efter gældende regler.</p>
+
+        <div class="cookie-info">
+            <h3>Ingen skjulte cookies</h3>
+            <p>Denne skoleopgave beskriver ikke konkrete marketingtjenester, som ikke faktisk er implementeret på hjemmesiden.</p>
+        </div>
+    </div>
+</article>
+
+<article class="cookie-card">
+    <button class="cookie-summary" type="button" aria-expanded="false" aria-controls="manage-content">
+        
+        <span class="cookie-title">
+            <span class="cookie-icon"><i class="fa-solid fa-gear" aria-hidden="true"></i></span>
+            
+            <span>
+                <strong>Administrér cookies</strong> 
+                <br> 
+                <span>Du bestemmer over dine cookievalg</span> 
+            </span>
+
+        </span>
+        
+        <span class="cookie-arrow"> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> </span>
+    </button>
+
+    <div class="cookie-content" id="manage-content">
+        <p>Du kan administrere eller slette cookies via indstillingerne i den browser, du bruger.</p>
+        <p>Hvis hjemmesiden anvender et cookie-samtykkeværktøj, kan dine valg også administreres gennem dette.</p>
+        
+        <ul>
+            <li>Chrome: Indstillinger → Privatliv og sikkerhed</li>
+            <li>Safari: Indstillinger → Privatliv</li>
+            <li>Firefox: Indstillinger → Privatliv og sikkerhed</li>
+            <li>Edge: Indstillinger → Cookies og webstedstilladelser</li>
+        </ul>
+
+    </div>
+</article>
+</div>
+
+<section class="cookies-contact">
+    <div class="cookies-contact-content">
+        <h2>Har du spørgsmål?</h2>
+        <p>Hvis du har spørgsmål til cookies, personoplysninger eller dine rettigheder, er du velkommen til at kontakte Arena X.</p>
+        <a class="contact-button" href="mailto:info@arena-x.dk">Kontakt Arena X <span aria-hidden="true"> → </span></a>
+    </div>
+</section>
+</main>
+
+<button class="cookies-top" type="button" aria-label="Gå til toppen" title="Gå til toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<script>
+    const cards=document.querySelectorAll(".cookie-card"),topBtn=document.querySelector(".cookies-top");cards.forEach(card=>{const btn=card.querySelector(".cookie-summary");btn.addEventListener("click",()=>{const open=card.classList.contains("open");cards.forEach(c=>{c.classList.remove("open");c.querySelector(".cookie-summary").setAttribute("aria-expanded","false")});if(!open){card.classList.add("open");btn.setAttribute("aria-expanded","true")}})});window.addEventListener("scroll",()=>topBtn.classList.toggle("visible",scrollY>500),{passive:true});topBtn.addEventListener("click",()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"}));
+</script>
+
+<!-- =====================================================
+FOOTER
+====================================================== -->
+<div id="footer"></div>
+
+<!-- =======================================================
+JAVASCRIPT
+======================================================= -->
+
+<script src="/arena_x_navbar/arena_x_navbar.js"></script>
+<script src="/arena_x_footer/arena_x_footer.js"></script>
+
+</body>
+</html>
+
+
